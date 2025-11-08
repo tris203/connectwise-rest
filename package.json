@@ -25,7 +25,8 @@
     "docs": "npx typedoc src/index.ts",
     "preapidocumenter": "npx api-extractor run --local --verbose",
     "apidocumenter": "npx api-documenter markdown --input-folder temp --output-folder docs",
-    "gh-pages": "npx gh-pages -d docs"
+    "gh-pages": "npx gh-pages -d docs",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
