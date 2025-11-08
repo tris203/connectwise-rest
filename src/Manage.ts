@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig } from 'axios'
 import { makeRequest, makePaginate, PaginationOptions, PaginationApiMethod } from './BaseAPI'
-import promiseRetry from 'promise-retry'
 import type { CWMOptions } from './ManageAPI'
 import { CWLogger, DataResponse, ErrorResponse, RequestOptions, RetryOptions } from './types'
 
@@ -156,11 +155,23 @@ export default class Manage {
       ) {
         //check for requests to /system/documents/{id}/download
         const documentDownloadEndpointRegExp = /^\/system\/documents\/[0-9]*\/download$/
-        if (documentDownloadEndpointRegExp.test(config.url)) {
+        //check for requets to /finance/invoices/{id}/pdf
+        const invoicePDFEndpointRegExp = /^\/finance\/invoices\/[0-9]*\/pdf$/
+        if (
+          documentDownloadEndpointRegExp.test(config.url) ||
+          invoicePDFEndpointRegExp.test(config.url)
+        ) {
           //replace the string "application/json" with "blob" in the Accept header
           config.headers.Accept = config.headers.Accept.replace('application/json', 'blob')
           //add response type 'stream' to axios response type
           config.responseType = 'stream'
+        }
+      }
+      if (config.url && config.headers && config.method === 'post') {
+        const memberTokenEndpointRegExp = /^\/system\/members\/.*\/tokens$/
+        if (memberTokenEndpointRegExp.test(config.url)) {
+          // add `x-cw-usertype: member` header
+          config.headers['x-cw-usertype'] = 'member'
         }
       }
       return config
