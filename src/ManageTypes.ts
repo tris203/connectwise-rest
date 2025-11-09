@@ -36182,7 +36182,7 @@ export interface components {
             entryMethod?: "Date" | "EntryField" | "List" | "Option" | null;
             /** Format: int32 */
             numberOfDecimals?: number | null;
-            value?: Record<string, never>;
+            value?: Record<string, unknown> | number | string | boolean;
             connectWiseId?: string;
         };
         CustomReport: {

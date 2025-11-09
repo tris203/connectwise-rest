@@ -23,6 +23,15 @@ function createPatchValuePropertyTransform(property, _schemaObject, meta) {
       tsUnion([tsRecord(STRING, UNKNOWN), NUMBER, STRING, BOOLEAN]),
     )
   }
+  if (meta.path == '#/components/schemas/CustomFieldValue/value') {
+    return ts.factory.updatePropertySignature(
+      property,
+      property.modifiers,
+      property.name,
+      ts.factory.createToken(ts.SyntaxKind.QuestionToken),
+      tsUnion([tsRecord(STRING, UNKNOWN), NUMBER, STRING, BOOLEAN]),
+    )
+  }
   return undefined
 }
 
