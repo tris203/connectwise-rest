@@ -1,7 +1,7 @@
 /**
  * Created by kgrube on 9/11/2018
  */
-/* eslint-disable @typescript-eslint/no-var-requires */
+
 const dotenv = require('dotenv')
 const path = require('path')
 const { ManageAPI, utils } = require('../dist')
@@ -26,7 +26,7 @@ const cwm = new ManageAPI({
   privateKey: MANAGE_API_PRIVATE_KEY,
   clientId: MANAGE_API_CLIENT_ID,
   apiVersion: '2021.2',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+
   logger: () => {},
 })
 

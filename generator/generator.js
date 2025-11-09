@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { getAutomateJson } = require('./automate-json')
 
 const automateSchema = getAutomateJson()

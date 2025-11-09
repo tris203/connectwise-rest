@@ -87,7 +87,7 @@ export interface PaginationConfig {
   thisObj: InstanceType<typeof Automate | typeof Manage>
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export type PaginationApiMethod = Function
 
 export type PaginationOptions = {

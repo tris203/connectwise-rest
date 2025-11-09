@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const openapiTS = require('openapi-typescript')
 const fs = require('fs')
 const path = require('path')

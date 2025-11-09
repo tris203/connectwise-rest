@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const dotenv = require('dotenv')
 const path = require('path')
 const { AutomateAPI } = require('../dist')
@@ -15,7 +14,7 @@ const cwa = new AutomateAPI({
   serverUrl: AUTOMATE_API_URL,
   username: AUTOMATE_API_USER,
   password: AUTOMATE_API_PASSWORD,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+
   logger: () => {},
 })
 
