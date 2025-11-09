@@ -10,6 +10,7 @@ const tsRecord = ot.tsRecord
 const STRING = ot.STRING
 const UNKNOWN = ot.UNKNOWN
 const NUMBER = ot.NUMBER
+const BOOLEAN = ot.BOOLEAN
 const tsUnion = ot.tsUnion
 
 function createPatchValuePropertyTransform(property, _schemaObject, meta) {
@@ -19,7 +20,7 @@ function createPatchValuePropertyTransform(property, _schemaObject, meta) {
       property.modifiers,
       property.name,
       ts.factory.createToken(ts.SyntaxKind.QuestionToken),
-      tsUnion([tsRecord(STRING, UNKNOWN), NUMBER, STRING]),
+      tsUnion([tsRecord(STRING, UNKNOWN), NUMBER, STRING, BOOLEAN]),
     )
   }
   return undefined
