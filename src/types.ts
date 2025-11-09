@@ -1,5 +1,7 @@
 import type * as ManageAPIs from './ManageAPI'
 import type * as AutomateApis from './AutomateAPI'
+import type { components as ManageComponents } from './ManageTypes'
+type PatchOperation = ManageComponents['schemas']['PatchOperation']
 
 export enum StatusCode {
   OK = 200,
@@ -64,5 +66,4 @@ export type NoContentResponse = undefined
 export type OctetStreamResponse = Buffer
 export type PDFResponse = Blob
 export type HTMLResponse = string
-export type PatchOperation = ManageAPIs.PatchOperation
 export type { ManageAPIs, AutomateApis }

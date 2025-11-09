@@ -27,16 +27,6 @@ import { CWLogger, RetryOptions } from './types'
 
 /**
  * @public
- * Manage patch operation input object, usually passed in an array of operations
- */
-export type PatchOperation = {
-  op: 'add' | 'replace' | 'remove'
-  path: string
-  value: unknown
-}
-
-/**
- * @public
  * Manage common parameters
  */
 export type CommonParameters = {
