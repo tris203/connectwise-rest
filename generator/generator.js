@@ -1,4 +1,4 @@
-const { getAutomateJson } = require('./automate-json')
+import { getAutomateJson } from './automate-json.js'
 
 const automateSchema = getAutomateJson()
 
@@ -36,7 +36,7 @@ export type ${name} = requestBodies['${typeName}']`
  * @param {} options.operations
  * @param {'Manage' | 'Automate'} options.generatorType
  */
-function generateAPIClass({ apiName, operations = [], generatorType }) {
+export function generateAPIClass({ apiName, operations = [], generatorType }) {
   // types holder for generating type aliases
   // type Types = Record<string, string>
   // system name, sanitized name
@@ -115,7 +115,18 @@ function generateAPIClass({ apiName, operations = [], generatorType }) {
 
         if (pathParams.length > 0) {
           pathParams.forEach((parameter) => {
-            functionParams.push(`${parameter.name}: ${typeMapSanitize(parameter.schema.type)}`)
+            const type = typeMapSanitize(parameter.schema.type)
+              ? typeMapSanitize(parameter.schema.type)
+              : typeMapSanitize(parameter.schema.$ref.split('/').pop())
+
+            if (parameter.schema.$ref) {
+              types[type] = {
+                schemaType: parameter.schema.$ref.includes('requestBodies')
+                  ? 'requestBody'
+                  : 'schemas',
+              }
+            }
+            functionParams.push(`${parameter.name}: ${type}`)
           })
         }
         requestParams.push(`path: \`${url.replaceAll(/({.+?})/g, (_, p1) => `$${p1}`)}\``)
@@ -248,8 +259,4 @@ export class ${apiName}API extends ${generatorType} {
   ${functions.join('\n')}
 }
   `
-}
-
-module.exports = {
-  generateAPIClass,
 }

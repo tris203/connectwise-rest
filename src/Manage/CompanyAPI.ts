@@ -11,6 +11,8 @@ export type AddressFormat = schemas['AddressFormat']
 export type AddressFormatInfo = schemas['AddressFormatInfo']
 /** {@link BulkResult} */
 export type BulkResult = schemas['BulkResult']
+/** {@link ClearPickerRequest} */
+export type ClearPickerRequest = schemas['ClearPickerRequest']
 /** {@link CommunicationType} */
 export type CommunicationType = schemas['CommunicationType']
 /** {@link CommunicationTypeInfo} */
@@ -1535,7 +1537,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  postCompanyCompanyPickerItemsClear(): Promise<NoContentResponse> {
+  postCompanyCompanyPickerItemsClear(
+    clearPickerRequest: ClearPickerRequest,
+  ): Promise<NoContentResponse> {
     return this.request({
       path: `/company/companyPickerItems/clear`,
       method: 'post',

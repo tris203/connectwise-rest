@@ -1,34 +1,37 @@
-const ot = require('openapi-typescript')
-const openapiTS = ot.default || ot
-const astToString = ot.astToString
-const fs = require('fs')
-const path = require('path')
-const spec = require('./manage-json/manage.json')
-const ts = require('typescript')
-
-const tsRecord = ot.tsRecord
-const STRING = ot.STRING
-const UNKNOWN = ot.UNKNOWN
-const NUMBER = ot.NUMBER
-const BOOLEAN = ot.BOOLEAN
-const tsUnion = ot.tsUnion
+import ot, {
+  astToString,
+  tsRecord,
+  STRING,
+  UNKNOWN,
+  NUMBER,
+  BOOLEAN,
+  tsUnion,
+  COMMENT_HEADER,
+} from 'openapi-typescript'
+import { writeFileSync, copyFileSync, rmSync } from 'fs'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import spec from './manage-json/manage.json' with { type: 'json' }
+import { factory, SyntaxKind } from 'typescript'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 function createPatchValuePropertyTransform(property, _schemaObject, meta) {
   if (meta.path == '#/components/schemas/PatchOperation/value') {
-    return ts.factory.updatePropertySignature(
+    return factory.updatePropertySignature(
       property,
       property.modifiers,
       property.name,
-      ts.factory.createToken(ts.SyntaxKind.QuestionToken),
+      factory.createToken(SyntaxKind.QuestionToken),
       tsUnion([tsRecord(STRING, UNKNOWN), NUMBER, STRING, BOOLEAN]),
     )
   }
   if (meta.path == '#/components/schemas/CustomFieldValue/value') {
-    return ts.factory.updatePropertySignature(
+    return factory.updatePropertySignature(
       property,
       property.modifiers,
       property.name,
-      ts.factory.createToken(ts.SyntaxKind.QuestionToken),
+      factory.createToken(SyntaxKind.QuestionToken),
       tsUnion([tsRecord(STRING, UNKNOWN), NUMBER, STRING, BOOLEAN]),
     )
   }
@@ -38,17 +41,17 @@ function createPatchValuePropertyTransform(property, _schemaObject, meta) {
 async function generate() {
   try {
     const options = { transformProperty: createPatchValuePropertyTransform }
-    const ast = await openapiTS(spec, options)
+    const ast = await ot(spec, options)
     const types = astToString(ast)
 
-    const tempFile = path.join(__dirname, 'manage-types.ts')
-    const destFile = path.join(__dirname, '../src/ManageTypes.ts')
+    const tempFile = join(__dirname, 'manage-types.ts')
+    const destFile = join(__dirname, '../src/ManageTypes.ts')
 
-    fs.writeFileSync(tempFile, ot.COMMENT_HEADER + types, 'utf8')
-    fs.copyFileSync(tempFile, destFile)
-    fs.rmSync(tempFile)
+    writeFileSync(tempFile, COMMENT_HEADER + types, 'utf8')
+    copyFileSync(tempFile, destFile)
+    rmSync(tempFile)
 
-    console.log('done')
+    console.log('types done')
   } catch (err) {
     console.error('Failed to generate Manage types:', err)
     process.exitCode = 1

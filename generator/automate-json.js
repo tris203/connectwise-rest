@@ -1,5 +1,6 @@
-const fs = require('fs')
-const path = require('path')
+import { readdirSync, readFileSync } from 'fs'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
 
 /**
  * @internal
@@ -7,9 +8,13 @@ const path = require('path')
 function getAutomateJson() {
   const sections = []
 
-  const files = fs.readdirSync(path.join(__dirname, 'automate-json'))
+  const __filename = fileURLToPath(import.meta.url)
+  const __dirname = dirname(__filename)
+
+  const files = readdirSync(join(__dirname, 'automate-json'))
   files.forEach((fileName) => {
-    const section = require(path.join(__dirname, 'automate-json', fileName))
+    const content = readFileSync(join(__dirname, 'automate-json', fileName), 'utf8')
+    const section = JSON.parse(content)
 
     Object.keys(section.paths).forEach((path) => {
       Object.keys(section.paths[path]).forEach((method) => {
@@ -55,6 +60,4 @@ function getAutomateJson() {
   return automate
 }
 
-module.exports = {
-  getAutomateJson,
-}
+export { getAutomateJson }

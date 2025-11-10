@@ -1,8 +1,12 @@
-const { getAutomateJson } = require('./automate-json')
-const path = require('path')
-const fs = require('fs')
-const { ESLint } = require('eslint')
-const { generateAPIClass } = require('./generator')
+import { getAutomateJson } from './automate-json.js'
+import path, { dirname } from 'path'
+import fs from 'fs'
+import { ESLint } from 'eslint'
+import { generateAPIClass } from './generator.js'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const eslint = new ESLint({ fix: true })
 
