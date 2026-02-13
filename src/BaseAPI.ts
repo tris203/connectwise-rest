@@ -87,7 +87,10 @@ export interface PaginationConfig {
   thisObj: InstanceType<typeof Automate | typeof Manage>
 }
 
-export type PaginationApiMethod<T = unknown> = (...args: unknown[]) => Promise<T[]>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type PaginationApiMethod<T = unknown, Args extends any[] = any[]> = (
+  ...args: Args
+) => Promise<T[]>
 
 export type PaginationOptions = {
   pageSize?: number
@@ -100,10 +103,10 @@ export type PaginationOptions = {
  */
 export const makePaginate =
   ({ thisObj }: PaginationConfig) =>
-  <T>(
-    apiMethod: PaginationApiMethod<T>,
+  <T, Args extends any[]>(
+    apiMethod: PaginationApiMethod<T, Args>,
     paginateArgs: PaginationOptions = {},
-    ...methodArgs: Record<string, unknown>[]
+    ...methodArgs: Args
   ): Promise<T[]> => {
     const { startPage = 1, pageSize = 1000 } = paginateArgs
 
@@ -142,9 +145,10 @@ export const makePaginate =
 /**
  * @internal
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getPage<T>(
-  apiMethod: PaginationApiMethod<T>,
-  methodArgs: Record<string, unknown>[],
+  apiMethod: PaginationApiMethod<T, any[]>,
+  methodArgs: any[],
   thisObj: InstanceType<typeof Automate | typeof Manage>,
   page = 1,
   pageSize = 1000,

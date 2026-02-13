@@ -73,10 +73,10 @@ export default class Automate {
    *
    * ```
    */
-  paginate: <T>(
-    apiMethod: PaginationApiMethod<T>,
+  paginate: <T, Args extends any[]>(
+    apiMethod: PaginationApiMethod<T, Args>,
     paginateArgs: PaginationOptions,
-    ...methodArgs: Record<string, unknown>[]
+    ...methodArgs: Args
   ) => Promise<T[]>
 
   constructor({
