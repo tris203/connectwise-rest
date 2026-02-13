@@ -87,8 +87,7 @@ export interface PaginationConfig {
   thisObj: InstanceType<typeof Automate | typeof Manage>
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-export type PaginationApiMethod = Function
+export type PaginationApiMethod<T = unknown> = (...args: unknown[]) => Promise<T[]>
 
 export type PaginationOptions = {
   pageSize?: number
@@ -101,15 +100,15 @@ export type PaginationOptions = {
  */
 export const makePaginate =
   ({ thisObj }: PaginationConfig) =>
-  (
-    apiMethod: PaginationApiMethod,
+  <T>(
+    apiMethod: PaginationApiMethod<T>,
     paginateArgs: PaginationOptions = {},
     ...methodArgs: Record<string, unknown>[]
-  ): Promise<unknown[]> => {
+  ): Promise<T[]> => {
     const { startPage = 1, pageSize = 1000 } = paginateArgs
 
     return new Promise(async (resolve, reject) => {
-      let results: unknown[] = []
+      let results: T[] = []
 
       let page = startPage
 
@@ -119,7 +118,7 @@ export const makePaginate =
 
       while (true) {
         try {
-          const pageResults = await getPage(apiMethod, methodArgs, thisObj, page++, pageSize)
+          const pageResults = await getPage<T>(apiMethod, methodArgs, thisObj, page++, pageSize)
           // complete page returned, loop again
           if (Array.isArray(pageResults) && pageResults.length > 0) {
             results = [...results, ...pageResults]
@@ -143,13 +142,13 @@ export const makePaginate =
 /**
  * @internal
  */
-function getPage(
-  apiMethod: PaginationApiMethod,
+function getPage<T>(
+  apiMethod: PaginationApiMethod<T>,
   methodArgs: Record<string, unknown>[],
   thisObj: InstanceType<typeof Automate | typeof Manage>,
   page = 1,
   pageSize = 1000,
-): Promise<unknown[]> {
+): Promise<T[]> {
   // Javascript Function.length returns number of non-default values
   // the method args will always be greater than the api method args
   // due to this, if params is not passed in, even as an empty object,
