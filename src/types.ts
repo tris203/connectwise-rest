@@ -1,7 +1,7 @@
 import type * as ManageAPIs from './ManageAPI'
 import type * as AutomateApis from './AutomateAPI'
 import type { components as ManageComponents } from './ManageTypes'
-type PatchOperation = ManageComponents['schemas']['PatchOperation']
+export type PatchOperation = ManageComponents['schemas']['PatchOperation']
 
 export enum StatusCode {
   OK = 200,
