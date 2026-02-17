@@ -23,7 +23,28 @@ function createPatchValuePropertyTransform(property, _schemaObject, meta) {
       property.modifiers,
       property.name,
       factory.createToken(SyntaxKind.QuestionToken),
-      tsUnion([tsRecord(STRING, UNKNOWN), NUMBER, STRING, BOOLEAN]),
+      tsUnion([
+        tsRecord(STRING, UNKNOWN),
+        NUMBER,
+        STRING,
+        BOOLEAN,
+        factory.createArrayTypeNode(
+          factory.createTypeLiteralNode([
+            factory.createPropertySignature(
+              undefined,
+              factory.createIdentifier('id'),
+              undefined,
+              NUMBER,
+            ),
+            factory.createPropertySignature(
+              undefined,
+              factory.createIdentifier('value'),
+              undefined,
+              STRING,
+            ),
+          ]),
+        ),
+      ]),
     )
   }
   if (meta.path == '#/components/schemas/CustomFieldValue/value') {

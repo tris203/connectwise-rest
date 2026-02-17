@@ -41334,7 +41334,10 @@ export interface components {
         PatchOperation: {
             op?: string;
             path?: string;
-            value?: Record<string, unknown> | number | string | boolean;
+            value?: Record<string, unknown> | number | string | boolean | {
+                id: number;
+                value: string;
+            }[];
         };
         PaymentMethodReference: {
             /** Format: int32 */
