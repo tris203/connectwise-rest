@@ -321,7 +321,9 @@ export class SystemAPI extends Manage {
     super(props)
   }
 
-  getSystemAllowedfiletypes(params: CommonParameters = {}): Promise<Array<AllowedFileType>> {
+  getSystemAllowedfiletypes(
+    params: CommonParameters<AllowedFileType> = {},
+  ): Promise<Array<AllowedFileType>> {
     return this.request({
       path: `/system/allowedfiletypes/`,
       method: 'get',
@@ -339,7 +341,7 @@ export class SystemAPI extends Manage {
 
   getSystemAllowedfiletypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AllowedFileType> = {},
   ): Promise<AllowedFileType> {
     return this.request({
       path: `/system/allowedfiletypes/${id}`,
@@ -377,7 +379,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAllowedfiletypesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemAllowedfiletypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/allowedfiletypes/count`,
       method: 'get',
@@ -385,7 +387,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAllowedorigins(params: CommonParameters = {}): Promise<Array<AllowedOrigin>> {
+  getSystemAllowedorigins(
+    params: CommonParameters<AllowedOrigin> = {},
+  ): Promise<Array<AllowedOrigin>> {
     return this.request({
       path: `/system/allowedorigins`,
       method: 'get',
@@ -401,7 +405,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAllowedoriginsById(id: number, params: CommonParameters = {}): Promise<AllowedOrigin> {
+  getSystemAllowedoriginsById(
+    id: number,
+    params: CommonParameters<AllowedOrigin> = {},
+  ): Promise<AllowedOrigin> {
     return this.request({
       path: `/system/allowedorigins/${id}`,
       method: 'get',
@@ -435,7 +442,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAllowedoriginsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemAllowedoriginsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/allowedorigins/count`,
       method: 'get',
@@ -443,7 +450,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemApiMembers(params: CommonParameters = {}): Promise<Array<ApiMember>> {
+  getSystemApiMembers(params: CommonParameters<ApiMember> = {}): Promise<Array<ApiMember>> {
     return this.request({
       path: `/system/apiMembers`,
       method: 'get',
@@ -459,7 +466,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemApiMembersById(id: number, params: CommonParameters = {}): Promise<ApiMember> {
+  getSystemApiMembersById(
+    id: number,
+    params: CommonParameters<ApiMember> = {},
+  ): Promise<ApiMember> {
     return this.request({
       path: `/system/apiMembers/${id}`,
       method: 'get',
@@ -486,7 +496,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemApiMembersCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemApiMembersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/apiMembers/count`,
       method: 'get',
@@ -494,7 +504,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemApiMembersDefault(params: CommonParameters = {}): Promise<ApiMember> {
+  getSystemApiMembersDefault(params: CommonParameters<ApiMember> = {}): Promise<ApiMember> {
     return this.request({
       path: `/system/apiMembers/default`,
       method: 'get',
@@ -502,7 +512,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAudittrail(params: CommonParameters = {}): Promise<Array<AuditTrailEntry>> {
+  getSystemAudittrail(
+    params: CommonParameters<AuditTrailEntry> = {},
+  ): Promise<Array<AuditTrailEntry>> {
     return this.request({
       path: `/system/audittrail`,
       method: 'get',
@@ -510,7 +522,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAudittrailCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemAudittrailCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/audittrail/count`,
       method: 'get',
@@ -518,7 +530,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAuthAnvils(params: CommonParameters = {}): Promise<Array<AuthAnvil>> {
+  getSystemAuthAnvils(params: CommonParameters<AuthAnvil> = {}): Promise<Array<AuthAnvil>> {
     return this.request({
       path: `/system/authAnvils`,
       method: 'get',
@@ -526,7 +538,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAuthAnvilsById(id: number, params: CommonParameters = {}): Promise<AuthAnvil> {
+  getSystemAuthAnvilsById(
+    id: number,
+    params: CommonParameters<AuthAnvil> = {},
+  ): Promise<AuthAnvil> {
     return this.request({
       path: `/system/authAnvils/${id}`,
       method: 'get',
@@ -553,7 +568,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAuthAnvilsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemAuthAnvilsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/authAnvils/count`,
       method: 'get',
@@ -561,7 +576,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAuthAnvilsTestConnection(params: CommonParameters = {}): Promise<SuccessResponse> {
+  getSystemAuthAnvilsTestConnection(
+    params: CommonParameters<SuccessResponse> = {},
+  ): Promise<SuccessResponse> {
     return this.request({
       path: `/system/authAnvils/testConnection`,
       method: 'get',
@@ -569,7 +586,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAutoSyncTime(params: CommonParameters = {}): Promise<Array<AutoSyncTime>> {
+  getSystemAutoSyncTime(params: CommonParameters<AutoSyncTime> = {}): Promise<Array<AutoSyncTime>> {
     return this.request({
       path: `/system/autoSyncTime`,
       method: 'get',
@@ -585,7 +602,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAutoSyncTimeById(id: number, params: CommonParameters = {}): Promise<AutoSyncTime> {
+  getSystemAutoSyncTimeById(
+    id: number,
+    params: CommonParameters<AutoSyncTime> = {},
+  ): Promise<AutoSyncTime> {
     return this.request({
       path: `/system/autoSyncTime/${id}`,
       method: 'get',
@@ -619,7 +639,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemAutoSyncTimeCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemAutoSyncTimeCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/autoSyncTime/count`,
       method: 'get',
@@ -627,7 +647,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemBillableOptionsInfo(params: CommonParameters = {}): Promise<Array<BillableOptionsInfo>> {
+  getSystemBillableOptionsInfo(
+    params: CommonParameters<BillableOptionsInfo> = {},
+  ): Promise<Array<BillableOptionsInfo>> {
     return this.request({
       path: `/system/BillableOptions/info`,
       method: 'get',
@@ -651,7 +673,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCallbacks(params: CommonParameters = {}): Promise<Array<CallbackEntry>> {
+  getSystemCallbacks(params: CommonParameters<CallbackEntry> = {}): Promise<Array<CallbackEntry>> {
     return this.request({
       path: `/system/callbacks`,
       method: 'get',
@@ -667,7 +689,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCallbacksById(id: number, params: CommonParameters = {}): Promise<CallbackEntry> {
+  getSystemCallbacksById(
+    id: number,
+    params: CommonParameters<CallbackEntry> = {},
+  ): Promise<CallbackEntry> {
     return this.request({
       path: `/system/callbacks/${id}`,
       method: 'get',
@@ -701,7 +726,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCallbacksCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemCallbacksCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/callbacks/count`,
       method: 'get',
@@ -709,7 +734,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCertifications(params: CommonParameters = {}): Promise<Array<Certification>> {
+  getSystemCertifications(
+    params: CommonParameters<Certification> = {},
+  ): Promise<Array<Certification>> {
     return this.request({
       path: `/system/certifications`,
       method: 'get',
@@ -725,7 +752,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCertificationsById(id: number, params: CommonParameters = {}): Promise<Certification> {
+  getSystemCertificationsById(
+    id: number,
+    params: CommonParameters<Certification> = {},
+  ): Promise<Certification> {
     return this.request({
       path: `/system/certifications/${id}`,
       method: 'get',
@@ -761,7 +791,7 @@ export class SystemAPI extends Manage {
 
   getSystemCertificationsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/certifications/${id}/usages`,
@@ -772,7 +802,7 @@ export class SystemAPI extends Manage {
 
   getSystemCertificationsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/certifications/${id}/usages/list`,
@@ -781,7 +811,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCertificationsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemCertificationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/certifications/count`,
       method: 'get',
@@ -790,7 +820,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemConnectWiseHostedScreens(
-    params: CommonParameters = {},
+    params: CommonParameters<ConnectWiseHostedScreen> = {},
   ): Promise<Array<ConnectWiseHostedScreen>> {
     return this.request({
       path: `/system/connectWiseHostedScreens`,
@@ -801,7 +831,7 @@ export class SystemAPI extends Manage {
 
   getSystemConnectWiseHostedScreensById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConnectWiseHostedScreen> = {},
   ): Promise<ConnectWiseHostedScreen> {
     return this.request({
       path: `/system/connectWiseHostedScreens/${id}`,
@@ -810,7 +840,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemConnectWiseHostedScreensCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemConnectWiseHostedScreensCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/connectWiseHostedScreens/count`,
       method: 'get',
@@ -819,7 +849,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemConnectwisehostedsetups(
-    params: CommonParameters = {},
+    params: CommonParameters<ConnectWiseHostedSetup> = {},
   ): Promise<Array<ConnectWiseHostedSetup>> {
     return this.request({
       path: `/system/connectwisehostedsetups`,
@@ -840,7 +870,7 @@ export class SystemAPI extends Manage {
 
   getSystemConnectwisehostedsetupsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConnectWiseHostedSetup> = {},
   ): Promise<ConnectWiseHostedSetup> {
     return this.request({
       path: `/system/connectwisehostedsetups/${id}`,
@@ -878,7 +908,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemConnectwisehostedsetupsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemConnectwisehostedsetupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/connectwisehostedsetups/count`,
       method: 'get',
@@ -887,7 +917,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemContactsyncMonitoring(
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncMonitoring> = {},
   ): Promise<Array<M365ContactSyncMonitoring>> {
     return this.request({
       path: `/system/contactsync/monitoring`,
@@ -912,7 +942,7 @@ export class SystemAPI extends Manage {
 
   getSystemContactsyncMonitoringById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncMonitoring> = {},
   ): Promise<M365ContactSyncMonitoring> {
     return this.request({
       path: `/system/contactsync/monitoring/${id}`,
@@ -921,7 +951,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemContactsyncMonitoringCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemContactsyncMonitoringCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/contactsync/monitoring/count`,
       method: 'get',
@@ -930,7 +960,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemContactsyncMonitoringNotificationtype(
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncMonitoring> = {},
   ): Promise<M365ContactSyncMonitoring> {
     return this.request({
       path: `/system/contactsync/monitoring/notificationtype/`,
@@ -941,7 +971,7 @@ export class SystemAPI extends Manage {
 
   getSystemContactsyncMonitoringTypeById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncMonitoring> = {},
   ): Promise<M365ContactSyncMonitoring> {
     return this.request({
       path: `/system/contactsync/monitoring/type/${id}`,
@@ -957,7 +987,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCustomReports(params: CommonParameters = {}): Promise<Array<CustomReport>> {
+  getSystemCustomReports(
+    params: CommonParameters<CustomReport> = {},
+  ): Promise<Array<CustomReport>> {
     return this.request({
       path: `/system/customReports`,
       method: 'get',
@@ -973,7 +1005,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCustomReportsById(id: number, params: CommonParameters = {}): Promise<CustomReport> {
+  getSystemCustomReportsById(
+    id: number,
+    params: CommonParameters<CustomReport> = {},
+  ): Promise<CustomReport> {
     return this.request({
       path: `/system/customReports/${id}`,
       method: 'get',
@@ -1009,7 +1044,7 @@ export class SystemAPI extends Manage {
 
   getSystemCustomReportsByParentIdParameters(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CustomReportParameter> = {},
   ): Promise<Array<CustomReportParameter>> {
     return this.request({
       path: `/system/customReports/${parentId}/parameters`,
@@ -1032,7 +1067,7 @@ export class SystemAPI extends Manage {
   getSystemCustomReportsByParentIdParametersById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CustomReportParameter> = {},
   ): Promise<CustomReportParameter> {
     return this.request({
       path: `/system/customReports/${parentId}/parameters/${id}`,
@@ -1077,7 +1112,7 @@ export class SystemAPI extends Manage {
 
   getSystemCustomReportsByParentIdParametersCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/customReports/${parentId}/parameters/count`,
@@ -1086,7 +1121,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCustomReportsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemCustomReportsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/customReports/count`,
       method: 'get',
@@ -1094,7 +1129,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCwTimeZones(params: CommonParameters = {}): Promise<Array<CwTimeZone>> {
+  getSystemCwTimeZones(params: CommonParameters<CwTimeZone> = {}): Promise<Array<CwTimeZone>> {
     return this.request({
       path: `/system/cwTimeZones`,
       method: 'get',
@@ -1102,7 +1137,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCwTimeZonesById(id: number, params: CommonParameters = {}): Promise<CwTimeZone> {
+  getSystemCwTimeZonesById(
+    id: number,
+    params: CommonParameters<CwTimeZone> = {},
+  ): Promise<CwTimeZone> {
     return this.request({
       path: `/system/cwTimeZones/${id}`,
       method: 'get',
@@ -1110,7 +1148,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemCwTimeZonesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemCwTimeZonesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/cwTimeZones/count`,
       method: 'get',
@@ -1118,7 +1156,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDepartments(params: CommonParameters = {}): Promise<Array<Department>> {
+  getSystemDepartments(params: CommonParameters<Department> = {}): Promise<Array<Department>> {
     return this.request({
       path: `/system/departments`,
       method: 'get',
@@ -1134,7 +1172,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDepartmentsById(id: number, params: CommonParameters = {}): Promise<Department> {
+  getSystemDepartmentsById(
+    id: number,
+    params: CommonParameters<Department> = {},
+  ): Promise<Department> {
     return this.request({
       path: `/system/departments/${id}`,
       method: 'get',
@@ -1168,7 +1209,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDepartmentsByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getSystemDepartmentsByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/departments/${id}/usages`,
       method: 'get',
@@ -1178,7 +1222,7 @@ export class SystemAPI extends Manage {
 
   getSystemDepartmentsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/departments/${id}/usages/list`,
@@ -1189,7 +1233,7 @@ export class SystemAPI extends Manage {
 
   getSystemDepartmentsByParentIdLocations(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<DepartmentLocation> = {},
   ): Promise<Array<DepartmentLocation>> {
     return this.request({
       path: `/system/departments/${parentId}/locations`,
@@ -1212,7 +1256,7 @@ export class SystemAPI extends Manage {
   getSystemDepartmentsByParentIdLocationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<DepartmentLocation> = {},
   ): Promise<DepartmentLocation> {
     return this.request({
       path: `/system/departments/${parentId}/locations/${id}`,
@@ -1257,7 +1301,7 @@ export class SystemAPI extends Manage {
 
   getSystemDepartmentsByParentIdLocationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/departments/${parentId}/locations/count`,
@@ -1266,7 +1310,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDepartmentsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemDepartmentsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/departments/count`,
       method: 'get',
@@ -1276,7 +1320,7 @@ export class SystemAPI extends Manage {
 
   getSystemDirectionalSyncsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<DirectionalSyncInfo> = {},
   ): Promise<DirectionalSyncInfo> {
     return this.request({
       path: `/system/directionalSyncs/${id}/info`,
@@ -1286,7 +1330,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemDirectionalSyncsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<DirectionalSyncInfo> = {},
   ): Promise<Array<DirectionalSyncInfo>> {
     return this.request({
       path: `/system/directionalSyncs/info`,
@@ -1295,7 +1339,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDirectionalSyncsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemDirectionalSyncsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/directionalSyncs/info/count`,
       method: 'get',
@@ -1303,7 +1347,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocuments(params: CommonParameters = {}): Promise<Array<DocumentInfo>> {
+  getSystemDocuments(params: CommonParameters<DocumentInfo> = {}): Promise<Array<DocumentInfo>> {
     return this.request({
       path: `/system/documents`,
       method: 'get',
@@ -1319,7 +1363,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentsById(id: number, params: CommonParameters = {}): Promise<DocumentInfo> {
+  getSystemDocumentsById(
+    id: number,
+    params: CommonParameters<DocumentInfo> = {},
+  ): Promise<DocumentInfo> {
     return this.request({
       path: `/system/documents/${id}`,
       method: 'get',
@@ -1341,7 +1388,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentsByIdDownload(id: number, params: CommonParameters = {}): Promise<string> {
+  getSystemDocumentsByIdDownload(
+    id: number,
+    params: CommonParameters<string> = {},
+  ): Promise<string> {
     return this.request({
       path: `/system/documents/${id}/download`,
       method: 'get',
@@ -1349,7 +1399,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentsByIdThumbnail(id: number, params: CommonParameters = {}): Promise<string> {
+  getSystemDocumentsByIdThumbnail(
+    id: number,
+    params: CommonParameters<string> = {},
+  ): Promise<string> {
     return this.request({
       path: `/system/documents/${id}/thumbnail`,
       method: 'get',
@@ -1357,7 +1410,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemDocumentsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/documents/count`,
       method: 'get',
@@ -1365,7 +1418,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentsUploadsample(params: CommonParameters = {}): Promise<HTMLResponse> {
+  getSystemDocumentsUploadsample(
+    params: CommonParameters<HTMLResponse> = {},
+  ): Promise<HTMLResponse> {
     return this.request({
       path: `/system/documents/uploadsample`,
       method: 'get',
@@ -1373,7 +1428,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentTypesByIdInfo(id: number, params: CommonParameters = {}): Promise<DocumentType> {
+  getSystemDocumentTypesByIdInfo(
+    id: number,
+    params: CommonParameters<DocumentType> = {},
+  ): Promise<DocumentType> {
     return this.request({
       path: `/system/documentTypes/${id}/info`,
       method: 'get',
@@ -1381,7 +1439,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentTypesInfo(params: CommonParameters = {}): Promise<Array<DocumentType>> {
+  getSystemDocumentTypesInfo(
+    params: CommonParameters<DocumentType> = {},
+  ): Promise<Array<DocumentType>> {
     return this.request({
       path: `/system/documentTypes/info`,
       method: 'get',
@@ -1389,7 +1449,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemDocumentTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemDocumentTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/documentTypes/info/count`,
       method: 'get',
@@ -1397,7 +1457,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailConnectors(params: CommonParameters = {}): Promise<Array<EmailConnector>> {
+  getSystemEmailConnectors(
+    params: CommonParameters<EmailConnector> = {},
+  ): Promise<Array<EmailConnector>> {
     return this.request({
       path: `/system/emailConnectors`,
       method: 'get',
@@ -1416,7 +1478,7 @@ export class SystemAPI extends Manage {
   getSystemEmailConnectorsByGrandparentIdParsingStylesByParentIdParsingRules(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EmailConnectorParsingRule> = {},
   ): Promise<Array<EmailConnectorParsingRule>> {
     return this.request({
       path: `/system/emailConnectors/${grandparentId}/parsingStyles/${parentId}/parsingRules`,
@@ -1441,7 +1503,7 @@ export class SystemAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EmailConnectorParsingRule> = {},
   ): Promise<EmailConnectorParsingRule> {
     return this.request({
       path: `/system/emailConnectors/${grandparentId}/parsingStyles/${parentId}/parsingRules/${id}`,
@@ -1490,7 +1552,7 @@ export class SystemAPI extends Manage {
   getSystemEmailConnectorsByGrandparentIdParsingStylesByParentIdParsingRulesCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/emailConnectors/${grandparentId}/parsingStyles/${parentId}/parsingRules/count`,
@@ -1499,7 +1561,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailConnectorsById(id: number, params: CommonParameters = {}): Promise<EmailConnector> {
+  getSystemEmailConnectorsById(
+    id: number,
+    params: CommonParameters<EmailConnector> = {},
+  ): Promise<EmailConnector> {
     return this.request({
       path: `/system/emailConnectors/${id}`,
       method: 'get',
@@ -1538,7 +1603,7 @@ export class SystemAPI extends Manage {
 
   getSystemEmailConnectorsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EmailConnectorInfo> = {},
   ): Promise<EmailConnectorInfo> {
     return this.request({
       path: `/system/emailConnectors/${id}/info`,
@@ -1549,7 +1614,7 @@ export class SystemAPI extends Manage {
 
   getSystemEmailConnectorsByParentIdParsingStyles(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EmailConnectorParsingStyle> = {},
   ): Promise<Array<EmailConnectorParsingStyle>> {
     return this.request({
       path: `/system/emailConnectors/${parentId}/parsingStyles`,
@@ -1572,7 +1637,7 @@ export class SystemAPI extends Manage {
   getSystemEmailConnectorsByParentIdParsingStylesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EmailConnectorParsingStyle> = {},
   ): Promise<EmailConnectorParsingStyle> {
     return this.request({
       path: `/system/emailConnectors/${parentId}/parsingStyles/${id}`,
@@ -1617,7 +1682,7 @@ export class SystemAPI extends Manage {
 
   getSystemEmailConnectorsByParentIdParsingStylesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/emailConnectors/${parentId}/parsingStyles/count`,
@@ -1626,7 +1691,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailConnectorsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemEmailConnectorsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/emailConnectors/count`,
       method: 'get',
@@ -1634,7 +1699,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailConnectorsInfo(params: CommonParameters = {}): Promise<Array<EmailConnectorInfo>> {
+  getSystemEmailConnectorsInfo(
+    params: CommonParameters<EmailConnectorInfo> = {},
+  ): Promise<Array<EmailConnectorInfo>> {
     return this.request({
       path: `/system/emailConnectors/info`,
       method: 'get',
@@ -1642,7 +1709,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailConnectorsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemEmailConnectorsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/emailConnectors/info/count`,
       method: 'get',
@@ -1650,7 +1717,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailExclusions(params: CommonParameters = {}): Promise<Array<EmailExclusion>> {
+  getSystemEmailExclusions(
+    params: CommonParameters<EmailExclusion> = {},
+  ): Promise<Array<EmailExclusion>> {
     return this.request({
       path: `/system/emailExclusions`,
       method: 'get',
@@ -1666,7 +1735,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailExclusionsById(id: number, params: CommonParameters = {}): Promise<EmailExclusion> {
+  getSystemEmailExclusionsById(
+    id: number,
+    params: CommonParameters<EmailExclusion> = {},
+  ): Promise<EmailExclusion> {
     return this.request({
       path: `/system/emailExclusions/${id}`,
       method: 'get',
@@ -1703,7 +1775,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailExclusionsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemEmailExclusionsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/emailExclusions/count`,
       method: 'get',
@@ -1711,7 +1783,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailTokens(params: CommonParameters = {}): Promise<Array<EmailToken>> {
+  getSystemEmailTokens(params: CommonParameters<EmailToken> = {}): Promise<Array<EmailToken>> {
     return this.request({
       path: `/system/emailTokens`,
       method: 'get',
@@ -1719,7 +1791,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailTokensById(id: number, params: CommonParameters = {}): Promise<EmailToken> {
+  getSystemEmailTokensById(
+    id: number,
+    params: CommonParameters<EmailToken> = {},
+  ): Promise<EmailToken> {
     return this.request({
       path: `/system/emailTokens/${id}`,
       method: 'get',
@@ -1727,7 +1802,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEmailTokensCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemEmailTokensCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/emailTokens/count`,
       method: 'get',
@@ -1735,7 +1810,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEPayConfigurations(params: CommonParameters = {}): Promise<Array<EPayConfiguration>> {
+  getSystemEPayConfigurations(
+    params: CommonParameters<EPayConfiguration> = {},
+  ): Promise<Array<EPayConfiguration>> {
     return this.request({
       path: `/system/ePayConfigurations`,
       method: 'get',
@@ -1753,7 +1830,7 @@ export class SystemAPI extends Manage {
 
   getSystemEPayConfigurationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EPayConfiguration> = {},
   ): Promise<EPayConfiguration> {
     return this.request({
       path: `/system/ePayConfigurations/${id}`,
@@ -1791,7 +1868,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemEPayConfigurationsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemEPayConfigurationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/ePayConfigurations/count`,
       method: 'get',
@@ -1799,7 +1876,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemExperiments(params: CommonParameters = {}): Promise<Array<Experiment>> {
+  getSystemExperiments(params: CommonParameters<Experiment> = {}): Promise<Array<Experiment>> {
     return this.request({
       path: `/system/experiments`,
       method: 'get',
@@ -1807,7 +1884,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemExperimentsById(id: number, params: CommonParameters = {}): Promise<Experiment> {
+  getSystemExperimentsById(
+    id: number,
+    params: CommonParameters<Experiment> = {},
+  ): Promise<Experiment> {
     return this.request({
       path: `/system/experiments/${id}`,
       method: 'get',
@@ -1815,7 +1895,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemExperimentsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemExperimentsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/experiments/count`,
       method: 'get',
@@ -1823,7 +1903,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemFileuploadsettings(params: CommonParameters = {}): Promise<Array<FileUploadSetting>> {
+  getSystemFileuploadsettings(
+    params: CommonParameters<FileUploadSetting> = {},
+  ): Promise<Array<FileUploadSetting>> {
     return this.request({
       path: `/system/fileuploadsettings/`,
       method: 'get',
@@ -1833,7 +1915,7 @@ export class SystemAPI extends Manage {
 
   getSystemFileuploadsettingsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<FileUploadSetting> = {},
   ): Promise<FileUploadSetting> {
     return this.request({
       path: `/system/fileuploadsettings/${id}`,
@@ -1864,7 +1946,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemFileuploadsettingsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemFileuploadsettingsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/fileuploadsettings/count`,
       method: 'get',
@@ -1872,7 +1954,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemGoogleemailsetup(params: CommonParameters = {}): Promise<Array<GoogleEmailSetup>> {
+  getSystemGoogleemailsetup(
+    params: CommonParameters<GoogleEmailSetup> = {},
+  ): Promise<Array<GoogleEmailSetup>> {
     return this.request({
       path: `/system/googleemailsetup/`,
       method: 'get',
@@ -1890,7 +1974,7 @@ export class SystemAPI extends Manage {
 
   getSystemGoogleemailsetupById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<GoogleEmailSetup> = {},
   ): Promise<GoogleEmailSetup> {
     return this.request({
       path: `/system/googleemailsetup/${id}`,
@@ -1935,7 +2019,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemGoogleemailsetupCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemGoogleemailsetupCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/googleemailsetup/count`,
       method: 'get',
@@ -1943,7 +2027,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemImaps(params: CommonParameters = {}): Promise<Array<Imap>> {
+  getSystemImaps(params: CommonParameters<Imap> = {}): Promise<Array<Imap>> {
     return this.request({
       path: `/system/imaps`,
       method: 'get',
@@ -1959,7 +2043,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemImapsById(id: number, params: CommonParameters = {}): Promise<Imap> {
+  getSystemImapsById(id: number, params: CommonParameters<Imap> = {}): Promise<Imap> {
     return this.request({
       path: `/system/imaps/${id}`,
       method: 'get',
@@ -1990,7 +2074,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemImapsByIdInfo(id: number, params: CommonParameters = {}): Promise<ImapInfo> {
+  getSystemImapsByIdInfo(id: number, params: CommonParameters<ImapInfo> = {}): Promise<ImapInfo> {
     return this.request({
       path: `/system/imaps/${id}/info`,
       method: 'get',
@@ -1998,7 +2082,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemImapsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemImapsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/imaps/count`,
       method: 'get',
@@ -2006,7 +2090,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemImapsInfo(params: CommonParameters = {}): Promise<Array<ImapInfo>> {
+  getSystemImapsInfo(params: CommonParameters<ImapInfo> = {}): Promise<Array<ImapInfo>> {
     return this.request({
       path: `/system/imaps/info`,
       method: 'get',
@@ -2014,7 +2098,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemImapsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemImapsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/imaps/info/count`,
       method: 'get',
@@ -2029,7 +2113,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfo(params: CommonParameters = {}): Promise<Info> {
+  getSystemInfo(params: CommonParameters<Info> = {}): Promise<Info> {
     return this.request({
       path: `/system/info`,
       method: 'get',
@@ -2038,7 +2122,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemInfoDepartmentlocations(
-    params: CommonParameters = {},
+    params: CommonParameters<DepartmentLocationInfo> = {},
   ): Promise<Array<DepartmentLocationInfo>> {
     return this.request({
       path: `/system/info/departmentlocations`,
@@ -2049,7 +2133,7 @@ export class SystemAPI extends Manage {
 
   getSystemInfoDepartmentlocationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<DepartmentLocationInfo> = {},
   ): Promise<DepartmentLocationInfo> {
     return this.request({
       path: `/system/info/departmentlocations/${id}`,
@@ -2058,7 +2142,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoDepartmentlocationsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoDepartmentlocationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/departmentlocations/count`,
       method: 'get',
@@ -2066,7 +2150,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoDepartments(params: CommonParameters = {}): Promise<Array<DepartmentInfo>> {
+  getSystemInfoDepartments(
+    params: CommonParameters<DepartmentInfo> = {},
+  ): Promise<Array<DepartmentInfo>> {
     return this.request({
       path: `/system/info/departments`,
       method: 'get',
@@ -2074,7 +2160,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoDepartmentsById(id: number, params: CommonParameters = {}): Promise<DepartmentInfo> {
+  getSystemInfoDepartmentsById(
+    id: number,
+    params: CommonParameters<DepartmentInfo> = {},
+  ): Promise<DepartmentInfo> {
     return this.request({
       path: `/system/info/departments/${id}`,
       method: 'get',
@@ -2082,7 +2171,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoDepartmentsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoDepartmentsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/departments/count`,
       method: 'get',
@@ -2090,7 +2179,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLinks(params: CommonParameters = {}): Promise<Array<LinkInfo>> {
+  getSystemInfoLinks(params: CommonParameters<LinkInfo> = {}): Promise<Array<LinkInfo>> {
     return this.request({
       path: `/system/info/links`,
       method: 'get',
@@ -2098,7 +2187,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLinksById(id: number, params: CommonParameters = {}): Promise<LinkInfo> {
+  getSystemInfoLinksById(id: number, params: CommonParameters<LinkInfo> = {}): Promise<LinkInfo> {
     return this.request({
       path: `/system/info/links/${id}`,
       method: 'get',
@@ -2117,7 +2206,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLinksCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoLinksCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/links/count`,
       method: 'get',
@@ -2125,7 +2214,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLocales(params: CommonParameters = {}): Promise<Array<LocaleInfo>> {
+  getSystemInfoLocales(params: CommonParameters<LocaleInfo> = {}): Promise<Array<LocaleInfo>> {
     return this.request({
       path: `/system/info/locales`,
       method: 'get',
@@ -2133,7 +2222,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLocalesById(id: number, params: CommonParameters = {}): Promise<LocaleInfo> {
+  getSystemInfoLocalesById(
+    id: number,
+    params: CommonParameters<LocaleInfo> = {},
+  ): Promise<LocaleInfo> {
     return this.request({
       path: `/system/info/locales/${id}`,
       method: 'get',
@@ -2141,7 +2233,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLocalesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoLocalesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/locales/count`,
       method: 'get',
@@ -2149,7 +2241,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLocations(params: CommonParameters = {}): Promise<Array<LocationInfo>> {
+  getSystemInfoLocations(
+    params: CommonParameters<LocationInfo> = {},
+  ): Promise<Array<LocationInfo>> {
     return this.request({
       path: `/system/info/locations`,
       method: 'get',
@@ -2157,7 +2251,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLocationsById(id: number, params: CommonParameters = {}): Promise<LocationInfo> {
+  getSystemInfoLocationsById(
+    id: number,
+    params: CommonParameters<LocationInfo> = {},
+  ): Promise<LocationInfo> {
     return this.request({
       path: `/system/info/locations/${id}`,
       method: 'get',
@@ -2165,7 +2262,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoLocationsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoLocationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/locations/count`,
       method: 'get',
@@ -2173,7 +2270,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoMembers(params: CommonParameters = {}): Promise<Array<MemberInfo>> {
+  getSystemInfoMembers(params: CommonParameters<MemberInfo> = {}): Promise<Array<MemberInfo>> {
     return this.request({
       path: `/system/info/members`,
       method: 'get',
@@ -2181,7 +2278,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoMembersById(id: number, params: CommonParameters = {}): Promise<MemberInfo> {
+  getSystemInfoMembersById(
+    id: number,
+    params: CommonParameters<MemberInfo> = {},
+  ): Promise<MemberInfo> {
     return this.request({
       path: `/system/info/members/${id}`,
       method: 'get',
@@ -2190,7 +2290,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemInfoMembersmemberIdentifierregextypes(
-    params: CommonParameters = {},
+    params: CommonParameters<MemberInfo> = {},
   ): Promise<MemberInfo> {
     return this.request({
       path: `/system/info/members/{memberIdentifier:regex(^(types. |(`,
@@ -2199,7 +2299,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoMembersCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoMembersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/members/count`,
       method: 'get',
@@ -2207,7 +2307,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoPersonas(params: CommonParameters = {}): Promise<Array<PersonasInfo>> {
+  getSystemInfoPersonas(params: CommonParameters<PersonasInfo> = {}): Promise<Array<PersonasInfo>> {
     return this.request({
       path: `/system/info/personas`,
       method: 'get',
@@ -2215,7 +2315,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoPersonasById(id: number, params: CommonParameters = {}): Promise<PersonasInfo> {
+  getSystemInfoPersonasById(
+    id: number,
+    params: CommonParameters<PersonasInfo> = {},
+  ): Promise<PersonasInfo> {
     return this.request({
       path: `/system/info/personas/${id}`,
       method: 'get',
@@ -2223,7 +2326,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoPersonasCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoPersonasCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/personas/count`,
       method: 'get',
@@ -2231,7 +2334,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoStandardNotes(params: CommonParameters = {}): Promise<Array<StandardNoteInfo>> {
+  getSystemInfoStandardNotes(
+    params: CommonParameters<StandardNoteInfo> = {},
+  ): Promise<Array<StandardNoteInfo>> {
     return this.request({
       path: `/system/info/standardNotes`,
       method: 'get',
@@ -2241,7 +2346,7 @@ export class SystemAPI extends Manage {
 
   getSystemInfoStandardNotesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<StandardNoteInfo> = {},
   ): Promise<StandardNoteInfo> {
     return this.request({
       path: `/system/info/standardNotes/${id}`,
@@ -2250,7 +2355,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInfoStandardNotesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInfoStandardNotesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/info/standardNotes/count`,
       method: 'get',
@@ -2258,7 +2363,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutBoards(params: CommonParameters = {}): Promise<Array<InOutBoard>> {
+  getSystemInOutBoards(params: CommonParameters<InOutBoard> = {}): Promise<Array<InOutBoard>> {
     return this.request({
       path: `/system/inOutBoards`,
       method: 'get',
@@ -2274,7 +2379,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutBoardsById(id: number, params: CommonParameters = {}): Promise<InOutBoard> {
+  getSystemInOutBoardsById(
+    id: number,
+    params: CommonParameters<InOutBoard> = {},
+  ): Promise<InOutBoard> {
     return this.request({
       path: `/system/inOutBoards/${id}`,
       method: 'get',
@@ -2308,7 +2416,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutBoardsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInOutBoardsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/inOutBoards/count`,
       method: 'get',
@@ -2316,7 +2424,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutTypes(params: CommonParameters = {}): Promise<Array<InOutType>> {
+  getSystemInOutTypes(params: CommonParameters<InOutType> = {}): Promise<Array<InOutType>> {
     return this.request({
       path: `/system/inOutTypes`,
       method: 'get',
@@ -2332,7 +2440,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutTypesById(id: number, params: CommonParameters = {}): Promise<InOutType> {
+  getSystemInOutTypesById(
+    id: number,
+    params: CommonParameters<InOutType> = {},
+  ): Promise<InOutType> {
     return this.request({
       path: `/system/inOutTypes/${id}`,
       method: 'get',
@@ -2366,7 +2477,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutTypesByIdInfo(id: number, params: CommonParameters = {}): Promise<InOutTypeInfo> {
+  getSystemInOutTypesByIdInfo(
+    id: number,
+    params: CommonParameters<InOutTypeInfo> = {},
+  ): Promise<InOutTypeInfo> {
     return this.request({
       path: `/system/inOutTypes/${id}/info`,
       method: 'get',
@@ -2374,7 +2488,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemInOutTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/inOutTypes/count`,
       method: 'get',
@@ -2382,7 +2496,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutTypesCountInfo(params: CommonParameters = {}): Promise<Count> {
+  getSystemInOutTypesCountInfo(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/inOutTypes/count/info`,
       method: 'get',
@@ -2390,7 +2504,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemInOutTypesInfo(params: CommonParameters = {}): Promise<Array<InOutTypeInfo>> {
+  getSystemInOutTypesInfo(
+    params: CommonParameters<InOutTypeInfo> = {},
+  ): Promise<Array<InOutTypeInfo>> {
     return this.request({
       path: `/system/inOutTypes/info`,
       method: 'get',
@@ -2398,7 +2514,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemIntegratorlogins(params: CommonParameters = {}): Promise<Array<IntegratorLogin>> {
+  getSystemIntegratorlogins(
+    params: CommonParameters<IntegratorLogin> = {},
+  ): Promise<Array<IntegratorLogin>> {
     return this.request({
       path: `/system/integratorlogins`,
       method: 'get',
@@ -2416,7 +2534,7 @@ export class SystemAPI extends Manage {
 
   getSystemIntegratorloginsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<IntegratorLogin> = {},
   ): Promise<IntegratorLogin> {
     return this.request({
       path: `/system/integratorlogins/${id}`,
@@ -2454,7 +2572,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemIntegratorloginsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemIntegratorloginsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/integratorlogins/count`,
       method: 'get',
@@ -2462,7 +2580,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemIntegratorTags(params: CommonParameters = {}): Promise<Array<IntegratorTag>> {
+  getSystemIntegratorTags(
+    params: CommonParameters<IntegratorTag> = {},
+  ): Promise<Array<IntegratorTag>> {
     return this.request({
       path: `/system/integratorTags`,
       method: 'get',
@@ -2478,7 +2598,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemIntegratorTagsById(id: number, params: CommonParameters = {}): Promise<IntegratorTag> {
+  getSystemIntegratorTagsById(
+    id: number,
+    params: CommonParameters<IntegratorTag> = {},
+  ): Promise<IntegratorTag> {
     return this.request({
       path: `/system/integratorTags/${id}`,
       method: 'get',
@@ -2512,7 +2635,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemIntegratorTagsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemIntegratorTagsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/integratorTags/count`,
       method: 'get',
@@ -2520,7 +2643,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemKpiCategories(params: CommonParameters = {}): Promise<Array<KPICategory>> {
+  getSystemKpiCategories(params: CommonParameters<KPICategory> = {}): Promise<Array<KPICategory>> {
     return this.request({
       path: `/system/kpiCategories`,
       method: 'get',
@@ -2528,7 +2651,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemKpiCategoriesById(id: number, params: CommonParameters = {}): Promise<KPICategory> {
+  getSystemKpiCategoriesById(
+    id: number,
+    params: CommonParameters<KPICategory> = {},
+  ): Promise<KPICategory> {
     return this.request({
       path: `/system/kpiCategories/${id}`,
       method: 'get',
@@ -2536,7 +2662,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemKpiCategoriesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemKpiCategoriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/kpiCategories/count`,
       method: 'get',
@@ -2544,7 +2670,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemKpis(params: CommonParameters = {}): Promise<Array<KPI>> {
+  getSystemKpis(params: CommonParameters<KPI> = {}): Promise<Array<KPI>> {
     return this.request({
       path: `/system/kpis`,
       method: 'get',
@@ -2552,7 +2678,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemKpisById(id: number, params: CommonParameters = {}): Promise<KPI> {
+  getSystemKpisById(id: number, params: CommonParameters<KPI> = {}): Promise<KPI> {
     return this.request({
       path: `/system/kpis/${id}`,
       method: 'get',
@@ -2560,7 +2686,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemKpisCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemKpisCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/kpis/count`,
       method: 'get',
@@ -2568,7 +2694,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLdapConfigurations(params: CommonParameters = {}): Promise<Array<LdapConfiguration>> {
+  getSystemLdapConfigurations(
+    params: CommonParameters<LdapConfiguration> = {},
+  ): Promise<Array<LdapConfiguration>> {
     return this.request({
       path: `/system/ldapConfigurations`,
       method: 'get',
@@ -2586,7 +2714,7 @@ export class SystemAPI extends Manage {
 
   getSystemLdapConfigurationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LdapConfiguration> = {},
   ): Promise<LdapConfiguration> {
     return this.request({
       path: `/system/ldapConfigurations/${id}`,
@@ -2626,7 +2754,7 @@ export class SystemAPI extends Manage {
 
   getSystemLdapConfigurationsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LdapConfigurationInfo> = {},
   ): Promise<LdapConfigurationInfo> {
     return this.request({
       path: `/system/ldapConfigurations/${id}/info`,
@@ -2635,7 +2763,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLdapConfigurationsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemLdapConfigurationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/ldapConfigurations/count`,
       method: 'get',
@@ -2644,7 +2772,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemLdapConfigurationsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<LdapConfigurationInfo> = {},
   ): Promise<Array<LdapConfigurationInfo>> {
     return this.request({
       path: `/system/ldapConfigurations/info`,
@@ -2653,7 +2781,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLdapConfigurationsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemLdapConfigurationsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/ldapConfigurations/info/count`,
       method: 'get',
@@ -2671,7 +2799,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLinks(params: CommonParameters = {}): Promise<Array<Link>> {
+  getSystemLinks(params: CommonParameters<Link> = {}): Promise<Array<Link>> {
     return this.request({
       path: `/system/links`,
       method: 'get',
@@ -2687,7 +2815,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLinksById(id: number, params: CommonParameters = {}): Promise<Link> {
+  getSystemLinksById(id: number, params: CommonParameters<Link> = {}): Promise<Link> {
     return this.request({
       path: `/system/links/${id}`,
       method: 'get',
@@ -2718,7 +2846,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLinksCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemLinksCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/links/count`,
       method: 'get',
@@ -2726,7 +2854,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLocations(params: CommonParameters = {}): Promise<Array<Location>> {
+  getSystemLocations(params: CommonParameters<Location> = {}): Promise<Array<Location>> {
     return this.request({
       path: `/system/locations`,
       method: 'get',
@@ -2742,7 +2870,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLocationsById(id: number, params: CommonParameters = {}): Promise<Location> {
+  getSystemLocationsById(id: number, params: CommonParameters<Location> = {}): Promise<Location> {
     return this.request({
       path: `/system/locations/${id}`,
       method: 'get',
@@ -2773,7 +2901,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLocationsByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getSystemLocationsByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/locations/${id}/usages`,
       method: 'get',
@@ -2783,7 +2914,7 @@ export class SystemAPI extends Manage {
 
   getSystemLocationsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/locations/${id}/usages/list`,
@@ -2794,7 +2925,7 @@ export class SystemAPI extends Manage {
 
   getSystemLocationsByParentIdDepartments(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LocationDepartment> = {},
   ): Promise<Array<LocationDepartment>> {
     return this.request({
       path: `/system/locations/${parentId}/departments`,
@@ -2806,7 +2937,7 @@ export class SystemAPI extends Manage {
   getSystemLocationsByParentIdDepartmentsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LocationDepartment> = {},
   ): Promise<LocationDepartment> {
     return this.request({
       path: `/system/locations/${parentId}/departments/${id}`,
@@ -2817,7 +2948,7 @@ export class SystemAPI extends Manage {
 
   getSystemLocationsByParentIdDepartmentsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/locations/${parentId}/departments/count`,
@@ -2828,7 +2959,7 @@ export class SystemAPI extends Manage {
 
   getSystemLocationsByParentIdWorkRoles(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LocationWorkRole> = {},
   ): Promise<Array<LocationWorkRole>> {
     return this.request({
       path: `/system/locations/${parentId}/workRoles`,
@@ -2840,7 +2971,7 @@ export class SystemAPI extends Manage {
   getSystemLocationsByParentIdWorkRolesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LocationWorkRole> = {},
   ): Promise<LocationWorkRole> {
     return this.request({
       path: `/system/locations/${parentId}/workRoles/${id}`,
@@ -2851,7 +2982,7 @@ export class SystemAPI extends Manage {
 
   getSystemLocationsByParentIdWorkRolesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/locations/${parentId}/workRoles/count`,
@@ -2860,7 +2991,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemLocationsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemLocationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/locations/count`,
       method: 'get',
@@ -2870,7 +3001,7 @@ export class SystemAPI extends Manage {
 
   getSystemM365contactsyncByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncInfo> = {},
   ): Promise<M365ContactSyncInfo> {
     return this.request({
       path: `/system/m365contactsync/${id}/info`,
@@ -2879,7 +3010,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemM365contactsyncInfo(params: CommonParameters = {}): Promise<Array<M365ContactSyncInfo>> {
+  getSystemM365contactsyncInfo(
+    params: CommonParameters<M365ContactSyncInfo> = {},
+  ): Promise<Array<M365ContactSyncInfo>> {
     return this.request({
       path: `/system/m365contactsync/info`,
       method: 'get',
@@ -2887,7 +3020,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemM365contactsyncInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemM365contactsyncInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/m365contactsync/info/count`,
       method: 'get',
@@ -2896,7 +3029,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemManagementNetworkSecurities(
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementNetworkSecurity> = {},
   ): Promise<Array<ManagementNetworkSecurity>> {
     return this.request({
       path: `/system/managementNetworkSecurities`,
@@ -2917,7 +3050,7 @@ export class SystemAPI extends Manage {
 
   getSystemManagementNetworkSecuritiesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementNetworkSecurity> = {},
   ): Promise<ManagementNetworkSecurity> {
     return this.request({
       path: `/system/managementNetworkSecurities/${id}`,
@@ -2957,7 +3090,7 @@ export class SystemAPI extends Manage {
 
   getSystemManagementNetworkSecuritiesByIdTestCredentials(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SuccessResponse> = {},
   ): Promise<SuccessResponse> {
     return this.request({
       path: `/system/managementNetworkSecurities/${id}/testCredentials`,
@@ -2966,7 +3099,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemManagementNetworkSecuritiesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemManagementNetworkSecuritiesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/managementNetworkSecurities/count`,
       method: 'get',
@@ -2976,7 +3109,7 @@ export class SystemAPI extends Manage {
 
   getSystemMarketplaceimportGetdefinitionById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MarketplaceImport> = {},
   ): Promise<MarketplaceImport> {
     return this.request({
       path: `/system/marketplaceimport/getdefinition/${id}`,
@@ -2995,7 +3128,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembers(params: CommonParameters = {}): Promise<Array<Member>> {
+  getSystemMembers(params: CommonParameters<Member> = {}): Promise<Array<Member>> {
     return this.request({
       path: `/system/members`,
       method: 'get',
@@ -3011,7 +3144,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersById(id: number, params: CommonParameters = {}): Promise<Member> {
+  getSystemMembersById(id: number, params: CommonParameters<Member> = {}): Promise<Member> {
     return this.request({
       path: `/system/members/${id}`,
       method: 'get',
@@ -3050,7 +3183,7 @@ export class SystemAPI extends Manage {
     id: number,
     useDefaultFlag: boolean,
     lastmodified: string,
-    params: CommonParameters = {},
+    params: CommonParameters<OctetStreamResponse> = {},
   ): Promise<OctetStreamResponse> {
     return this.request({
       path: `/system/members/${id}/image`,
@@ -3089,7 +3222,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getSystemMembersByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/members/${id}/usages`,
       method: 'get',
@@ -3097,7 +3233,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersByIdUsagesList(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getSystemMembersByIdUsagesList(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/system/members/${id}/usages/list`,
       method: 'get',
@@ -3107,7 +3246,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersmemberIdentifierregextypes(
     memberIdentifier: string,
-    params: CommonParameters = {},
+    params: CommonParameters<Member> = {},
   ): Promise<Member> {
     return this.request({
       path: `/system/members/{memberIdentifier:regex(^(types. |(`,
@@ -3125,7 +3264,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdAccruals(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberAccrual> = {},
   ): Promise<Array<MemberAccrual>> {
     return this.request({
       path: `/system/members/${parentId}/accruals`,
@@ -3148,7 +3287,7 @@ export class SystemAPI extends Manage {
   getSystemMembersByParentIdAccrualsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberAccrual> = {},
   ): Promise<MemberAccrual> {
     return this.request({
       path: `/system/members/${parentId}/accruals/${id}`,
@@ -3193,7 +3332,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdAccrualsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/members/${parentId}/accruals/count`,
@@ -3204,7 +3343,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdCertifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberCertification> = {},
   ): Promise<Array<MemberCertification>> {
     return this.request({
       path: `/system/members/${parentId}/certifications`,
@@ -3227,7 +3366,7 @@ export class SystemAPI extends Manage {
   getSystemMembersByParentIdCertificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberCertification> = {},
   ): Promise<MemberCertification> {
     return this.request({
       path: `/system/members/${parentId}/certifications/${id}`,
@@ -3272,7 +3411,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdCertificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/members/${parentId}/certifications/count`,
@@ -3283,7 +3422,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdDelegations(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberDelegation> = {},
   ): Promise<Array<MemberDelegation>> {
     return this.request({
       path: `/system/members/${parentId}/delegations`,
@@ -3306,7 +3445,7 @@ export class SystemAPI extends Manage {
   getSystemMembersByParentIdDelegationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberDelegation> = {},
   ): Promise<MemberDelegation> {
     return this.request({
       path: `/system/members/${parentId}/delegations/${id}`,
@@ -3351,7 +3490,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdDelegationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/members/${parentId}/delegations/count`,
@@ -3362,7 +3501,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdManagedDeviceAccounts(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDeviceAccount> = {},
   ): Promise<Array<ManagedDeviceAccount>> {
     return this.request({
       path: `/system/members/${parentId}/managedDeviceAccounts`,
@@ -3395,7 +3534,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdMycertifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberCertification> = {},
   ): Promise<Array<MemberCertification>> {
     return this.request({
       path: `/system/members/${parentId}/mycertifications`,
@@ -3418,7 +3557,7 @@ export class SystemAPI extends Manage {
   getSystemMembersByParentIdMycertificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberCertification> = {},
   ): Promise<MemberCertification> {
     return this.request({
       path: `/system/members/${parentId}/mycertifications/${id}`,
@@ -3463,7 +3602,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdMycertificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/members/${parentId}/mycertifications/count`,
@@ -3474,7 +3613,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdNotificationSettings(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberNotificationSetting> = {},
   ): Promise<Array<MemberNotificationSetting>> {
     return this.request({
       path: `/system/members/${parentId}/notificationSettings`,
@@ -3497,7 +3636,7 @@ export class SystemAPI extends Manage {
   getSystemMembersByParentIdNotificationSettingsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberNotificationSetting> = {},
   ): Promise<MemberNotificationSetting> {
     return this.request({
       path: `/system/members/${parentId}/notificationSettings/${id}`,
@@ -3542,7 +3681,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdNotificationSettingsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/members/${parentId}/notificationSettings/count`,
@@ -3553,7 +3692,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdPersonas(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberPersona> = {},
   ): Promise<Array<MemberPersona>> {
     return this.request({
       path: `/system/members/${parentId}/personas`,
@@ -3576,7 +3715,7 @@ export class SystemAPI extends Manage {
   getSystemMembersByParentIdPersonasById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberPersona> = {},
   ): Promise<MemberPersona> {
     return this.request({
       path: `/system/members/${parentId}/personas/${id}`,
@@ -3621,7 +3760,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdPersonasCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/members/${parentId}/personas/count`,
@@ -3632,7 +3771,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdSkills(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberSkill> = {},
   ): Promise<Array<MemberSkill>> {
     return this.request({
       path: `/system/members/${parentId}/skills`,
@@ -3655,7 +3794,7 @@ export class SystemAPI extends Manage {
   getSystemMembersByParentIdSkillsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberSkill> = {},
   ): Promise<MemberSkill> {
     return this.request({
       path: `/system/members/${parentId}/skills/${id}`,
@@ -3700,7 +3839,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersByParentIdSkillsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/members/${parentId}/skills/count`,
@@ -3716,7 +3855,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersCalendarsync(params: CommonParameters = {}): Promise<Array<MemberForCalSync>> {
+  getSystemMembersCalendarsync(
+    params: CommonParameters<MemberForCalSync> = {},
+  ): Promise<Array<MemberForCalSync>> {
     return this.request({
       path: `/system/members/calendarsync`,
       method: 'get',
@@ -3724,7 +3865,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMembersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/members/count`,
       method: 'get',
@@ -3732,7 +3873,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersTypes(params: CommonParameters = {}): Promise<Array<MemberType>> {
+  getSystemMembersTypes(params: CommonParameters<MemberType> = {}): Promise<Array<MemberType>> {
     return this.request({
       path: `/system/members/types`,
       method: 'get',
@@ -3748,7 +3889,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersTypesById(id: number, params: CommonParameters = {}): Promise<MemberType> {
+  getSystemMembersTypesById(
+    id: number,
+    params: CommonParameters<MemberType> = {},
+  ): Promise<MemberType> {
     return this.request({
       path: `/system/members/types/${id}`,
       method: 'get',
@@ -3784,7 +3928,7 @@ export class SystemAPI extends Manage {
 
   getSystemMembersTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberTypeInfo> = {},
   ): Promise<MemberTypeInfo> {
     return this.request({
       path: `/system/members/types/${id}/info`,
@@ -3793,7 +3937,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMembersTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/members/types/count`,
       method: 'get',
@@ -3801,7 +3945,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersTypesInfo(params: CommonParameters = {}): Promise<Array<MemberTypeInfo>> {
+  getSystemMembersTypesInfo(
+    params: CommonParameters<MemberTypeInfo> = {},
+  ): Promise<Array<MemberTypeInfo>> {
     return this.request({
       path: `/system/members/types/info`,
       method: 'get',
@@ -3809,7 +3955,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMembersTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/members/types/info/count`,
       method: 'get',
@@ -3817,7 +3963,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembersWithSso(params: CommonParameters = {}): Promise<Array<Member>> {
+  getSystemMembersWithSso(params: CommonParameters<Member> = {}): Promise<Array<Member>> {
     return this.request({
       path: `/system/members/withSso`,
       method: 'get',
@@ -3825,7 +3971,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembertemplates(params: CommonParameters = {}): Promise<Array<MemberTemplate>> {
+  getSystemMembertemplates(
+    params: CommonParameters<MemberTemplate> = {},
+  ): Promise<Array<MemberTemplate>> {
     return this.request({
       path: `/system/membertemplates/`,
       method: 'get',
@@ -3841,7 +3989,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembertemplatesById(id: number, params: CommonParameters = {}): Promise<MemberTemplate> {
+  getSystemMembertemplatesById(
+    id: number,
+    params: CommonParameters<MemberTemplate> = {},
+  ): Promise<MemberTemplate> {
     return this.request({
       path: `/system/membertemplates/${id}`,
       method: 'get',
@@ -3860,7 +4011,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMembertemplatesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMembertemplatesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/membertemplates/count`,
       method: 'get',
@@ -3868,7 +4019,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMenuentries(params: CommonParameters = {}): Promise<Array<MenuEntry>> {
+  getSystemMenuentries(params: CommonParameters<MenuEntry> = {}): Promise<Array<MenuEntry>> {
     return this.request({
       path: `/system/menuentries`,
       method: 'get',
@@ -3884,7 +4035,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMenuentriesById(id: number, params: CommonParameters = {}): Promise<MenuEntry> {
+  getSystemMenuentriesById(
+    id: number,
+    params: CommonParameters<MenuEntry> = {},
+  ): Promise<MenuEntry> {
     return this.request({
       path: `/system/menuentries/${id}`,
       method: 'get',
@@ -3922,7 +4076,7 @@ export class SystemAPI extends Manage {
     id: number,
     lastmodified: string,
     largeFlag: boolean,
-    params: CommonParameters = {},
+    params: CommonParameters<OctetStreamResponse> = {},
   ): Promise<OctetStreamResponse> {
     return this.request({
       path: `/system/menuentries/${id}/image`,
@@ -3940,7 +4094,7 @@ export class SystemAPI extends Manage {
 
   getSystemMenuEntriesByParentIdLocations(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MenuEntryLocation> = {},
   ): Promise<Array<MenuEntryLocation>> {
     return this.request({
       path: `/system/menuEntries/${parentId}/locations`,
@@ -3963,7 +4117,7 @@ export class SystemAPI extends Manage {
   getSystemMenuEntriesByParentIdLocationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MenuEntryLocation> = {},
   ): Promise<MenuEntryLocation> {
     return this.request({
       path: `/system/menuEntries/${parentId}/locations/${id}`,
@@ -3984,7 +4138,7 @@ export class SystemAPI extends Manage {
 
   getSystemMenuEntriesByParentIdLocationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/menuEntries/${parentId}/locations/count`,
@@ -3993,7 +4147,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMenuentriesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMenuentriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/menuentries/count`,
       method: 'get',
@@ -4001,7 +4155,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyAccountById(id: number, params: CommonParameters = {}): Promise<MyAccount> {
+  getSystemMyAccountById(id: number, params: CommonParameters<MyAccount> = {}): Promise<MyAccount> {
     return this.request({
       path: `/system/myAccount/${id}`,
       method: 'get',
@@ -4027,7 +4181,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyAccountByParentIdDelegations(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberDelegation> = {},
   ): Promise<Array<MemberDelegation>> {
     return this.request({
       path: `/system/myAccount/${parentId}/delegations`,
@@ -4050,7 +4204,7 @@ export class SystemAPI extends Manage {
   getSystemMyAccountByParentIdDelegationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberDelegation> = {},
   ): Promise<MemberDelegation> {
     return this.request({
       path: `/system/myAccount/${parentId}/delegations/${id}`,
@@ -4095,7 +4249,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyAccountByParentIdDelegationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/myAccount/${parentId}/delegations/count`,
@@ -4106,7 +4260,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyAccountByParentIdSkills(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberSkill> = {},
   ): Promise<Array<MemberSkill>> {
     return this.request({
       path: `/system/myAccount/${parentId}/skills`,
@@ -4129,7 +4283,7 @@ export class SystemAPI extends Manage {
   getSystemMyAccountByParentIdSkillsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MemberSkill> = {},
   ): Promise<MemberSkill> {
     return this.request({
       path: `/system/myAccount/${parentId}/skills/${id}`,
@@ -4174,7 +4328,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyAccountByParentIdSkillsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/myAccount/${parentId}/skills/count`,
@@ -4184,7 +4338,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemMyCompanyCorporateStructure(
-    params: CommonParameters = {},
+    params: CommonParameters<CorporateStructure> = {},
   ): Promise<Array<CorporateStructure>> {
     return this.request({
       path: `/system/myCompany/corporateStructure`,
@@ -4195,7 +4349,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyCompanyCorporateStructureById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CorporateStructure> = {},
   ): Promise<CorporateStructure> {
     return this.request({
       path: `/system/myCompany/corporateStructure/${id}`,
@@ -4228,7 +4382,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyCompanyCorporateStructureByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CorporateStructureInfo> = {},
   ): Promise<CorporateStructureInfo> {
     return this.request({
       path: `/system/myCompany/corporateStructure/${id}/info`,
@@ -4237,7 +4391,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCorporateStructureCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMyCompanyCorporateStructureCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/myCompany/corporateStructure/count`,
       method: 'get',
@@ -4246,7 +4400,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemMyCompanyCorporateStructureInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<CorporateStructureInfo> = {},
   ): Promise<Array<CorporateStructureInfo>> {
     return this.request({
       path: `/system/myCompany/corporateStructure/info`,
@@ -4255,7 +4409,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCorporateStructureInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMyCompanyCorporateStructureInfoCount(
+    params: CommonParameters<Count> = {},
+  ): Promise<Count> {
     return this.request({
       path: `/system/myCompany/corporateStructure/info/count`,
       method: 'get',
@@ -4264,7 +4420,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemMyCompanyCorporateStructureLevels(
-    params: CommonParameters = {},
+    params: CommonParameters<CorporateStructureLevel> = {},
   ): Promise<Array<CorporateStructureLevel>> {
     return this.request({
       path: `/system/myCompany/corporateStructureLevels`,
@@ -4275,7 +4431,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyCompanyCorporateStructureLevelsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CorporateStructureLevel> = {},
   ): Promise<CorporateStructureLevel> {
     return this.request({
       path: `/system/myCompany/corporateStructureLevels/${id}`,
@@ -4284,7 +4440,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCorporateStructureLevelsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMyCompanyCorporateStructureLevelsCount(
+    params: CommonParameters<Count> = {},
+  ): Promise<Count> {
     return this.request({
       path: `/system/myCompany/corporateStructureLevels/count`,
       method: 'get',
@@ -4292,7 +4450,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCrm(params: CommonParameters = {}): Promise<Array<Crm>> {
+  getSystemMyCompanyCrm(params: CommonParameters<Crm> = {}): Promise<Array<Crm>> {
     return this.request({
       path: `/system/myCompany/crm`,
       method: 'get',
@@ -4300,7 +4458,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCrmById(id: number, params: CommonParameters = {}): Promise<Crm> {
+  getSystemMyCompanyCrmById(id: number, params: CommonParameters<Crm> = {}): Promise<Crm> {
     return this.request({
       path: `/system/myCompany/crm/${id}`,
       method: 'get',
@@ -4324,7 +4482,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCrmByIdInfo(id: number, params: CommonParameters = {}): Promise<CrmInfo> {
+  getSystemMyCompanyCrmByIdInfo(
+    id: number,
+    params: CommonParameters<CrmInfo> = {},
+  ): Promise<CrmInfo> {
     return this.request({
       path: `/system/myCompany/crm/${id}/info`,
       method: 'get',
@@ -4332,7 +4493,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCrmCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMyCompanyCrmCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/myCompany/crm/count`,
       method: 'get',
@@ -4340,7 +4501,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCrmInfo(params: CommonParameters = {}): Promise<Array<CrmInfo>> {
+  getSystemMyCompanyCrmInfo(params: CommonParameters<CrmInfo> = {}): Promise<Array<CrmInfo>> {
     return this.request({
       path: `/system/myCompany/crm/info`,
       method: 'get',
@@ -4348,7 +4509,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyCrmInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMyCompanyCrmInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/myCompany/crm/info/count`,
       method: 'get',
@@ -4356,7 +4517,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMycompanyDocuments(params: CommonParameters = {}): Promise<Array<DocumentSetup>> {
+  getSystemMycompanyDocuments(
+    params: CommonParameters<DocumentSetup> = {},
+  ): Promise<Array<DocumentSetup>> {
     return this.request({
       path: `/system/mycompany/documents`,
       method: 'get',
@@ -4366,7 +4529,7 @@ export class SystemAPI extends Manage {
 
   getSystemMycompanyDocumentsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<DocumentSetup> = {},
   ): Promise<DocumentSetup> {
     return this.request({
       path: `/system/mycompany/documents/${id}`,
@@ -4394,7 +4557,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMycompanyInfoServices(params: CommonParameters = {}): Promise<Array<ServiceInfo>> {
+  getSystemMycompanyInfoServices(
+    params: CommonParameters<ServiceInfo> = {},
+  ): Promise<Array<ServiceInfo>> {
     return this.request({
       path: `/system/mycompany/info/services`,
       method: 'get',
@@ -4404,7 +4569,7 @@ export class SystemAPI extends Manage {
 
   getSystemMycompanyInfoServicesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ServiceInfo> = {},
   ): Promise<ServiceInfo> {
     return this.request({
       path: `/system/mycompany/info/services/${id}`,
@@ -4413,7 +4578,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyOther(params: CommonParameters = {}): Promise<Array<Other>> {
+  getSystemMyCompanyOther(params: CommonParameters<Other> = {}): Promise<Array<Other>> {
     return this.request({
       path: `/system/myCompany/other`,
       method: 'get',
@@ -4421,7 +4586,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyOtherById(id: number, params: CommonParameters = {}): Promise<Other> {
+  getSystemMyCompanyOtherById(id: number, params: CommonParameters<Other> = {}): Promise<Other> {
     return this.request({
       path: `/system/myCompany/other/${id}`,
       method: 'get',
@@ -4448,7 +4613,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyOtherCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMyCompanyOtherCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/myCompany/other/count`,
       method: 'get',
@@ -4457,7 +4622,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemMycompanyReportingServices(
-    params: CommonParameters = {},
+    params: CommonParameters<ReportingService> = {},
   ): Promise<Array<ReportingService>> {
     return this.request({
       path: `/system/mycompany/reportingServices`,
@@ -4468,7 +4633,7 @@ export class SystemAPI extends Manage {
 
   getSystemMycompanyReportingServicesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ReportingService> = {},
   ): Promise<ReportingService> {
     return this.request({
       path: `/system/mycompany/reportingServices/${id}`,
@@ -4506,7 +4671,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMycompanyServices(params: CommonParameters = {}): Promise<Array<Service>> {
+  getSystemMycompanyServices(params: CommonParameters<Service> = {}): Promise<Array<Service>> {
     return this.request({
       path: `/system/mycompany/services`,
       method: 'get',
@@ -4514,7 +4679,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMycompanyServicesById(id: number, params: CommonParameters = {}): Promise<Service> {
+  getSystemMycompanyServicesById(
+    id: number,
+    params: CommonParameters<Service> = {},
+  ): Promise<Service> {
     return this.request({
       path: `/system/mycompany/services/${id}`,
       method: 'get',
@@ -4541,7 +4709,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyTimeExpense(params: CommonParameters = {}): Promise<Array<TimeExpense>> {
+  getSystemMyCompanyTimeExpense(
+    params: CommonParameters<TimeExpense> = {},
+  ): Promise<Array<TimeExpense>> {
     return this.request({
       path: `/system/myCompany/timeExpense`,
       method: 'get',
@@ -4551,7 +4721,7 @@ export class SystemAPI extends Manage {
 
   getSystemMyCompanyTimeExpenseById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TimeExpense> = {},
   ): Promise<TimeExpense> {
     return this.request({
       path: `/system/myCompany/timeExpense/${id}`,
@@ -4579,7 +4749,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyCompanyTimeExpenseCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemMyCompanyTimeExpenseCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/myCompany/timeExpense/count`,
       method: 'get',
@@ -4587,7 +4757,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyMembers(params: CommonParameters = {}): Promise<MyMember> {
+  getSystemMyMembers(params: CommonParameters<MyMember> = {}): Promise<MyMember> {
     return this.request({
       path: `/system/myMembers`,
       method: 'get',
@@ -4595,7 +4765,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMyMembersInfo(params: CommonParameters = {}): Promise<MyMemberInfo> {
+  getSystemMyMembersInfo(params: CommonParameters<MyMemberInfo> = {}): Promise<MyMemberInfo> {
     return this.request({
       path: `/system/myMembers/info`,
       method: 'get',
@@ -4603,7 +4773,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemMySecurity(params: CommonParameters = {}): Promise<Array<MySecurity>> {
+  getSystemMySecurity(params: CommonParameters<MySecurity> = {}): Promise<Array<MySecurity>> {
     return this.request({
       path: `/system/mySecurity`,
       method: 'get',
@@ -4612,7 +4782,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemMySecurityCustomizeItems(
-    params: CommonParameters = {},
+    params: CommonParameters<MySecurityCustomizeItem> = {},
   ): Promise<Array<MySecurityCustomizeItem>> {
     return this.request({
       path: `/system/mySecurity/customizeItems/`,
@@ -4622,7 +4792,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemNotificationRecipients(
-    params: CommonParameters = {},
+    params: CommonParameters<NotificationRecipient> = {},
   ): Promise<Array<NotificationRecipient>> {
     return this.request({
       path: `/system/notificationRecipients`,
@@ -4633,7 +4803,7 @@ export class SystemAPI extends Manage {
 
   getSystemNotificationRecipientsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<NotificationRecipient> = {},
   ): Promise<NotificationRecipient> {
     return this.request({
       path: `/system/notificationRecipients/${id}`,
@@ -4642,7 +4812,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemNotificationRecipientsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemNotificationRecipientsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/notificationRecipients/count`,
       method: 'get',
@@ -4652,7 +4822,7 @@ export class SystemAPI extends Manage {
 
   getSystemOffice365ApplicationByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Office365EmailApplicationInfo> = {},
   ): Promise<Office365EmailApplicationInfo> {
     return this.request({
       path: `/system/office365/application/${id}/info`,
@@ -4662,7 +4832,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemOffice365ApplicationInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<Office365EmailApplicationInfo> = {},
   ): Promise<Array<Office365EmailApplicationInfo>> {
     return this.request({
       path: `/system/office365/application/info`,
@@ -4671,7 +4841,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemOffice365ApplicationInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemOffice365ApplicationInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/office365/application/info/count`,
       method: 'get',
@@ -4680,7 +4850,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemOffice365EmailSetups(
-    params: CommonParameters = {},
+    params: CommonParameters<Office365EmailSetup> = {},
   ): Promise<Array<Office365EmailSetup>> {
     return this.request({
       path: `/system/office365/emailSetups`,
@@ -4699,7 +4869,7 @@ export class SystemAPI extends Manage {
 
   getSystemOffice365EmailSetupsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Office365EmailSetup> = {},
   ): Promise<Office365EmailSetup> {
     return this.request({
       path: `/system/office365/emailSetups/${id}`,
@@ -4746,7 +4916,7 @@ export class SystemAPI extends Manage {
 
   getSystemOffice365EmailSetupsByIdGetEmails(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UserEmail> = {},
   ): Promise<Array<UserEmail>> {
     return this.request({
       path: `/system/office365/emailSetups/${id}/getEmails/`,
@@ -4762,7 +4932,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemOffice365EmailSetupsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemOffice365EmailSetupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/office365/emailSetups/count`,
       method: 'get',
@@ -4771,7 +4941,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemOnPremiseSearchSetting(
-    params: CommonParameters = {},
+    params: CommonParameters<OnPremiseSearchSetting> = {},
   ): Promise<Array<OnPremiseSearchSetting>> {
     return this.request({
       path: `/system/onPremiseSearchSetting/`,
@@ -4782,7 +4952,7 @@ export class SystemAPI extends Manage {
 
   getSystemOnPremiseSearchSettingById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OnPremiseSearchSetting> = {},
   ): Promise<OnPremiseSearchSetting> {
     return this.request({
       path: `/system/onPremiseSearchSetting/${id}`,
@@ -4813,7 +4983,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemOnPremiseSearchSettingCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemOnPremiseSearchSettingCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/onPremiseSearchSetting/count`,
       method: 'get',
@@ -4821,7 +4991,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemOsgradeweights(params: CommonParameters = {}): Promise<Array<OsGradeWeight>> {
+  getSystemOsgradeweights(
+    params: CommonParameters<OsGradeWeight> = {},
+  ): Promise<Array<OsGradeWeight>> {
     return this.request({
       path: `/system/osgradeweights`,
       method: 'get',
@@ -4829,7 +5001,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemOsgradeweightsById(id: number, params: CommonParameters = {}): Promise<OsGradeWeight> {
+  getSystemOsgradeweightsById(
+    id: number,
+    params: CommonParameters<OsGradeWeight> = {},
+  ): Promise<OsGradeWeight> {
     return this.request({
       path: `/system/osgradeweights/${id}`,
       method: 'get',
@@ -4856,7 +5031,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemOsgradeweightsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemOsgradeweightsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/osgradeweights/count`,
       method: 'get',
@@ -4864,7 +5039,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemParsingTypes(params: CommonParameters = {}): Promise<Array<ParsingType>> {
+  getSystemParsingTypes(params: CommonParameters<ParsingType> = {}): Promise<Array<ParsingType>> {
     return this.request({
       path: `/system/parsingTypes`,
       method: 'get',
@@ -4872,7 +5047,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemParsingTypesById(id: number, params: CommonParameters = {}): Promise<ParsingType> {
+  getSystemParsingTypesById(
+    id: number,
+    params: CommonParameters<ParsingType> = {},
+  ): Promise<ParsingType> {
     return this.request({
       path: `/system/parsingTypes/${id}`,
       method: 'get',
@@ -4880,7 +5058,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemParsingTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemParsingTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/parsingTypes/count`,
       method: 'get',
@@ -4888,7 +5066,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemParsingVariables(params: CommonParameters = {}): Promise<Array<ParsingVariable>> {
+  getSystemParsingVariables(
+    params: CommonParameters<ParsingVariable> = {},
+  ): Promise<Array<ParsingVariable>> {
     return this.request({
       path: `/system/parsingVariables`,
       method: 'get',
@@ -4898,7 +5078,7 @@ export class SystemAPI extends Manage {
 
   getSystemParsingVariablesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ParsingVariable> = {},
   ): Promise<ParsingVariable> {
     return this.request({
       path: `/system/parsingVariables/${id}`,
@@ -4907,7 +5087,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemParsingVariablesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemParsingVariablesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/parsingVariables/count`,
       method: 'get',
@@ -4915,7 +5095,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemPortalReports(params: CommonParameters = {}): Promise<Array<PortalReport>> {
+  getSystemPortalReports(
+    params: CommonParameters<PortalReport> = {},
+  ): Promise<Array<PortalReport>> {
     return this.request({
       path: `/system/portalReports`,
       method: 'get',
@@ -4931,7 +5113,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemPortalReportsById(id: number, params: CommonParameters = {}): Promise<PortalReport> {
+  getSystemPortalReportsById(
+    id: number,
+    params: CommonParameters<PortalReport> = {},
+  ): Promise<PortalReport> {
     return this.request({
       path: `/system/portalReports/${id}`,
       method: 'get',
@@ -4965,7 +5150,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemPortalReportsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemPortalReportsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/portalReports/count`,
       method: 'get',
@@ -4973,7 +5158,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemQuoteLinkSetup(params: CommonParameters = {}): Promise<Array<QuoteLink>> {
+  getSystemQuoteLinkSetup(params: CommonParameters<QuoteLink> = {}): Promise<Array<QuoteLink>> {
     return this.request({
       path: `/system/quoteLinkSetup`,
       method: 'get',
@@ -4989,7 +5174,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemQuoteLinkSetupById(id: number, params: CommonParameters = {}): Promise<QuoteLink> {
+  getSystemQuoteLinkSetupById(
+    id: number,
+    params: CommonParameters<QuoteLink> = {},
+  ): Promise<QuoteLink> {
     return this.request({
       path: `/system/quoteLinkSetup/${id}`,
       method: 'get',
@@ -5023,7 +5211,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemQuoteLinkSetupCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemQuoteLinkSetupCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/quoteLinkSetup/count`,
       method: 'get',
@@ -5033,7 +5221,7 @@ export class SystemAPI extends Manage {
 
   getSystemQuoteLinkSetupTestConnection(
     url: string,
-    params: CommonParameters = {},
+    params: CommonParameters<SuccessResponse> = {},
   ): Promise<SuccessResponse> {
     return this.request({
       path: `/system/quoteLinkSetup/testConnection`,
@@ -5042,7 +5230,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemReportCards(params: CommonParameters = {}): Promise<Array<ReportCard>> {
+  getSystemReportCards(params: CommonParameters<ReportCard> = {}): Promise<Array<ReportCard>> {
     return this.request({
       path: `/system/reportCards`,
       method: 'get',
@@ -5058,7 +5246,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemReportCardsById(id: number, params: CommonParameters = {}): Promise<ReportCard> {
+  getSystemReportCardsById(
+    id: number,
+    params: CommonParameters<ReportCard> = {},
+  ): Promise<ReportCard> {
     return this.request({
       path: `/system/reportCards/${id}`,
       method: 'get',
@@ -5092,7 +5283,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemReportCardsByIdInfo(id: number, params: CommonParameters = {}): Promise<ReportCardInfo> {
+  getSystemReportCardsByIdInfo(
+    id: number,
+    params: CommonParameters<ReportCardInfo> = {},
+  ): Promise<ReportCardInfo> {
     return this.request({
       path: `/system/reportCards/${id}/info`,
       method: 'get',
@@ -5102,7 +5296,7 @@ export class SystemAPI extends Manage {
 
   getSystemReportCardsByParentIdDetails(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ReportCardDetail> = {},
   ): Promise<Array<ReportCardDetail>> {
     return this.request({
       path: `/system/reportCards/${parentId}/details`,
@@ -5125,7 +5319,7 @@ export class SystemAPI extends Manage {
   getSystemReportCardsByParentIdDetailsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ReportCardDetail> = {},
   ): Promise<ReportCardDetail> {
     return this.request({
       path: `/system/reportCards/${parentId}/details/${id}`,
@@ -5170,7 +5364,7 @@ export class SystemAPI extends Manage {
 
   getSystemReportCardsByParentIdDetailsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/reportCards/${parentId}/details/count`,
@@ -5179,7 +5373,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemReportCardsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemReportCardsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/reportCards/count`,
       method: 'get',
@@ -5187,7 +5381,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemReportCardsInfo(params: CommonParameters = {}): Promise<Array<ReportCardInfo>> {
+  getSystemReportCardsInfo(
+    params: CommonParameters<ReportCardInfo> = {},
+  ): Promise<Array<ReportCardInfo>> {
     return this.request({
       path: `/system/reportCards/info`,
       method: 'get',
@@ -5195,7 +5391,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemReportCardsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemReportCardsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/reportCards/info/count`,
       method: 'get',
@@ -5203,7 +5399,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemReports(params: CommonParameters = {}): Promise<Array<Report>> {
+  getSystemReports(params: CommonParameters<Report> = {}): Promise<Array<Report>> {
     return this.request({
       path: `/system/reports`,
       method: 'get',
@@ -5213,7 +5409,7 @@ export class SystemAPI extends Manage {
 
   getSystemReportsByReportName(
     reportName: string,
-    params: CommonParameters = {},
+    params: CommonParameters<ReportDataResponse> = {},
   ): Promise<ReportDataResponse> {
     return this.request({
       path: `/system/reports/${reportName}`,
@@ -5224,7 +5420,7 @@ export class SystemAPI extends Manage {
 
   getSystemReportsByReportNameColumns(
     reportName: string,
-    params: CommonParameters = {},
+    params: CommonParameters<ReportColumnDefinition> = {},
   ): Promise<Array<ReportColumnDefinition>> {
     return this.request({
       path: `/system/reports/${reportName}/columns`,
@@ -5235,7 +5431,7 @@ export class SystemAPI extends Manage {
 
   getSystemReportsByReportNameCount(
     reportName: string,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/reports/${reportName}/count`,
@@ -5244,7 +5440,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSecurityroles(params: CommonParameters = {}): Promise<Array<SecurityRole>> {
+  getSystemSecurityroles(
+    params: CommonParameters<SecurityRole> = {},
+  ): Promise<Array<SecurityRole>> {
     return this.request({
       path: `/system/securityroles`,
       method: 'get',
@@ -5260,7 +5458,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSecurityrolesById(id: number, params: CommonParameters = {}): Promise<SecurityRole> {
+  getSystemSecurityrolesById(
+    id: number,
+    params: CommonParameters<SecurityRole> = {},
+  ): Promise<SecurityRole> {
     return this.request({
       path: `/system/securityroles/${id}`,
       method: 'get',
@@ -5277,7 +5478,7 @@ export class SystemAPI extends Manage {
 
   getSystemSecurityrolesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SecurityRoleInfo> = {},
   ): Promise<SecurityRoleInfo> {
     return this.request({
       path: `/system/securityroles/${id}/info`,
@@ -5288,7 +5489,7 @@ export class SystemAPI extends Manage {
 
   getSystemSecurityRolesByParentIdSettings(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SecurityRoleSetting> = {},
   ): Promise<Array<SecurityRoleSetting>> {
     return this.request({
       path: `/system/securityRoles/${parentId}/settings`,
@@ -5300,7 +5501,7 @@ export class SystemAPI extends Manage {
   getSystemSecurityRolesByParentIdSettingsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SecurityRoleSetting> = {},
   ): Promise<SecurityRoleSetting> {
     return this.request({
       path: `/system/securityRoles/${parentId}/settings/${id}`,
@@ -5311,7 +5512,7 @@ export class SystemAPI extends Manage {
 
   getSystemSecurityRolesByParentIdSettingsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/securityRoles/${parentId}/settings/count`,
@@ -5320,7 +5521,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSecurityrolesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSecurityrolesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/securityroles/count`,
       method: 'get',
@@ -5328,7 +5529,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSecurityrolesInfo(params: CommonParameters = {}): Promise<Array<SecurityRoleInfo>> {
+  getSystemSecurityrolesInfo(
+    params: CommonParameters<SecurityRoleInfo> = {},
+  ): Promise<Array<SecurityRoleInfo>> {
     return this.request({
       path: `/system/securityroles/info`,
       method: 'get',
@@ -5336,7 +5539,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSecurityrolesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSecurityrolesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/securityroles/info/count`,
       method: 'get',
@@ -5344,7 +5547,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSettings(params: CommonParameters = {}): Promise<Array<SystemSetting>> {
+  getSystemSettings(params: CommonParameters<SystemSetting> = {}): Promise<Array<SystemSetting>> {
     return this.request({
       path: `/system/settings`,
       method: 'get',
@@ -5352,7 +5555,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSettingsById(id: number, params: CommonParameters = {}): Promise<SystemSetting> {
+  getSystemSettingsById(
+    id: number,
+    params: CommonParameters<SystemSetting> = {},
+  ): Promise<SystemSetting> {
     return this.request({
       path: `/system/settings/${id}`,
       method: 'get',
@@ -5379,7 +5585,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSettingsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSettingsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/settings/count`,
       method: 'get',
@@ -5387,7 +5593,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSetupScreens(params: CommonParameters = {}): Promise<Array<SetupScreen>> {
+  getSystemSetupScreens(params: CommonParameters<SetupScreen> = {}): Promise<Array<SetupScreen>> {
     return this.request({
       path: `/system/setupScreens`,
       method: 'get',
@@ -5395,7 +5601,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSetupScreensById(id: number, params: CommonParameters = {}): Promise<SetupScreen> {
+  getSystemSetupScreensById(
+    id: number,
+    params: CommonParameters<SetupScreen> = {},
+  ): Promise<SetupScreen> {
     return this.request({
       path: `/system/setupScreens/${id}`,
       method: 'get',
@@ -5403,7 +5612,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSetupScreensCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSetupScreensCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/setupScreens/count`,
       method: 'get',
@@ -5411,7 +5620,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillCategories(params: CommonParameters = {}): Promise<Array<SkillCategory>> {
+  getSystemSkillCategories(
+    params: CommonParameters<SkillCategory> = {},
+  ): Promise<Array<SkillCategory>> {
     return this.request({
       path: `/system/skillCategories`,
       method: 'get',
@@ -5427,7 +5638,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillCategoriesById(id: number, params: CommonParameters = {}): Promise<SkillCategory> {
+  getSystemSkillCategoriesById(
+    id: number,
+    params: CommonParameters<SkillCategory> = {},
+  ): Promise<SkillCategory> {
     return this.request({
       path: `/system/skillCategories/${id}`,
       method: 'get',
@@ -5461,7 +5675,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillCategoriesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSkillCategoriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/skillCategories/count`,
       method: 'get',
@@ -5469,7 +5683,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkills(params: CommonParameters = {}): Promise<Array<Skill>> {
+  getSystemSkills(params: CommonParameters<Skill> = {}): Promise<Array<Skill>> {
     return this.request({
       path: `/system/skills`,
       method: 'get',
@@ -5485,7 +5699,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillsById(id: number, params: CommonParameters = {}): Promise<Skill> {
+  getSystemSkillsById(id: number, params: CommonParameters<Skill> = {}): Promise<Skill> {
     return this.request({
       path: `/system/skills/${id}`,
       method: 'get',
@@ -5516,7 +5730,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillsByIdInfo(id: number, params: CommonParameters = {}): Promise<SkillInfo> {
+  getSystemSkillsByIdInfo(
+    id: number,
+    params: CommonParameters<SkillInfo> = {},
+  ): Promise<SkillInfo> {
     return this.request({
       path: `/system/skills/${id}/info`,
       method: 'get',
@@ -5524,7 +5741,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSkillsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/skills/count`,
       method: 'get',
@@ -5532,7 +5749,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillsInfo(params: CommonParameters = {}): Promise<Array<SkillInfo>> {
+  getSystemSkillsInfo(params: CommonParameters<SkillInfo> = {}): Promise<Array<SkillInfo>> {
     return this.request({
       path: `/system/skills/info`,
       method: 'get',
@@ -5540,7 +5757,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSkillsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSkillsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/skills/info/count`,
       method: 'get',
@@ -5548,7 +5765,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSsoConfigurations(params: CommonParameters = {}): Promise<Array<SsoConfiguration>> {
+  getSystemSsoConfigurations(
+    params: CommonParameters<SsoConfiguration> = {},
+  ): Promise<Array<SsoConfiguration>> {
     return this.request({
       path: `/system/ssoConfigurations`,
       method: 'get',
@@ -5566,7 +5785,7 @@ export class SystemAPI extends Manage {
 
   getSystemSsoConfigurationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SsoConfiguration> = {},
   ): Promise<SsoConfiguration> {
     return this.request({
       path: `/system/ssoConfigurations/${id}`,
@@ -5626,7 +5845,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSsoConfigurationsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSsoConfigurationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/ssoConfigurations/count`,
       method: 'get',
@@ -5634,7 +5853,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSsoUsers(params: CommonParameters = {}): Promise<Array<SsoUser>> {
+  getSystemSsoUsers(params: CommonParameters<SsoUser> = {}): Promise<Array<SsoUser>> {
     return this.request({
       path: `/system/ssoUsers`,
       method: 'get',
@@ -5644,7 +5863,7 @@ export class SystemAPI extends Manage {
 
   getSystemSsoUsersByExternalId(
     externalId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SsoUser> = {},
   ): Promise<SsoUser> {
     return this.request({
       path: `/system/ssoUsers/${externalId}`,
@@ -5653,7 +5872,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSsoUsersCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSsoUsersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/ssoUsers/count`,
       method: 'get',
@@ -5661,7 +5880,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemStandardNotes(params: CommonParameters = {}): Promise<Array<StandardNote>> {
+  getSystemStandardNotes(
+    params: CommonParameters<StandardNote> = {},
+  ): Promise<Array<StandardNote>> {
     return this.request({
       path: `/system/standardNotes`,
       method: 'get',
@@ -5677,7 +5898,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemStandardNotesById(id: number, params: CommonParameters = {}): Promise<StandardNote> {
+  getSystemStandardNotesById(
+    id: number,
+    params: CommonParameters<StandardNote> = {},
+  ): Promise<StandardNote> {
     return this.request({
       path: `/system/standardNotes/${id}`,
       method: 'get',
@@ -5711,7 +5935,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemStandardNotesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemStandardNotesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/standardNotes/count`,
       method: 'get',
@@ -5719,7 +5943,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSurveys(params: CommonParameters = {}): Promise<Array<Survey>> {
+  getSystemSurveys(params: CommonParameters<Survey> = {}): Promise<Array<Survey>> {
     return this.request({
       path: `/system/surveys`,
       method: 'get',
@@ -5738,7 +5962,7 @@ export class SystemAPI extends Manage {
   getSystemSurveysByGrandparentIdQuestionsByParentIdValues(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SurveyQuestionValue> = {},
   ): Promise<Array<SurveyQuestionValue>> {
     return this.request({
       path: `/system/surveys/${grandparentId}/questions/${parentId}/values`,
@@ -5763,7 +5987,7 @@ export class SystemAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SurveyQuestionValue> = {},
   ): Promise<SurveyQuestionValue> {
     return this.request({
       path: `/system/surveys/${grandparentId}/questions/${parentId}/values/${id}`,
@@ -5809,7 +6033,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSurveysById(id: number, params: CommonParameters = {}): Promise<Survey> {
+  getSystemSurveysById(id: number, params: CommonParameters<Survey> = {}): Promise<Survey> {
     return this.request({
       path: `/system/surveys/${id}`,
       method: 'get',
@@ -5847,7 +6071,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSurveysByIdInfo(id: number, params: CommonParameters = {}): Promise<SurveyInfo> {
+  getSystemSurveysByIdInfo(
+    id: number,
+    params: CommonParameters<SurveyInfo> = {},
+  ): Promise<SurveyInfo> {
     return this.request({
       path: `/system/surveys/${id}/info`,
       method: 'get',
@@ -5857,7 +6084,7 @@ export class SystemAPI extends Manage {
 
   getSystemSurveysByParentIdQuestions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SurveyQuestion> = {},
   ): Promise<Array<SurveyQuestion>> {
     return this.request({
       path: `/system/surveys/${parentId}/questions`,
@@ -5880,7 +6107,7 @@ export class SystemAPI extends Manage {
   getSystemSurveysByParentIdQuestionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SurveyQuestion> = {},
   ): Promise<SurveyQuestion> {
     return this.request({
       path: `/system/surveys/${parentId}/questions/${id}`,
@@ -5925,7 +6152,7 @@ export class SystemAPI extends Manage {
 
   getSystemSurveysByParentIdQuestionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/surveys/${parentId}/questions/count`,
@@ -5934,7 +6161,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSurveysCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSurveysCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/surveys/count`,
       method: 'get',
@@ -5942,7 +6169,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSurveysInfo(params: CommonParameters = {}): Promise<Array<SurveyInfo>> {
+  getSystemSurveysInfo(params: CommonParameters<SurveyInfo> = {}): Promise<Array<SurveyInfo>> {
     return this.request({
       path: `/system/surveys/info`,
       method: 'get',
@@ -5950,7 +6177,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemSurveysInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemSurveysInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/surveys/info/count`,
       method: 'get',
@@ -5958,7 +6185,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemTimeZoneSetups(params: CommonParameters = {}): Promise<Array<TimeZoneSetup>> {
+  getSystemTimeZoneSetups(
+    params: CommonParameters<TimeZoneSetup> = {},
+  ): Promise<Array<TimeZoneSetup>> {
     return this.request({
       path: `/system/timeZoneSetups`,
       method: 'get',
@@ -5974,7 +6203,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemTimeZoneSetupsById(id: number, params: CommonParameters = {}): Promise<TimeZoneSetup> {
+  getSystemTimeZoneSetupsById(
+    id: number,
+    params: CommonParameters<TimeZoneSetup> = {},
+  ): Promise<TimeZoneSetup> {
     return this.request({
       path: `/system/timeZoneSetups/${id}`,
       method: 'get',
@@ -6010,7 +6242,7 @@ export class SystemAPI extends Manage {
 
   getSystemTimeZoneSetupsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TimeZoneSetupInfo> = {},
   ): Promise<TimeZoneSetupInfo> {
     return this.request({
       path: `/system/timeZoneSetups/${id}/info`,
@@ -6019,7 +6251,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemTimeZoneSetupsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemTimeZoneSetupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/timeZoneSetups/count`,
       method: 'get',
@@ -6027,7 +6259,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemTimeZoneSetupsInfo(params: CommonParameters = {}): Promise<Array<TimeZoneSetupInfo>> {
+  getSystemTimeZoneSetupsInfo(
+    params: CommonParameters<TimeZoneSetupInfo> = {},
+  ): Promise<Array<TimeZoneSetupInfo>> {
     return this.request({
       path: `/system/timeZoneSetups/info`,
       method: 'get',
@@ -6035,7 +6269,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemTimeZoneSetupsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemTimeZoneSetupsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/timeZoneSetups/info/count`,
       method: 'get',
@@ -6043,7 +6277,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemTodayPageCategories(params: CommonParameters = {}): Promise<Array<TodayPageCategory>> {
+  getSystemTodayPageCategories(
+    params: CommonParameters<TodayPageCategory> = {},
+  ): Promise<Array<TodayPageCategory>> {
     return this.request({
       path: `/system/todayPageCategories`,
       method: 'get',
@@ -6061,7 +6297,7 @@ export class SystemAPI extends Manage {
 
   getSystemTodayPageCategoriesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TodayPageCategory> = {},
   ): Promise<TodayPageCategory> {
     return this.request({
       path: `/system/todayPageCategories/${id}`,
@@ -6099,7 +6335,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemTodayPageCategoriesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemTodayPageCategoriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/todayPageCategories/count`,
       method: 'get',
@@ -6107,7 +6343,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemUserDefinedFields(params: CommonParameters = {}): Promise<Array<UserDefinedField>> {
+  getSystemUserDefinedFields(
+    params: CommonParameters<UserDefinedField> = {},
+  ): Promise<Array<UserDefinedField>> {
     return this.request({
       path: `/system/userDefinedFields`,
       method: 'get',
@@ -6125,7 +6363,7 @@ export class SystemAPI extends Manage {
 
   getSystemUserDefinedFieldsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UserDefinedField> = {},
   ): Promise<UserDefinedField> {
     return this.request({
       path: `/system/userDefinedFields/${id}`,
@@ -6165,7 +6403,7 @@ export class SystemAPI extends Manage {
 
   getSystemUserDefinedFieldsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UserDefinedFieldInfo> = {},
   ): Promise<UserDefinedFieldInfo> {
     return this.request({
       path: `/system/userDefinedFields/${id}/info`,
@@ -6174,7 +6412,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemUserDefinedFieldsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemUserDefinedFieldsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/userDefinedFields/count`,
       method: 'get',
@@ -6183,7 +6421,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemUserDefinedFieldsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<UserDefinedFieldInfo> = {},
   ): Promise<Array<UserDefinedFieldInfo>> {
     return this.request({
       path: `/system/userDefinedFields/info`,
@@ -6192,7 +6430,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemUserDefinedFieldsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemUserDefinedFieldsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/userDefinedFields/info/count`,
       method: 'get',
@@ -6202,7 +6440,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowActionsByParentIdAutomateParameters(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowActionAutomateParameter> = {},
   ): Promise<Array<WorkflowActionAutomateParameter>> {
     return this.request({
       path: `/system/workflowActions/${parentId}/automateParameters`,
@@ -6225,7 +6463,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowActionsByParentIdAutomateParametersById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowActionAutomateParameter> = {},
   ): Promise<WorkflowActionAutomateParameter> {
     return this.request({
       path: `/system/workflowActions/${parentId}/automateParameters/${id}`,
@@ -6270,7 +6508,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowActionsByParentIdAutomateParametersCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflowActions/${parentId}/automateParameters/count`,
@@ -6280,7 +6518,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemWorkflowActionsAutomateParameters(
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowActionAutomateParameter> = {},
   ): Promise<Array<WorkflowActionAutomateParameter>> {
     return this.request({
       path: `/system/workflowActions/automateParameters`,
@@ -6291,7 +6529,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowActionsAutomateParametersById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowActionAutomateParameter> = {},
   ): Promise<WorkflowActionAutomateParameter> {
     return this.request({
       path: `/system/workflowActions/automateParameters/${id}`,
@@ -6300,7 +6538,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflows(params: CommonParameters = {}): Promise<Array<Workflow>> {
+  getSystemWorkflows(params: CommonParameters<Workflow> = {}): Promise<Array<Workflow>> {
     return this.request({
       path: `/system/workflows`,
       method: 'get',
@@ -6319,7 +6557,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByGrandparentIdEventsByParentIdActions(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowAction> = {},
   ): Promise<Array<WorkflowAction>> {
     return this.request({
       path: `/system/workflows/${grandparentId}/events/${parentId}/actions`,
@@ -6344,7 +6582,7 @@ export class SystemAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowAction> = {},
   ): Promise<WorkflowAction> {
     return this.request({
       path: `/system/workflows/${grandparentId}/events/${parentId}/actions/${id}`,
@@ -6393,7 +6631,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByGrandparentIdEventsByParentIdActionsCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflows/${grandparentId}/events/${parentId}/actions/count`,
@@ -6405,7 +6643,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByGrandparentIdTriggersByParentIdOptions(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowTriggerOption> = {},
   ): Promise<Array<WorkflowTriggerOption>> {
     return this.request({
       path: `/system/workflows/${grandparentId}/triggers/${parentId}/options`,
@@ -6417,7 +6655,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByGrandparentIdTriggersByParentIdOptionsCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflows/${grandparentId}/triggers/${parentId}/options/count`,
@@ -6426,7 +6664,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsById(id: number, params: CommonParameters = {}): Promise<Workflow> {
+  getSystemWorkflowsById(id: number, params: CommonParameters<Workflow> = {}): Promise<Workflow> {
     return this.request({
       path: `/system/workflows/${id}`,
       method: 'get',
@@ -6466,7 +6704,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdAttachments(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowAttachment> = {},
   ): Promise<Array<WorkflowAttachment>> {
     return this.request({
       path: `/system/workflows/${parentId}/attachments`,
@@ -6478,7 +6716,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByParentIdAttachmentsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowAttachment> = {},
   ): Promise<WorkflowAttachment> {
     return this.request({
       path: `/system/workflows/${parentId}/attachments/${id}`,
@@ -6489,7 +6727,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdAttachmentsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflows/${parentId}/attachments/count`,
@@ -6500,7 +6738,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdEvents(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowEvent> = {},
   ): Promise<Array<WorkflowEvent>> {
     return this.request({
       path: `/system/workflows/${parentId}/events`,
@@ -6523,7 +6761,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByParentIdEventsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowEvent> = {},
   ): Promise<WorkflowEvent> {
     return this.request({
       path: `/system/workflows/${parentId}/events/${id}`,
@@ -6579,7 +6817,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByParentIdEventsByIdTest(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<object> = {},
   ): Promise<Array<object>> {
     return this.request({
       path: `/system/workflows/${parentId}/events/${id}/test`,
@@ -6590,7 +6828,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdEventsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflows/${parentId}/events/count`,
@@ -6601,7 +6839,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdNotifyTypes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowNotifyType> = {},
   ): Promise<Array<WorkflowNotifyType>> {
     return this.request({
       path: `/system/workflows/${parentId}/notifyTypes`,
@@ -6613,7 +6851,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByParentIdNotifyTypesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowNotifyType> = {},
   ): Promise<WorkflowNotifyType> {
     return this.request({
       path: `/system/workflows/${parentId}/notifyTypes/${id}`,
@@ -6625,7 +6863,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsByParentIdNotifyTypesByIdInfo(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowNotifyTypeInfo> = {},
   ): Promise<WorkflowNotifyTypeInfo> {
     return this.request({
       path: `/system/workflows/${parentId}/notifyTypes/${id}/info`,
@@ -6636,7 +6874,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdNotifyTypesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflows/${parentId}/notifyTypes/count`,
@@ -6647,7 +6885,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdNotifyTypesInfo(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowNotifyTypeInfo> = {},
   ): Promise<Array<WorkflowNotifyTypeInfo>> {
     return this.request({
       path: `/system/workflows/${parentId}/notifyTypes/info`,
@@ -6658,7 +6896,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdNotifyTypesInfoCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflows/${parentId}/notifyTypes/info/count`,
@@ -6669,7 +6907,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdTriggers(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowTrigger> = {},
   ): Promise<Array<WorkflowTrigger>> {
     return this.request({
       path: `/system/workflows/${parentId}/triggers`,
@@ -6680,7 +6918,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsByParentIdTriggersCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/system/workflows/${parentId}/triggers/count`,
@@ -6689,7 +6927,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsAttachments(params: CommonParameters = {}): Promise<Array<WorkflowAttachment>> {
+  getSystemWorkflowsAttachments(
+    params: CommonParameters<WorkflowAttachment> = {},
+  ): Promise<Array<WorkflowAttachment>> {
     return this.request({
       path: `/system/workflows/attachments`,
       method: 'get',
@@ -6699,7 +6939,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsAttachmentsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowAttachment> = {},
   ): Promise<Array<WorkflowAttachment>> {
     return this.request({
       path: `/system/workflows/attachments/${id}`,
@@ -6708,7 +6948,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemWorkflowsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/workflows/count`,
       method: 'get',
@@ -6716,7 +6956,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsEvents(params: CommonParameters = {}): Promise<Array<WorkflowEvent>> {
+  getSystemWorkflowsEvents(
+    params: CommonParameters<WorkflowEvent> = {},
+  ): Promise<Array<WorkflowEvent>> {
     return this.request({
       path: `/system/workflows/events`,
       method: 'get',
@@ -6724,7 +6966,10 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsEventsById(id: number, params: CommonParameters = {}): Promise<WorkflowEvent> {
+  getSystemWorkflowsEventsById(
+    id: number,
+    params: CommonParameters<WorkflowEvent> = {},
+  ): Promise<WorkflowEvent> {
     return this.request({
       path: `/system/workflows/events/${id}`,
       method: 'get',
@@ -6732,7 +6977,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsEventsActions(params: CommonParameters = {}): Promise<Array<WorkflowAction>> {
+  getSystemWorkflowsEventsActions(
+    params: CommonParameters<WorkflowAction> = {},
+  ): Promise<Array<WorkflowAction>> {
     return this.request({
       path: `/system/workflows/events/actions`,
       method: 'get',
@@ -6742,7 +6989,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsEventsActionsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowAction> = {},
   ): Promise<WorkflowAction> {
     return this.request({
       path: `/system/workflows/events/actions/${id}`,
@@ -6751,7 +6998,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsNotifyTypes(params: CommonParameters = {}): Promise<Array<WorkflowNotifyType>> {
+  getSystemWorkflowsNotifyTypes(
+    params: CommonParameters<WorkflowNotifyType> = {},
+  ): Promise<Array<WorkflowNotifyType>> {
     return this.request({
       path: `/system/workflows/notifyTypes`,
       method: 'get',
@@ -6761,7 +7010,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsNotifyTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowNotifyType> = {},
   ): Promise<Array<WorkflowNotifyType>> {
     return this.request({
       path: `/system/workflows/notifyTypes/${id}`,
@@ -6770,7 +7019,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsTableTypes(params: CommonParameters = {}): Promise<Array<WorkflowTableType>> {
+  getSystemWorkflowsTableTypes(
+    params: CommonParameters<WorkflowTableType> = {},
+  ): Promise<Array<WorkflowTableType>> {
     return this.request({
       path: `/system/workflows/tableTypes`,
       method: 'get',
@@ -6780,7 +7031,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsTableTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowTableType> = {},
   ): Promise<WorkflowTableType> {
     return this.request({
       path: `/system/workflows/tableTypes/${id}`,
@@ -6791,7 +7042,7 @@ export class SystemAPI extends Manage {
 
   getSystemWorkflowsTableTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowTableTypeInfo> = {},
   ): Promise<WorkflowTableTypeInfo> {
     return this.request({
       path: `/system/workflows/tableTypes/${id}/info`,
@@ -6800,7 +7051,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsTableTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemWorkflowsTableTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/workflows/tableTypes/count`,
       method: 'get',
@@ -6809,7 +7060,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemWorkflowsTableTypesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowTableTypeInfo> = {},
   ): Promise<Array<WorkflowTableTypeInfo>> {
     return this.request({
       path: `/system/workflows/tableTypes/info`,
@@ -6818,7 +7069,7 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsTableTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSystemWorkflowsTableTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/system/workflows/tableTypes/info/count`,
       method: 'get',
@@ -6826,7 +7077,9 @@ export class SystemAPI extends Manage {
     })
   }
 
-  getSystemWorkflowsTriggers(params: CommonParameters = {}): Promise<Array<WorkflowTrigger>> {
+  getSystemWorkflowsTriggers(
+    params: CommonParameters<WorkflowTrigger> = {},
+  ): Promise<Array<WorkflowTrigger>> {
     return this.request({
       path: `/system/workflows/triggers`,
       method: 'get',
@@ -6835,7 +7088,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemWorkflowsTriggersOptions(
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowTriggerOption> = {},
   ): Promise<Array<WorkflowTriggerOption>> {
     return this.request({
       path: `/system/workflows/triggers/options`,
@@ -6889,7 +7142,7 @@ export class SystemAPI extends Manage {
   getSystemWorkflowsUserdefinedfieldsEventsByGrandparentIdActionsByParentId(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowActionUserDefinedField> = {},
   ): Promise<Array<WorkflowActionUserDefinedField>> {
     return this.request({
       path: `/system/workflows/userdefinedfields/events/${grandparentId}/actions/${parentId}`,
@@ -6899,7 +7152,7 @@ export class SystemAPI extends Manage {
   }
 
   getSystemWorkflowsUserdefinedfieldsEventsActions(
-    params: CommonParameters = {},
+    params: CommonParameters<WorkflowActionUserDefinedField> = {},
   ): Promise<Array<WorkflowActionUserDefinedField>> {
     return this.request({
       path: `/system/workflows/userdefinedfields/events/actions`,

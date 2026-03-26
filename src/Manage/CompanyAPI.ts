@@ -205,7 +205,9 @@ export class CompanyAPI extends Manage {
     super(props)
   }
 
-  getCompanyAddressFormats(params: CommonParameters = {}): Promise<Array<AddressFormat>> {
+  getCompanyAddressFormats(
+    params: CommonParameters<AddressFormat> = {},
+  ): Promise<Array<AddressFormat>> {
     return this.request({
       path: `/company/addressFormats`,
       method: 'get',
@@ -221,7 +223,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyAddressFormatsById(id: number, params: CommonParameters = {}): Promise<AddressFormat> {
+  getCompanyAddressFormatsById(
+    id: number,
+    params: CommonParameters<AddressFormat> = {},
+  ): Promise<AddressFormat> {
     return this.request({
       path: `/company/addressFormats/${id}`,
       method: 'get',
@@ -257,7 +262,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyAddressFormatsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AddressFormatInfo> = {},
   ): Promise<AddressFormatInfo> {
     return this.request({
       path: `/company/addressFormats/${id}/info`,
@@ -266,7 +271,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyAddressFormatsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyAddressFormatsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/addressFormats/count`,
       method: 'get',
@@ -274,7 +279,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyAddressFormatsInfo(params: CommonParameters = {}): Promise<Array<AddressFormatInfo>> {
+  getCompanyAddressFormatsInfo(
+    params: CommonParameters<AddressFormatInfo> = {},
+  ): Promise<Array<AddressFormatInfo>> {
     return this.request({
       path: `/company/addressFormats/info`,
       method: 'get',
@@ -282,7 +289,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyAddressFormatsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyAddressFormatsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/addressFormats/info/count`,
       method: 'get',
@@ -290,7 +297,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCommunicationTypes(params: CommonParameters = {}): Promise<Array<CommunicationType>> {
+  getCompanyCommunicationTypes(
+    params: CommonParameters<CommunicationType> = {},
+  ): Promise<Array<CommunicationType>> {
     return this.request({
       path: `/company/communicationTypes`,
       method: 'get',
@@ -308,7 +317,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCommunicationTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CommunicationType> = {},
   ): Promise<CommunicationType> {
     return this.request({
       path: `/company/communicationTypes/${id}`,
@@ -348,7 +357,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCommunicationTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CommunicationTypeInfo> = {},
   ): Promise<CommunicationTypeInfo> {
     return this.request({
       path: `/company/communicationTypes/${id}/info`,
@@ -359,7 +368,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCommunicationTypesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/communicationTypes/${id}/usages`,
@@ -370,7 +379,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCommunicationTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/communicationTypes/${id}/usages/list`,
@@ -379,7 +388,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCommunicationTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCommunicationTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/communicationTypes/count`,
       method: 'get',
@@ -388,7 +397,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyCommunicationTypesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<CommunicationTypeInfo> = {},
   ): Promise<Array<CommunicationTypeInfo>> {
     return this.request({
       path: `/company/communicationTypes/info`,
@@ -397,7 +406,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCommunicationTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCommunicationTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/communicationTypes/info/count`,
       method: 'get',
@@ -405,7 +414,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompanies(params: CommonParameters = {}): Promise<Array<Company>> {
+  getCompanyCompanies(params: CommonParameters<Company> = {}): Promise<Array<Company>> {
     return this.request({
       path: `/company/companies`,
       method: 'get',
@@ -421,7 +430,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesById(id: number, params: CommonParameters = {}): Promise<Company> {
+  getCompanyCompaniesById(id: number, params: CommonParameters<Company> = {}): Promise<Company> {
     return this.request({
       path: `/company/companies/${id}`,
       method: 'get',
@@ -460,7 +469,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getCompanyCompaniesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/${id}/usages`,
       method: 'get',
@@ -470,7 +482,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/${id}/usages/list`,
@@ -481,7 +493,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdCustomStatusNotes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyCustomNote> = {},
   ): Promise<Array<CompanyCustomNote>> {
     return this.request({
       path: `/company/companies/${parentId}/customStatusNotes`,
@@ -504,7 +516,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdCustomStatusNotesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyCustomNote> = {},
   ): Promise<CompanyCustomNote> {
     return this.request({
       path: `/company/companies/${parentId}/customStatusNotes/${id}`,
@@ -549,7 +561,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdCustomStatusNotesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/customStatusNotes/count`,
@@ -560,7 +572,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdGroups(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyGroup> = {},
   ): Promise<Array<CompanyGroup>> {
     return this.request({
       path: `/company/companies/${parentId}/groups`,
@@ -583,7 +595,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdGroupsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyGroup> = {},
   ): Promise<CompanyGroup> {
     return this.request({
       path: `/company/companies/${parentId}/groups/${id}`,
@@ -628,7 +640,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdGroupsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/groups/count`,
@@ -639,7 +651,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdManagementReportNotifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementReportNotification> = {},
   ): Promise<Array<ManagementReportNotification>> {
     return this.request({
       path: `/company/companies/${parentId}/managementReportNotifications`,
@@ -662,7 +674,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdManagementReportNotificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementReportNotification> = {},
   ): Promise<ManagementReportNotification> {
     return this.request({
       path: `/company/companies/${parentId}/managementReportNotifications/${id}`,
@@ -707,7 +719,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdManagementReportNotificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/managementReportNotifications/count`,
@@ -718,7 +730,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdManagementReportSetup(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementReportSetup> = {},
   ): Promise<Array<ManagementReportSetup>> {
     return this.request({
       path: `/company/companies/${parentId}/managementReportSetup`,
@@ -764,7 +776,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdManagementSummaryReports(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyManagementSummary> = {},
   ): Promise<Array<CompanyManagementSummary>> {
     return this.request({
       path: `/company/companies/${parentId}/managementSummaryReports`,
@@ -787,7 +799,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdManagementSummaryReportsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyManagementSummary> = {},
   ): Promise<CompanyManagementSummary> {
     return this.request({
       path: `/company/companies/${parentId}/managementSummaryReports/${id}`,
@@ -832,7 +844,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdManagementSummaryReportsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/managementSummaryReports/count`,
@@ -843,7 +855,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdNotes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyNote> = {},
   ): Promise<Array<CompanyNote>> {
     return this.request({
       path: `/company/companies/${parentId}/notes`,
@@ -866,7 +878,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdNotesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyNote> = {},
   ): Promise<CompanyNote> {
     return this.request({
       path: `/company/companies/${parentId}/notes/${id}`,
@@ -911,7 +923,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdNotesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/notes/count`,
@@ -922,7 +934,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdSites(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanySite> = {},
   ): Promise<Array<CompanySite>> {
     return this.request({
       path: `/company/companies/${parentId}/sites`,
@@ -942,7 +954,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdSitesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanySite> = {},
   ): Promise<CompanySite> {
     return this.request({
       path: `/company/companies/${parentId}/sites/${id}`,
@@ -988,7 +1000,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdSitesByIdInfo(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanySiteInfo> = {},
   ): Promise<CompanySiteInfo> {
     return this.request({
       path: `/company/companies/${parentId}/sites/${id}/info`,
@@ -1000,7 +1012,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdSitesByIdUsages(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/${parentId}/sites/${id}/usages`,
@@ -1012,7 +1024,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdSitesByIdUsagesList(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/${parentId}/sites/${id}/usages/list`,
@@ -1023,7 +1035,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdSitesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/sites/count`,
@@ -1034,7 +1046,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdSitesInfo(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanySiteInfo> = {},
   ): Promise<Array<CompanySiteInfo>> {
     return this.request({
       path: `/company/companies/${parentId}/sites/info`,
@@ -1045,7 +1057,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdSitesInfoCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/sites/info/count`,
@@ -1056,7 +1068,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdSurveysCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/surveys/count`,
@@ -1067,7 +1079,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdTeams(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyTeam> = {},
   ): Promise<Array<CompanyTeam>> {
     return this.request({
       path: `/company/companies/${parentId}/teams`,
@@ -1090,7 +1102,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdTeamsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyTeam> = {},
   ): Promise<CompanyTeam> {
     return this.request({
       path: `/company/companies/${parentId}/teams/${id}`,
@@ -1135,7 +1147,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdTeamsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/teams/count`,
@@ -1146,7 +1158,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdTracks(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactTrack> = {},
   ): Promise<Array<ContactTrack>> {
     return this.request({
       path: `/company/companies/${parentId}/tracks`,
@@ -1169,7 +1181,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdTracksById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactTrack> = {},
   ): Promise<ContactTrack> {
     return this.request({
       path: `/company/companies/${parentId}/tracks/${id}`,
@@ -1190,7 +1202,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdTracksCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/tracks/count`,
@@ -1201,7 +1213,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdTypeAssociations(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyCompanyTypeAssociationCompanyTypeAssociation> = {},
   ): Promise<Array<CompanyCompanyTypeAssociationCompanyTypeAssociation>> {
     return this.request({
       path: `/company/companies/${parentId}/typeAssociations`,
@@ -1224,7 +1236,7 @@ export class CompanyAPI extends Manage {
   getCompanyCompaniesByParentIdTypeAssociationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyCompanyTypeAssociationCompanyTypeAssociation> = {},
   ): Promise<CompanyCompanyTypeAssociationCompanyTypeAssociation> {
     return this.request({
       path: `/company/companies/${parentId}/typeAssociations/${id}`,
@@ -1269,7 +1281,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesByParentIdTypeAssociationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/companies/${parentId}/typeAssociations/count`,
@@ -1278,7 +1290,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCompaniesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/companies/count`,
       method: 'get',
@@ -1286,7 +1298,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesDefault(params: CommonParameters = {}): Promise<Company> {
+  getCompanyCompaniesDefault(params: CommonParameters<Company> = {}): Promise<Company> {
     return this.request({
       path: `/company/companies/default`,
       method: 'get',
@@ -1294,7 +1306,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesInfo(params: CommonParameters = {}): Promise<Array<CompanyInfo>> {
+  getCompanyCompaniesInfo(params: CommonParameters<CompanyInfo> = {}): Promise<Array<CompanyInfo>> {
     return this.request({
       path: `/company/companies/info`,
       method: 'get',
@@ -1302,7 +1314,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCompaniesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/companies/info/count`,
       method: 'get',
@@ -1310,7 +1322,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesInfoTypes(params: CommonParameters = {}): Promise<Array<CompanyTypeInfo>> {
+  getCompanyCompaniesInfoTypes(
+    params: CommonParameters<CompanyTypeInfo> = {},
+  ): Promise<Array<CompanyTypeInfo>> {
     return this.request({
       path: `/company/companies/info/types`,
       method: 'get',
@@ -1320,7 +1334,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesInfoTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyTypeInfo> = {},
   ): Promise<CompanyTypeInfo> {
     return this.request({
       path: `/company/companies/info/types/${id}`,
@@ -1329,7 +1343,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesInfoTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCompaniesInfoTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/companies/info/types/count`,
       method: 'get',
@@ -1337,7 +1351,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesStatuses(params: CommonParameters = {}): Promise<Array<CompanyStatus>> {
+  getCompanyCompaniesStatuses(
+    params: CommonParameters<CompanyStatus> = {},
+  ): Promise<Array<CompanyStatus>> {
     return this.request({
       path: `/company/companies/statuses`,
       method: 'get',
@@ -1355,7 +1371,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesStatusesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyStatus> = {},
   ): Promise<CompanyStatus> {
     return this.request({
       path: `/company/companies/statuses/${id}`,
@@ -1395,7 +1411,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesStatusesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/statuses/${id}/usages`,
@@ -1406,7 +1422,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesStatusesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/statuses/${id}/usages/list`,
@@ -1415,7 +1431,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCompaniesStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/companies/statuses/count`,
       method: 'get',
@@ -1423,7 +1439,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesTypes(params: CommonParameters = {}): Promise<Array<CompanyType>> {
+  getCompanyCompaniesTypes(
+    params: CommonParameters<CompanyType> = {},
+  ): Promise<Array<CompanyType>> {
     return this.request({
       path: `/company/companies/types`,
       method: 'get',
@@ -1439,7 +1457,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesTypesById(id: number, params: CommonParameters = {}): Promise<CompanyType> {
+  getCompanyCompaniesTypesById(
+    id: number,
+    params: CommonParameters<CompanyType> = {},
+  ): Promise<CompanyType> {
     return this.request({
       path: `/company/companies/types/${id}`,
       method: 'get',
@@ -1475,7 +1496,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesTypesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/types/${id}/usages`,
@@ -1486,7 +1507,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompaniesTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/companies/types/${id}/usages/list`,
@@ -1495,7 +1516,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompaniesTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCompaniesTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/companies/types/count`,
       method: 'get',
@@ -1503,7 +1524,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompanyPickerItems(params: CommonParameters = {}): Promise<Array<CompanyPickerItem>> {
+  getCompanyCompanyPickerItems(
+    params: CommonParameters<CompanyPickerItem> = {},
+  ): Promise<Array<CompanyPickerItem>> {
     return this.request({
       path: `/company/companyPickerItems`,
       method: 'get',
@@ -1521,7 +1544,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompanyPickerItemsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyPickerItem> = {},
   ): Promise<CompanyPickerItem> {
     return this.request({
       path: `/company/companyPickerItems/${id}`,
@@ -1546,7 +1569,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompanyPickerItemsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCompanyPickerItemsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/companyPickerItems/count`,
       method: 'get',
@@ -1555,7 +1578,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyCompanyTypeAssociations(
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyCompanyTypeAssociation> = {},
   ): Promise<Array<CompanyCompanyTypeAssociation>> {
     return this.request({
       path: `/company/companyTypeAssociations`,
@@ -1576,7 +1599,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyCompanyTypeAssociationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyCompanyTypeAssociation> = {},
   ): Promise<CompanyCompanyTypeAssociation> {
     return this.request({
       path: `/company/companyTypeAssociations/${id}`,
@@ -1614,7 +1637,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCompanyTypeAssociationsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCompanyTypeAssociationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/companyTypeAssociations/count`,
       method: 'get',
@@ -1622,7 +1645,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyConfigurations(params: CommonParameters = {}): Promise<Array<CompanyConfiguration>> {
+  getCompanyConfigurations(
+    params: CommonParameters<CompanyConfiguration> = {},
+  ): Promise<Array<CompanyConfiguration>> {
     return this.request({
       path: `/company/configurations`,
       method: 'get',
@@ -1632,7 +1657,7 @@ export class CompanyAPI extends Manage {
 
   postCompanyConfigurations(
     configuration: CompanyConfiguration,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyConfiguration> = {},
   ): Promise<CompanyConfiguration> {
     return this.request({
       path: `/company/configurations`,
@@ -1644,7 +1669,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyConfiguration> = {},
   ): Promise<CompanyConfiguration> {
     return this.request({
       path: `/company/configurations/${id}`,
@@ -1663,7 +1688,7 @@ export class CompanyAPI extends Manage {
   putCompanyConfigurationsById(
     id: number,
     configuration: CompanyConfiguration,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyConfiguration> = {},
   ): Promise<CompanyConfiguration> {
     return this.request({
       path: `/company/configurations/${id}`,
@@ -1676,7 +1701,7 @@ export class CompanyAPI extends Manage {
   patchCompanyConfigurationsById(
     id: number,
     patchOperations: Array<PatchOperation>,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyConfiguration> = {},
   ): Promise<CompanyConfiguration> {
     return this.request({
       path: `/company/configurations/${id}`,
@@ -1699,7 +1724,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsByIdQuickAccessCount(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationTabsCount> = {},
   ): Promise<ConfigurationTabsCount> {
     return this.request({
       path: `/company/configurations/${id}/quickAccess/count`,
@@ -1710,7 +1735,7 @@ export class CompanyAPI extends Manage {
 
   postCompanyConfigurationsBulk(
     companyConfigurations: Array<CompanyConfiguration>,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyConfiguration> = {},
   ): Promise<CompanyConfiguration> {
     return this.request({
       path: `/company/configurations/bulk`,
@@ -1729,7 +1754,7 @@ export class CompanyAPI extends Manage {
 
   putCompanyConfigurationsBulk(
     companyConfigurations: Array<CompanyConfiguration>,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyConfiguration> = {},
   ): Promise<CompanyConfiguration> {
     return this.request({
       path: `/company/configurations/bulk`,
@@ -1739,7 +1764,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyConfigurationsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyConfigurationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/configurations/count`,
       method: 'get',
@@ -1748,7 +1773,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyConfigurationsStatuses(
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationStatus> = {},
   ): Promise<Array<ConfigurationStatus>> {
     return this.request({
       path: `/company/configurations/statuses`,
@@ -1769,7 +1794,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsStatusesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationStatus> = {},
   ): Promise<ConfigurationStatus> {
     return this.request({
       path: `/company/configurations/statuses/${id}`,
@@ -1809,7 +1834,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsStatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationStatusInfo> = {},
   ): Promise<ConfigurationStatusInfo> {
     return this.request({
       path: `/company/configurations/statuses/${id}/info`,
@@ -1820,7 +1845,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsStatusesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/configurations/statuses/${id}/usages`,
@@ -1831,7 +1856,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsStatusesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/configurations/statuses/${id}/usages/list`,
@@ -1840,7 +1865,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyConfigurationsStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyConfigurationsStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/configurations/statuses/count`,
       method: 'get',
@@ -1849,7 +1874,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyConfigurationsStatusesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationStatusInfo> = {},
   ): Promise<Array<ConfigurationStatusInfo>> {
     return this.request({
       path: `/company/configurations/statuses/info`,
@@ -1858,7 +1883,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyConfigurationsStatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyConfigurationsStatusesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/configurations/statuses/info/count`,
       method: 'get',
@@ -1866,7 +1891,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyConfigurationsTypes(params: CommonParameters = {}): Promise<Array<ConfigurationType>> {
+  getCompanyConfigurationsTypes(
+    params: CommonParameters<ConfigurationType> = {},
+  ): Promise<Array<ConfigurationType>> {
     return this.request({
       path: `/company/configurations/types`,
       method: 'get',
@@ -1885,7 +1912,7 @@ export class CompanyAPI extends Manage {
   getCompanyConfigurationsTypesByGrandparentIdQuestionsByParentIdValues(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationTypeQuestionValue> = {},
   ): Promise<Array<ConfigurationTypeQuestionValue>> {
     return this.request({
       path: `/company/configurations/types/${grandparentId}/questions/${parentId}/values`,
@@ -1910,7 +1937,7 @@ export class CompanyAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationTypeQuestionValue> = {},
   ): Promise<ConfigurationTypeQuestionValue> {
     return this.request({
       path: `/company/configurations/types/${grandparentId}/questions/${parentId}/values/${id}`,
@@ -1960,7 +1987,7 @@ export class CompanyAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/configurations/types/${grandparentId}/questions/${parentId}/values/${id}/usages`,
@@ -1973,7 +2000,7 @@ export class CompanyAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/configurations/types/${grandparentId}/questions/${parentId}/values/${id}/usages/list`,
@@ -1985,7 +2012,7 @@ export class CompanyAPI extends Manage {
   getCompanyConfigurationsTypesByGrandparentIdQuestionsByParentIdValuesCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/configurations/types/${grandparentId}/questions/${parentId}/values/count`,
@@ -1996,7 +2023,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationType> = {},
   ): Promise<ConfigurationType> {
     return this.request({
       path: `/company/configurations/types/${id}`,
@@ -2036,7 +2063,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationTypeInfo> = {},
   ): Promise<ConfigurationTypeInfo> {
     return this.request({
       path: `/company/configurations/types/${id}/info`,
@@ -2047,7 +2074,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsTypesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/configurations/types/${id}/usages`,
@@ -2058,7 +2085,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/configurations/types/${id}/usages/list`,
@@ -2069,7 +2096,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsTypesByParentIdQuestions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationTypeQuestion> = {},
   ): Promise<Array<ConfigurationTypeQuestion>> {
     return this.request({
       path: `/company/configurations/types/${parentId}/questions`,
@@ -2092,7 +2119,7 @@ export class CompanyAPI extends Manage {
   getCompanyConfigurationsTypesByParentIdQuestionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationTypeQuestion> = {},
   ): Promise<ConfigurationTypeQuestion> {
     return this.request({
       path: `/company/configurations/types/${parentId}/questions/${id}`,
@@ -2137,7 +2164,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyConfigurationsTypesByParentIdQuestionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/configurations/types/${parentId}/questions/count`,
@@ -2154,7 +2181,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyConfigurationsTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyConfigurationsTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/configurations/types/count`,
       method: 'get',
@@ -2164,7 +2191,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/contact/types/${id}/usages/list`,
@@ -2173,7 +2200,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContacts(params: CommonParameters = {}): Promise<Array<Contact>> {
+  getCompanyContacts(params: CommonParameters<Contact> = {}): Promise<Array<Contact>> {
     return this.request({
       path: `/company/contacts`,
       method: 'get',
@@ -2189,7 +2216,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsById(id: number, params: CommonParameters = {}): Promise<Contact> {
+  getCompanyContactsById(id: number, params: CommonParameters<Contact> = {}): Promise<Contact> {
     return this.request({
       path: `/company/contacts/${id}`,
       method: 'get',
@@ -2224,7 +2251,7 @@ export class CompanyAPI extends Manage {
     id: number,
     useDefaultFlag: boolean,
     lastModified: string,
-    params: CommonParameters = {},
+    params: CommonParameters<OctetStreamResponse> = {},
   ): Promise<OctetStreamResponse> {
     return this.request({
       path: `/company/contacts/${id}/image`,
@@ -2233,7 +2260,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsByIdInfo(id: number, params: CommonParameters = {}): Promise<ContactInfo> {
+  getCompanyContactsByIdInfo(
+    id: number,
+    params: CommonParameters<ContactInfo> = {},
+  ): Promise<ContactInfo> {
     return this.request({
       path: `/company/contacts/${id}/info`,
       method: 'get',
@@ -2243,7 +2273,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByIdPortalSecurity(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalSecurity> = {},
   ): Promise<Array<PortalSecurity>> {
     return this.request({
       path: `/company/contacts/${id}/portalSecurity`,
@@ -2252,7 +2282,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getCompanyContactsByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/contacts/${id}/usages`,
       method: 'get',
@@ -2262,7 +2295,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/contacts/${id}/usages/list`,
@@ -2273,7 +2306,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdCommunications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactCommunication> = {},
   ): Promise<Array<ContactCommunication>> {
     return this.request({
       path: `/company/contacts/${parentId}/communications`,
@@ -2296,7 +2329,7 @@ export class CompanyAPI extends Manage {
   getCompanyContactsByParentIdCommunicationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactCommunication> = {},
   ): Promise<ContactCommunication> {
     return this.request({
       path: `/company/contacts/${parentId}/communications/${id}`,
@@ -2341,7 +2374,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdCommunicationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/contacts/${parentId}/communications/count`,
@@ -2352,7 +2385,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdGroups(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactGroup> = {},
   ): Promise<Array<ContactGroup>> {
     return this.request({
       path: `/company/contacts/${parentId}/groups`,
@@ -2375,7 +2408,7 @@ export class CompanyAPI extends Manage {
   getCompanyContactsByParentIdGroupsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactGroup> = {},
   ): Promise<ContactGroup> {
     return this.request({
       path: `/company/contacts/${parentId}/groups/${id}`,
@@ -2420,7 +2453,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdGroupsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/contacts/${parentId}/groups/count`,
@@ -2431,7 +2464,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdNotes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactNote> = {},
   ): Promise<Array<ContactNote>> {
     return this.request({
       path: `/company/contacts/${parentId}/notes`,
@@ -2454,7 +2487,7 @@ export class CompanyAPI extends Manage {
   getCompanyContactsByParentIdNotesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactNote> = {},
   ): Promise<ContactNote> {
     return this.request({
       path: `/company/contacts/${parentId}/notes/${id}`,
@@ -2499,7 +2532,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdNotesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/contacts/${parentId}/notes/count`,
@@ -2510,7 +2543,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdTracks(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactTrack> = {},
   ): Promise<Array<ContactTrack>> {
     return this.request({
       path: `/company/contacts/${parentId}/tracks`,
@@ -2533,7 +2566,7 @@ export class CompanyAPI extends Manage {
   getCompanyContactsByParentIdTracksById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactTrack> = {},
   ): Promise<ContactTrack> {
     return this.request({
       path: `/company/contacts/${parentId}/tracks/${id}`,
@@ -2554,7 +2587,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdTracksCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/contacts/${parentId}/tracks/count`,
@@ -2565,7 +2598,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdTypeAssociations(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactContactTypeAssociationContactTypeAssociation> = {},
   ): Promise<Array<ContactContactTypeAssociationContactTypeAssociation>> {
     return this.request({
       path: `/company/contacts/${parentId}/typeAssociations`,
@@ -2588,7 +2621,7 @@ export class CompanyAPI extends Manage {
   getCompanyContactsByParentIdTypeAssociationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactContactTypeAssociationContactTypeAssociation> = {},
   ): Promise<ContactContactTypeAssociationContactTypeAssociation> {
     return this.request({
       path: `/company/contacts/${parentId}/typeAssociations/${id}`,
@@ -2633,7 +2666,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsByParentIdTypeAssociationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/contacts/${parentId}/typeAssociations/count`,
@@ -2642,7 +2675,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contacts/count`,
       method: 'get',
@@ -2650,7 +2683,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsDefault(companyId: number, params: CommonParameters = {}): Promise<Contact> {
+  getCompanyContactsDefault(
+    companyId: number,
+    params: CommonParameters<Contact> = {},
+  ): Promise<Contact> {
     return this.request({
       path: `/company/contacts/default`,
       method: 'get',
@@ -2658,7 +2694,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsDepartments(params: CommonParameters = {}): Promise<Array<ContactDepartment>> {
+  getCompanyContactsDepartments(
+    params: CommonParameters<ContactDepartment> = {},
+  ): Promise<Array<ContactDepartment>> {
     return this.request({
       path: `/company/contacts/departments`,
       method: 'get',
@@ -2676,7 +2714,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsDepartmentsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactDepartment> = {},
   ): Promise<ContactDepartment> {
     return this.request({
       path: `/company/contacts/departments/${id}`,
@@ -2716,7 +2754,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsDepartmentsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactDepartmentInfo> = {},
   ): Promise<ContactDepartmentInfo> {
     return this.request({
       path: `/company/contacts/departments/${id}/info`,
@@ -2727,7 +2765,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsDepartmentsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/contacts/departments/${id}/usages`,
@@ -2738,7 +2776,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsDepartmentsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/contacts/departments/${id}/usages/list`,
@@ -2747,7 +2785,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsDepartmentsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactsDepartmentsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contacts/departments/count`,
       method: 'get',
@@ -2756,7 +2794,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyContactsDepartmentsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<ContactDepartmentInfo> = {},
   ): Promise<Array<ContactDepartmentInfo>> {
     return this.request({
       path: `/company/contacts/departments/info`,
@@ -2765,7 +2803,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsDepartmentsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactsDepartmentsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contacts/departments/info/count`,
       method: 'get',
@@ -2773,7 +2811,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsInfo(params: CommonParameters = {}): Promise<Array<ContactInfo>> {
+  getCompanyContactsInfo(params: CommonParameters<ContactInfo> = {}): Promise<Array<ContactInfo>> {
     return this.request({
       path: `/company/contacts/info`,
       method: 'get',
@@ -2781,7 +2819,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contacts/info/count`,
       method: 'get',
@@ -2790,7 +2828,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyContactsRelationships(
-    params: CommonParameters = {},
+    params: CommonParameters<ContactRelationship> = {},
   ): Promise<Array<ContactRelationship>> {
     return this.request({
       path: `/company/contacts/relationships`,
@@ -2811,7 +2849,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsRelationshipsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactRelationship> = {},
   ): Promise<ContactRelationship> {
     return this.request({
       path: `/company/contacts/relationships/${id}`,
@@ -2849,7 +2887,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsRelationshipsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactsRelationshipsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contacts/relationships/count`,
       method: 'get',
@@ -2865,7 +2903,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsTypes(params: CommonParameters = {}): Promise<Array<ContactType>> {
+  getCompanyContactsTypes(params: CommonParameters<ContactType> = {}): Promise<Array<ContactType>> {
     return this.request({
       path: `/company/contacts/types`,
       method: 'get',
@@ -2881,7 +2919,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsTypesById(id: number, params: CommonParameters = {}): Promise<ContactType> {
+  getCompanyContactsTypesById(
+    id: number,
+    params: CommonParameters<ContactType> = {},
+  ): Promise<ContactType> {
     return this.request({
       path: `/company/contacts/types/${id}`,
       method: 'get',
@@ -2917,7 +2958,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactsTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ContactTypeInfo> = {},
   ): Promise<ContactTypeInfo> {
     return this.request({
       path: `/company/contacts/types/${id}/info`,
@@ -2926,7 +2967,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactsTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contacts/types/count`,
       method: 'get',
@@ -2934,7 +2975,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsTypesCountInfo(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactsTypesCountInfo(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contacts/types/count/info`,
       method: 'get',
@@ -2942,7 +2983,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactsTypesInfo(params: CommonParameters = {}): Promise<Array<ContactTypeInfo>> {
+  getCompanyContactsTypesInfo(
+    params: CommonParameters<ContactTypeInfo> = {},
+  ): Promise<Array<ContactTypeInfo>> {
     return this.request({
       path: `/company/contacts/types/info`,
       method: 'get',
@@ -2961,7 +3004,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyContactTypeAssociations(
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyContactTypeAssociation> = {},
   ): Promise<Array<CompanyContactTypeAssociation>> {
     return this.request({
       path: `/company/contactTypeAssociations`,
@@ -2982,7 +3025,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyContactTypeAssociationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyContactTypeAssociation> = {},
   ): Promise<CompanyContactTypeAssociation> {
     return this.request({
       path: `/company/contactTypeAssociations/${id}`,
@@ -3020,7 +3063,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyContactTypeAssociationsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyContactTypeAssociationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/contactTypeAssociations/count`,
       method: 'get',
@@ -3028,7 +3071,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCountries(params: CommonParameters = {}): Promise<Array<Country>> {
+  getCompanyCountries(params: CommonParameters<Country> = {}): Promise<Array<Country>> {
     return this.request({
       path: `/company/countries`,
       method: 'get',
@@ -3044,7 +3087,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCountriesById(id: number, params: CommonParameters = {}): Promise<Country> {
+  getCompanyCountriesById(id: number, params: CommonParameters<Country> = {}): Promise<Country> {
     return this.request({
       path: `/company/countries/${id}`,
       method: 'get',
@@ -3075,7 +3118,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCountriesByIdInfo(id: number, params: CommonParameters = {}): Promise<CountryInfo> {
+  getCompanyCountriesByIdInfo(
+    id: number,
+    params: CommonParameters<CountryInfo> = {},
+  ): Promise<CountryInfo> {
     return this.request({
       path: `/company/countries/${id}/info`,
       method: 'get',
@@ -3083,7 +3129,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCountriesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCountriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/countries/count`,
       method: 'get',
@@ -3091,7 +3137,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCountriesInfo(params: CommonParameters = {}): Promise<Array<CountryInfo>> {
+  getCompanyCountriesInfo(params: CommonParameters<CountryInfo> = {}): Promise<Array<CountryInfo>> {
     return this.request({
       path: `/company/countries/info`,
       method: 'get',
@@ -3099,7 +3145,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyCountriesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyCountriesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/countries/info/count`,
       method: 'get',
@@ -3107,7 +3153,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyEntityTypes(params: CommonParameters = {}): Promise<Array<EntityType>> {
+  getCompanyEntityTypes(params: CommonParameters<EntityType> = {}): Promise<Array<EntityType>> {
     return this.request({
       path: `/company/entityTypes`,
       method: 'get',
@@ -3115,7 +3161,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyEntityTypesById(id: number, params: CommonParameters = {}): Promise<EntityType> {
+  getCompanyEntityTypesById(
+    id: number,
+    params: CommonParameters<EntityType> = {},
+  ): Promise<EntityType> {
     return this.request({
       path: `/company/entityTypes/${id}`,
       method: 'get',
@@ -3125,7 +3174,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyEntitytypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EntityTypeInfo> = {},
   ): Promise<EntityTypeInfo> {
     return this.request({
       path: `/company/entitytypes/${id}/info`,
@@ -3134,7 +3183,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyEntityTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyEntityTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/entityTypes/count`,
       method: 'get',
@@ -3142,7 +3191,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyEntitytypesInfo(params: CommonParameters = {}): Promise<Array<EntityTypeInfo>> {
+  getCompanyEntitytypesInfo(
+    params: CommonParameters<EntityTypeInfo> = {},
+  ): Promise<Array<EntityTypeInfo>> {
     return this.request({
       path: `/company/entitytypes/info`,
       method: 'get',
@@ -3150,7 +3201,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyEntityTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyEntityTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/entityTypes/info/count`,
       method: 'get',
@@ -3158,7 +3209,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyExpenseTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyExpenseTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/expenseTypes/info/count`,
       method: 'get',
@@ -3166,7 +3217,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyM365contact(params: CommonParameters = {}): Promise<Array<M365Contact>> {
+  getCompanyM365contact(params: CommonParameters<M365Contact> = {}): Promise<Array<M365Contact>> {
     return this.request({
       path: `/company/m365contact`,
       method: 'get',
@@ -3174,7 +3225,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyM365contactById(id: number, params: CommonParameters = {}): Promise<M365Contact> {
+  getCompanyM365contactById(
+    id: number,
+    params: CommonParameters<M365Contact> = {},
+  ): Promise<M365Contact> {
     return this.request({
       path: `/company/m365contact/${id}`,
       method: 'get',
@@ -3182,7 +3236,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyM365contactCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyM365contactCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/m365contact/count`,
       method: 'get',
@@ -3192,7 +3246,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyM365contactsyncByIdProperty(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncProperty> = {},
   ): Promise<M365ContactSyncProperty> {
     return this.request({
       path: `/company/m365contactsync/${id}/property`,
@@ -3218,7 +3272,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyM365contactsyncPropertyCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyM365contactsyncPropertyCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/m365contactsync/property/count`,
       method: 'get',
@@ -3228,7 +3282,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyM365contactsyncPropertyExcluded(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncProperty> = {},
   ): Promise<Array<M365ContactSyncProperty>> {
     return this.request({
       path: `/company/m365contactsync/property/excluded`,
@@ -3239,7 +3293,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyM365contactsyncPropertyIncluded(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<M365ContactSyncProperty> = {},
   ): Promise<Array<M365ContactSyncProperty>> {
     return this.request({
       path: `/company/m365contactsync/property/included`,
@@ -3249,7 +3303,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyManagedDevicesIntegrations(
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegration> = {},
   ): Promise<Array<ManagedDevicesIntegration>> {
     return this.request({
       path: `/company/managedDevicesIntegrations`,
@@ -3270,7 +3324,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegration> = {},
   ): Promise<ManagedDevicesIntegration> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${id}`,
@@ -3310,7 +3364,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationInfo> = {},
   ): Promise<ManagedDevicesIntegrationInfo> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${id}/info`,
@@ -3321,7 +3375,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${id}/usages`,
@@ -3332,7 +3386,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${id}/usages/list`,
@@ -3343,7 +3397,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByParentIdCrossReferences(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationCrossReference> = {},
   ): Promise<Array<ManagedDevicesIntegrationCrossReference>> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/crossReferences`,
@@ -3366,7 +3420,7 @@ export class CompanyAPI extends Manage {
   getCompanyManagedDevicesIntegrationsByParentIdCrossReferencesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationCrossReference> = {},
   ): Promise<ManagedDevicesIntegrationCrossReference> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/crossReferences/${id}`,
@@ -3411,7 +3465,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByParentIdCrossReferencesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/crossReferences/count`,
@@ -3422,7 +3476,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByParentIdLogins(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationLogin> = {},
   ): Promise<Array<ManagedDevicesIntegrationLogin>> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/logins`,
@@ -3445,7 +3499,7 @@ export class CompanyAPI extends Manage {
   getCompanyManagedDevicesIntegrationsByParentIdLoginsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationLogin> = {},
   ): Promise<ManagedDevicesIntegrationLogin> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/logins/${id}`,
@@ -3490,7 +3544,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByParentIdLoginsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/logins/count`,
@@ -3501,7 +3555,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByParentIdNotifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationNotification> = {},
   ): Promise<Array<ManagedDevicesIntegrationNotification>> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/notifications`,
@@ -3524,7 +3578,7 @@ export class CompanyAPI extends Manage {
   getCompanyManagedDevicesIntegrationsByParentIdNotificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationNotification> = {},
   ): Promise<ManagedDevicesIntegrationNotification> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/notifications/${id}`,
@@ -3569,7 +3623,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagedDevicesIntegrationsByParentIdNotificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/managedDevicesIntegrations/${parentId}/notifications/count`,
@@ -3578,7 +3632,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagedDevicesIntegrationsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyManagedDevicesIntegrationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/managedDevicesIntegrations/count`,
       method: 'get',
@@ -3587,7 +3641,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyManagedDevicesIntegrationsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<ManagedDevicesIntegrationInfo> = {},
   ): Promise<Array<ManagedDevicesIntegrationInfo>> {
     return this.request({
       path: `/company/managedDevicesIntegrations/info`,
@@ -3596,7 +3650,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagedDevicesIntegrationsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyManagedDevicesIntegrationsInfoCount(
+    params: CommonParameters<Count> = {},
+  ): Promise<Count> {
     return this.request({
       path: `/company/managedDevicesIntegrations/info/count`,
       method: 'get',
@@ -3604,7 +3660,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagement(params: CommonParameters = {}): Promise<Array<Management>> {
+  getCompanyManagement(params: CommonParameters<Management> = {}): Promise<Array<Management>> {
     return this.request({
       path: `/company/management`,
       method: 'get',
@@ -3612,7 +3668,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagementById(id: number, params: CommonParameters = {}): Promise<Management> {
+  getCompanyManagementById(
+    id: number,
+    params: CommonParameters<Management> = {},
+  ): Promise<Management> {
     return this.request({
       path: `/company/management/${id}`,
       method: 'get',
@@ -3649,7 +3708,7 @@ export class CompanyAPI extends Manage {
   getCompanyManagementByIdLogDownload(
     id: number,
     filePath: string,
-    params: CommonParameters = {},
+    params: CommonParameters<OctetStreamResponse> = {},
   ): Promise<OctetStreamResponse> {
     return this.request({
       path: `/company/management/${id}/log/download`,
@@ -3660,7 +3719,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementByIdLogs(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementLogDocumentInfo> = {},
   ): Promise<Array<ManagementLogDocumentInfo>> {
     return this.request({
       path: `/company/management/${id}/logs`,
@@ -3671,7 +3730,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementByParentIdManagementReportNotifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementReportNotification> = {},
   ): Promise<Array<ManagementReportNotification>> {
     return this.request({
       path: `/company/management/${parentId}/managementReportNotifications`,
@@ -3694,7 +3753,7 @@ export class CompanyAPI extends Manage {
   getCompanyManagementByParentIdManagementReportNotificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementReportNotification> = {},
   ): Promise<ManagementReportNotification> {
     return this.request({
       path: `/company/management/${parentId}/managementReportNotifications/${id}`,
@@ -3739,7 +3798,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementByParentIdManagementReportNotificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/management/${parentId}/managementReportNotifications/count`,
@@ -3748,7 +3807,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagementCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyManagementCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/management/count`,
       method: 'get',
@@ -3756,7 +3815,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagementBackups(params: CommonParameters = {}): Promise<Array<ManagementBackup>> {
+  getCompanyManagementBackups(
+    params: CommonParameters<ManagementBackup> = {},
+  ): Promise<Array<ManagementBackup>> {
     return this.request({
       path: `/company/managementBackups`,
       method: 'get',
@@ -3774,7 +3835,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementBackupsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementBackup> = {},
   ): Promise<ManagementBackup> {
     return this.request({
       path: `/company/managementBackups/${id}`,
@@ -3812,7 +3873,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagementBackupsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyManagementBackupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/managementBackups/count`,
       method: 'get',
@@ -3821,7 +3882,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyManagementItSolutions(
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementItSolution> = {},
   ): Promise<Array<ManagementItSolution>> {
     return this.request({
       path: `/company/managementItSolutions`,
@@ -3842,7 +3903,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementItSolutionsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementItSolution> = {},
   ): Promise<ManagementItSolution> {
     return this.request({
       path: `/company/managementItSolutions/${id}`,
@@ -3882,7 +3943,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementItSolutionsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/managementItSolutions/${id}/usages`,
@@ -3893,7 +3954,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementItSolutionsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/managementItSolutions/${id}/usages/list`,
@@ -3904,7 +3965,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementItSolutionsByParentIdManagementProducts(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementItSolutionAgreementInterfaceParameter> = {},
   ): Promise<Array<ManagementItSolutionAgreementInterfaceParameter>> {
     return this.request({
       path: `/company/managementItSolutions/${parentId}/managementProducts`,
@@ -3927,7 +3988,7 @@ export class CompanyAPI extends Manage {
   getCompanyManagementItSolutionsByParentIdManagementProductsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManagementItSolutionAgreementInterfaceParameter> = {},
   ): Promise<ManagementItSolutionAgreementInterfaceParameter> {
     return this.request({
       path: `/company/managementItSolutions/${parentId}/managementProducts/${id}`,
@@ -3972,7 +4033,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyManagementItSolutionsByParentIdManagementProductsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/managementItSolutions/${parentId}/managementProducts/count`,
@@ -3981,7 +4042,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyManagementItSolutionsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyManagementItSolutionsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/managementItSolutions/count`,
       method: 'get',
@@ -3989,7 +4050,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyMarketDescriptions(params: CommonParameters = {}): Promise<Array<MarketDescription>> {
+  getCompanyMarketDescriptions(
+    params: CommonParameters<MarketDescription> = {},
+  ): Promise<Array<MarketDescription>> {
     return this.request({
       path: `/company/marketDescriptions`,
       method: 'get',
@@ -4007,7 +4070,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyMarketDescriptionsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MarketDescription> = {},
   ): Promise<MarketDescription> {
     return this.request({
       path: `/company/marketDescriptions/${id}`,
@@ -4047,7 +4110,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyMarketDescriptionsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MarketDescriptionInfo> = {},
   ): Promise<MarketDescriptionInfo> {
     return this.request({
       path: `/company/marketDescriptions/${id}/info`,
@@ -4058,7 +4121,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyMarketDescriptionsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/marketDescriptions/${id}/usages`,
@@ -4069,7 +4132,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyMarketDescriptionsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/marketDescriptions/${id}/usages/list`,
@@ -4078,7 +4141,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyMarketDescriptionsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyMarketDescriptionsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/marketDescriptions/count`,
       method: 'get',
@@ -4087,7 +4150,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyMarketDescriptionsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<MarketDescriptionInfo> = {},
   ): Promise<Array<MarketDescriptionInfo>> {
     return this.request({
       path: `/company/marketDescriptions/info`,
@@ -4096,7 +4159,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyMarketDescriptionsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyMarketDescriptionsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/marketDescriptions/info/count`,
       method: 'get',
@@ -4104,7 +4167,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyNoteTypes(params: CommonParameters = {}): Promise<Array<CompanyNoteType>> {
+  getCompanyNoteTypes(
+    params: CommonParameters<CompanyNoteType> = {},
+  ): Promise<Array<CompanyNoteType>> {
     return this.request({
       path: `/company/noteTypes`,
       method: 'get',
@@ -4120,7 +4185,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyNoteTypesById(id: number, params: CommonParameters = {}): Promise<CompanyNoteType> {
+  getCompanyNoteTypesById(
+    id: number,
+    params: CommonParameters<CompanyNoteType> = {},
+  ): Promise<CompanyNoteType> {
     return this.request({
       path: `/company/noteTypes/${id}`,
       method: 'get',
@@ -4156,7 +4224,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyNoteTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CompanyNoteTypeInfo> = {},
   ): Promise<CompanyNoteTypeInfo> {
     return this.request({
       path: `/company/noteTypes/${id}/info`,
@@ -4165,7 +4233,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyNoteTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyNoteTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/noteTypes/count`,
       method: 'get',
@@ -4173,7 +4241,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyNoteTypesCountInfo(params: CommonParameters = {}): Promise<Count> {
+  getCompanyNoteTypesCountInfo(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/noteTypes/count/info`,
       method: 'get',
@@ -4181,7 +4249,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyNoteTypesInfo(params: CommonParameters = {}): Promise<Array<CompanyNoteTypeInfo>> {
+  getCompanyNoteTypesInfo(
+    params: CommonParameters<CompanyNoteTypeInfo> = {},
+  ): Promise<Array<CompanyNoteTypeInfo>> {
     return this.request({
       path: `/company/noteTypes/info`,
       method: 'get',
@@ -4189,7 +4259,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyOwnershipTypes(params: CommonParameters = {}): Promise<Array<OwnershipType>> {
+  getCompanyOwnershipTypes(
+    params: CommonParameters<OwnershipType> = {},
+  ): Promise<Array<OwnershipType>> {
     return this.request({
       path: `/company/ownershipTypes`,
       method: 'get',
@@ -4205,7 +4277,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyOwnershipTypesById(id: number, params: CommonParameters = {}): Promise<OwnershipType> {
+  getCompanyOwnershipTypesById(
+    id: number,
+    params: CommonParameters<OwnershipType> = {},
+  ): Promise<OwnershipType> {
     return this.request({
       path: `/company/ownershipTypes/${id}`,
       method: 'get',
@@ -4241,7 +4316,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyOwnershipTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OwnershipTypeInfo> = {},
   ): Promise<OwnershipTypeInfo> {
     return this.request({
       path: `/company/ownershipTypes/${id}/info`,
@@ -4250,7 +4325,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyOwnershipTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyOwnershipTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/ownershipTypes/count`,
       method: 'get',
@@ -4258,7 +4333,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyOwnershipTypesInfo(params: CommonParameters = {}): Promise<Array<OwnershipTypeInfo>> {
+  getCompanyOwnershipTypesInfo(
+    params: CommonParameters<OwnershipTypeInfo> = {},
+  ): Promise<Array<OwnershipTypeInfo>> {
     return this.request({
       path: `/company/ownershipTypes/info`,
       method: 'get',
@@ -4266,7 +4343,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyOwnershipTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyOwnershipTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/ownershipTypes/info/count`,
       method: 'get',
@@ -4274,7 +4351,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyPaymentTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyPaymentTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/paymentTypes/info/count`,
       method: 'get',
@@ -4283,7 +4360,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyPortalConfigurations(
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfiguration> = {},
   ): Promise<Array<PortalConfiguration>> {
     return this.request({
       path: `/company/portalConfigurations`,
@@ -4304,7 +4381,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfiguration> = {},
   ): Promise<PortalConfiguration> {
     return this.request({
       path: `/company/portalConfigurations/${id}`,
@@ -4344,7 +4421,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdInvoiceSetups(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationInvoiceSetup> = {},
   ): Promise<Array<PortalConfigurationInvoiceSetup>> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/invoiceSetups`,
@@ -4356,7 +4433,7 @@ export class CompanyAPI extends Manage {
   getCompanyPortalConfigurationsByParentIdInvoiceSetupsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationInvoiceSetup> = {},
   ): Promise<PortalConfigurationInvoiceSetup> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/invoiceSetups/${id}`,
@@ -4403,7 +4480,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdInvoiceSetupsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/invoiceSetups/count`,
@@ -4414,7 +4491,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdOpportunitySetups(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationOpportunitySetup> = {},
   ): Promise<Array<PortalConfigurationOpportunitySetup>> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/opportunitySetups`,
@@ -4448,7 +4525,7 @@ export class CompanyAPI extends Manage {
   getCompanyPortalConfigurationsByParentIdOpportunitySetupsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationOpportunitySetup> = {},
   ): Promise<PortalConfigurationOpportunitySetup> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/opportunitySetups/${id}`,
@@ -4483,7 +4560,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdPasswordEmailSetups(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationPasswordEmailSetup> = {},
   ): Promise<Array<PortalConfigurationPasswordEmailSetup>> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/passwordEmailSetups`,
@@ -4495,7 +4572,7 @@ export class CompanyAPI extends Manage {
   getCompanyPortalConfigurationsByParentIdPasswordEmailSetupsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationPasswordEmailSetup> = {},
   ): Promise<PortalConfigurationPasswordEmailSetup> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/passwordEmailSetups/${id}`,
@@ -4530,7 +4607,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdProjectSetups(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationProjectSetup> = {},
   ): Promise<Array<PortalConfigurationProjectSetup>> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/projectSetups`,
@@ -4542,7 +4619,7 @@ export class CompanyAPI extends Manage {
   getCompanyPortalConfigurationsByParentIdProjectSetupsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationProjectSetup> = {},
   ): Promise<PortalConfigurationProjectSetup> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/projectSetups/${id}`,
@@ -4577,7 +4654,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdProjectSetupsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/projectSetups/count`,
@@ -4588,7 +4665,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdServiceSetups(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationServiceSetup> = {},
   ): Promise<Array<PortalConfigurationServiceSetup>> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/serviceSetups`,
@@ -4600,7 +4677,7 @@ export class CompanyAPI extends Manage {
   getCompanyPortalConfigurationsByParentIdServiceSetupsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationServiceSetup> = {},
   ): Promise<PortalConfigurationServiceSetup> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/serviceSetups/${id}`,
@@ -4635,7 +4712,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsByParentIdServiceSetupsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/portalConfigurations/${parentId}/serviceSetups/count`,
@@ -4652,7 +4729,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyPortalConfigurationsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyPortalConfigurationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/portalConfigurations/count`,
       method: 'get',
@@ -4661,7 +4738,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyPortalConfigurationsInvoiceSetupPaymentProcessors(
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationPaymentProcessor> = {},
   ): Promise<Array<PortalConfigurationPaymentProcessor>> {
     return this.request({
       path: `/company/portalConfigurations/invoiceSetup/paymentProcessors`,
@@ -4672,7 +4749,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalConfigurationsInvoiceSetupPaymentProcessorsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalConfigurationPaymentProcessor> = {},
   ): Promise<PortalConfigurationPaymentProcessor> {
     return this.request({
       path: `/company/portalConfigurations/invoiceSetup/paymentProcessors/${id}`,
@@ -4682,7 +4759,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyPortalConfigurationsInvoiceSetupPaymentProcessorsCount(
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/portalConfigurations/invoiceSetup/paymentProcessors/count`,
@@ -4692,7 +4769,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyPortalSecurityLevels(
-    params: CommonParameters = {},
+    params: CommonParameters<PortalSecurityLevel> = {},
   ): Promise<Array<PortalSecurityLevel>> {
     return this.request({
       path: `/company/portalSecurityLevels`,
@@ -4703,7 +4780,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalSecurityLevelsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalSecurityLevel> = {},
   ): Promise<PortalSecurityLevel> {
     return this.request({
       path: `/company/portalSecurityLevels/${id}`,
@@ -4734,7 +4811,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyPortalSecurityLevelsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyPortalSecurityLevelsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/portalSecurityLevels/count`,
       method: 'get',
@@ -4743,7 +4820,7 @@ export class CompanyAPI extends Manage {
   }
 
   getCompanyPortalSecuritySettings(
-    params: CommonParameters = {},
+    params: CommonParameters<PortalSecuritySetting> = {},
   ): Promise<Array<PortalSecuritySetting>> {
     return this.request({
       path: `/company/portalSecuritySettings`,
@@ -4754,7 +4831,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyPortalSecuritySettingsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalSecuritySetting> = {},
   ): Promise<PortalSecuritySetting> {
     return this.request({
       path: `/company/portalSecuritySettings/${id}`,
@@ -4785,7 +4862,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyPortalSecuritySettingsCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyPortalSecuritySettingsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/portalSecuritySettings/count`,
       method: 'get',
@@ -4793,7 +4870,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStates(params: CommonParameters = {}): Promise<Array<State>> {
+  getCompanyStates(params: CommonParameters<State> = {}): Promise<Array<State>> {
     return this.request({
       path: `/company/states`,
       method: 'get',
@@ -4809,7 +4886,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStatesById(id: number, params: CommonParameters = {}): Promise<State> {
+  getCompanyStatesById(id: number, params: CommonParameters<State> = {}): Promise<State> {
     return this.request({
       path: `/company/states/${id}`,
       method: 'get',
@@ -4840,7 +4917,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStatesByIdInfo(id: number, params: CommonParameters = {}): Promise<StateInfo> {
+  getCompanyStatesByIdInfo(
+    id: number,
+    params: CommonParameters<StateInfo> = {},
+  ): Promise<StateInfo> {
     return this.request({
       path: `/company/states/${id}/info`,
       method: 'get',
@@ -4848,7 +4928,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStatesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getCompanyStatesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/states/${id}/usages`,
       method: 'get',
@@ -4856,7 +4939,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStatesByIdUsagesList(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getCompanyStatesByIdUsagesList(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/states/${id}/usages/list`,
       method: 'get',
@@ -4864,7 +4950,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStatesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyStatesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/states/count`,
       method: 'get',
@@ -4872,7 +4958,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStatesInfo(params: CommonParameters = {}): Promise<Array<StateInfo>> {
+  getCompanyStatesInfo(params: CommonParameters<StateInfo> = {}): Promise<Array<StateInfo>> {
     return this.request({
       path: `/company/states/info`,
       method: 'get',
@@ -4880,7 +4966,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyStatesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyStatesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/states/info/count`,
       method: 'get',
@@ -4888,7 +4974,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTeamRoles(params: CommonParameters = {}): Promise<Array<TeamRole>> {
+  getCompanyTeamRoles(params: CommonParameters<TeamRole> = {}): Promise<Array<TeamRole>> {
     return this.request({
       path: `/company/teamRoles`,
       method: 'get',
@@ -4904,7 +4990,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTeamRolesById(id: number, params: CommonParameters = {}): Promise<TeamRole> {
+  getCompanyTeamRolesById(id: number, params: CommonParameters<TeamRole> = {}): Promise<TeamRole> {
     return this.request({
       path: `/company/teamRoles/${id}`,
       method: 'get',
@@ -4935,7 +5021,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTeamRolesByIdInfo(id: number, params: CommonParameters = {}): Promise<TeamRoleInfo> {
+  getCompanyTeamRolesByIdInfo(
+    id: number,
+    params: CommonParameters<TeamRoleInfo> = {},
+  ): Promise<TeamRoleInfo> {
     return this.request({
       path: `/company/teamRoles/${id}/info`,
       method: 'get',
@@ -4943,7 +5032,10 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTeamRolesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getCompanyTeamRolesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/teamRoles/${id}/usages`,
       method: 'get',
@@ -4953,7 +5045,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyTeamRolesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/company/teamRoles/${id}/usages/list`,
@@ -4962,7 +5054,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTeamRolesCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyTeamRolesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/teamRoles/count`,
       method: 'get',
@@ -4970,7 +5062,9 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTeamRolesInfo(params: CommonParameters = {}): Promise<Array<TeamRoleInfo>> {
+  getCompanyTeamRolesInfo(
+    params: CommonParameters<TeamRoleInfo> = {},
+  ): Promise<Array<TeamRoleInfo>> {
     return this.request({
       path: `/company/teamRoles/info`,
       method: 'get',
@@ -4978,7 +5072,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTeamRolesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyTeamRolesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/teamRoles/info/count`,
       method: 'get',
@@ -4986,7 +5080,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTracks(params: CommonParameters = {}): Promise<Array<Track>> {
+  getCompanyTracks(params: CommonParameters<Track> = {}): Promise<Array<Track>> {
     return this.request({
       path: `/company/tracks`,
       method: 'get',
@@ -5002,7 +5096,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTracksById(id: number, params: CommonParameters = {}): Promise<Track> {
+  getCompanyTracksById(id: number, params: CommonParameters<Track> = {}): Promise<Track> {
     return this.request({
       path: `/company/tracks/${id}`,
       method: 'get',
@@ -5035,7 +5129,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyTracksByParentIdActions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TrackAction> = {},
   ): Promise<Array<TrackAction>> {
     return this.request({
       path: `/company/tracks/${parentId}/actions`,
@@ -5058,7 +5152,7 @@ export class CompanyAPI extends Manage {
   getCompanyTracksByParentIdActionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TrackAction> = {},
   ): Promise<TrackAction> {
     return this.request({
       path: `/company/tracks/${parentId}/actions/${id}`,
@@ -5098,7 +5192,7 @@ export class CompanyAPI extends Manage {
 
   getCompanyTracksByParentIdActionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/company/tracks/${parentId}/actions/count`,
@@ -5107,7 +5201,7 @@ export class CompanyAPI extends Manage {
     })
   }
 
-  getCompanyTracksCount(params: CommonParameters = {}): Promise<Count> {
+  getCompanyTracksCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/company/tracks/count`,
       method: 'get',

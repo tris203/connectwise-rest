@@ -57,7 +57,7 @@ export class ScheduleAPI extends Manage {
     super(props)
   }
 
-  getScheduleCalendars(params: CommonParameters = {}): Promise<Array<Calendar>> {
+  getScheduleCalendars(params: CommonParameters<Calendar> = {}): Promise<Array<Calendar>> {
     return this.request({
       path: `/schedule/calendars`,
       method: 'get',
@@ -73,7 +73,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleCalendarsById(id: number, params: CommonParameters = {}): Promise<Calendar> {
+  getScheduleCalendarsById(id: number, params: CommonParameters<Calendar> = {}): Promise<Calendar> {
     return this.request({
       path: `/schedule/calendars/${id}`,
       method: 'get',
@@ -114,7 +114,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleCalendarsByIdInfo(id: number, params: CommonParameters = {}): Promise<CalendarInfo> {
+  getScheduleCalendarsByIdInfo(
+    id: number,
+    params: CommonParameters<CalendarInfo> = {},
+  ): Promise<CalendarInfo> {
     return this.request({
       path: `/schedule/calendars/${id}/info`,
       method: 'get',
@@ -122,7 +125,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleCalendarsByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getScheduleCalendarsByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/schedule/calendars/${id}/usages`,
       method: 'get',
@@ -132,7 +138,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleCalendarsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/schedule/calendars/${id}/usages/list`,
@@ -141,7 +147,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleCalendarsCount(params: CommonParameters = {}): Promise<Calendar> {
+  getScheduleCalendarsCount(params: CommonParameters<Calendar> = {}): Promise<Calendar> {
     return this.request({
       path: `/schedule/calendars/count`,
       method: 'get',
@@ -149,7 +155,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleCalendarsInfo(params: CommonParameters = {}): Promise<Array<CalendarInfo>> {
+  getScheduleCalendarsInfo(
+    params: CommonParameters<CalendarInfo> = {},
+  ): Promise<Array<CalendarInfo>> {
     return this.request({
       path: `/schedule/calendars/info`,
       method: 'get',
@@ -157,7 +165,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleCalendarsInfoCount(params: CommonParameters = {}): Promise<CalendarInfo> {
+  getScheduleCalendarsInfoCount(
+    params: CommonParameters<CalendarInfo> = {},
+  ): Promise<CalendarInfo> {
     return this.request({
       path: `/schedule/calendars/info/count`,
       method: 'get',
@@ -165,7 +175,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleColors(params: CommonParameters = {}): Promise<Array<ScheduleColor>> {
+  getScheduleColors(params: CommonParameters<ScheduleColor> = {}): Promise<Array<ScheduleColor>> {
     return this.request({
       path: `/schedule/colors`,
       method: 'get',
@@ -173,7 +183,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleColorsById(id: number, params: CommonParameters = {}): Promise<ScheduleColor> {
+  getScheduleColorsById(
+    id: number,
+    params: CommonParameters<ScheduleColor> = {},
+  ): Promise<ScheduleColor> {
     return this.request({
       path: `/schedule/colors/${id}`,
       method: 'get',
@@ -207,7 +220,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleColorsCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleColorsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/colors/count`,
       method: 'get',
@@ -222,7 +235,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleDetails(params: CommonParameters = {}): Promise<Array<ScheduleEntryDetail>> {
+  getScheduleDetails(
+    params: CommonParameters<ScheduleEntryDetail> = {},
+  ): Promise<Array<ScheduleEntryDetail>> {
     return this.request({
       path: `/schedule/details`,
       method: 'get',
@@ -230,7 +245,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleDetailsById(id: number, params: CommonParameters = {}): Promise<ScheduleEntryDetail> {
+  getScheduleDetailsById(
+    id: number,
+    params: CommonParameters<ScheduleEntryDetail> = {},
+  ): Promise<ScheduleEntryDetail> {
     return this.request({
       path: `/schedule/details/${id}`,
       method: 'get',
@@ -238,7 +256,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleDetailsCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleDetailsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/details/count`,
       method: 'get',
@@ -246,7 +264,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleEntries(params: CommonParameters = {}): Promise<Array<ScheduleEntry>> {
+  getScheduleEntries(params: CommonParameters<ScheduleEntry> = {}): Promise<Array<ScheduleEntry>> {
     return this.request({
       path: `/schedule/entries`,
       method: 'get',
@@ -262,7 +280,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleEntriesById(id: number, params: CommonParameters = {}): Promise<ScheduleEntry> {
+  getScheduleEntriesById(
+    id: number,
+    params: CommonParameters<ScheduleEntry> = {},
+  ): Promise<ScheduleEntry> {
     return this.request({
       path: `/schedule/entries/${id}`,
       method: 'get',
@@ -308,7 +329,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleEntriesByParentIdDetails(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ScheduleDetail> = {},
   ): Promise<Array<ScheduleDetail>> {
     return this.request({
       path: `/schedule/entries/${parentId}/details`,
@@ -320,7 +341,7 @@ export class ScheduleAPI extends Manage {
   getScheduleEntriesByParentIdDetailsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ScheduleDetail> = {},
   ): Promise<ScheduleDetail> {
     return this.request({
       path: `/schedule/entries/${parentId}/details/${id}`,
@@ -331,7 +352,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleEntriesByParentIdDetailsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/schedule/entries/${parentId}/details/count`,
@@ -340,7 +361,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleEntriesCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleEntriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/entries/count`,
       method: 'get',
@@ -348,7 +369,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleHolidayLists(params: CommonParameters = {}): Promise<Array<HolidayList>> {
+  getScheduleHolidayLists(params: CommonParameters<HolidayList> = {}): Promise<Array<HolidayList>> {
     return this.request({
       path: `/schedule/holidayLists`,
       method: 'get',
@@ -364,7 +385,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleHolidayListsById(id: number, params: CommonParameters = {}): Promise<HolidayList> {
+  getScheduleHolidayListsById(
+    id: number,
+    params: CommonParameters<HolidayList> = {},
+  ): Promise<HolidayList> {
     return this.request({
       path: `/schedule/holidayLists/${id}`,
       method: 'get',
@@ -400,7 +424,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleHolidaylistsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<HolidayListInfo> = {},
   ): Promise<HolidayListInfo> {
     return this.request({
       path: `/schedule/holidaylists/${id}/info`,
@@ -411,7 +435,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleHolidayListsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/schedule/holidayLists/${id}/usages`,
@@ -422,7 +446,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleHolidayListsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/schedule/holidayLists/${id}/usages/list`,
@@ -433,7 +457,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleHolidayListsByParentIdHolidays(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Holiday> = {},
   ): Promise<Array<Holiday>> {
     return this.request({
       path: `/schedule/holidayLists/${parentId}/holidays`,
@@ -453,7 +477,7 @@ export class ScheduleAPI extends Manage {
   getScheduleHolidayListsByParentIdHolidaysById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Holiday> = {},
   ): Promise<Holiday> {
     return this.request({
       path: `/schedule/holidayLists/${parentId}/holidays/${id}`,
@@ -499,7 +523,7 @@ export class ScheduleAPI extends Manage {
   getScheduleHolidaylistsByParentIdHolidaysByIdInfo(
     parentId: number,
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<HolidayInfo> = {},
   ): Promise<HolidayInfo> {
     return this.request({
       path: `/schedule/holidaylists/${parentId}/holidays/${id}/info`,
@@ -510,7 +534,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleHolidayListsByParentIdHolidaysCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/schedule/holidayLists/${parentId}/holidays/count`,
@@ -521,7 +545,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleHolidaylistsByParentIdHolidaysInfo(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<HolidayInfo> = {},
   ): Promise<Array<HolidayInfo>> {
     return this.request({
       path: `/schedule/holidaylists/${parentId}/holidays/info`,
@@ -538,7 +562,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleHolidayListsCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleHolidayListsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/holidayLists/count`,
       method: 'get',
@@ -546,7 +570,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleHolidaylistsInfo(params: CommonParameters = {}): Promise<Array<HolidayListInfo>> {
+  getScheduleHolidaylistsInfo(
+    params: CommonParameters<HolidayListInfo> = {},
+  ): Promise<Array<HolidayListInfo>> {
     return this.request({
       path: `/schedule/holidaylists/info`,
       method: 'get',
@@ -554,7 +580,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getSchedulePortalcalendars(params: CommonParameters = {}): Promise<Array<PortalCalendar>> {
+  getSchedulePortalcalendars(
+    params: CommonParameters<PortalCalendar> = {},
+  ): Promise<Array<PortalCalendar>> {
     return this.request({
       path: `/schedule/portalcalendars`,
       method: 'get',
@@ -564,7 +592,7 @@ export class ScheduleAPI extends Manage {
 
   getSchedulePortalcalendarsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PortalCalendar> = {},
   ): Promise<PortalCalendar> {
     return this.request({
       path: `/schedule/portalcalendars/${id}`,
@@ -595,7 +623,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getSchedulePortalcalendarsCount(params: CommonParameters = {}): Promise<Count> {
+  getSchedulePortalcalendarsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/portalcalendars/count`,
       method: 'get',
@@ -603,7 +631,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleReminderTimes(params: CommonParameters = {}): Promise<Array<ScheduleReminderTime>> {
+  getScheduleReminderTimes(
+    params: CommonParameters<ScheduleReminderTime> = {},
+  ): Promise<Array<ScheduleReminderTime>> {
     return this.request({
       path: `/schedule/reminderTimes`,
       method: 'get',
@@ -613,7 +643,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleReminderTimesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ScheduleReminderTime> = {},
   ): Promise<ScheduleReminderTime> {
     return this.request({
       path: `/schedule/reminderTimes/${id}`,
@@ -644,7 +674,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleReminderTimesCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleReminderTimesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/reminderTimes/count`,
       method: 'get',
@@ -652,7 +682,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleStatuses(params: CommonParameters = {}): Promise<Array<ScheduleStatus>> {
+  getScheduleStatuses(
+    params: CommonParameters<ScheduleStatus> = {},
+  ): Promise<Array<ScheduleStatus>> {
     return this.request({
       path: `/schedule/statuses`,
       method: 'get',
@@ -668,7 +700,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleStatusesById(id: number, params: CommonParameters = {}): Promise<ScheduleStatus> {
+  getScheduleStatusesById(
+    id: number,
+    params: CommonParameters<ScheduleStatus> = {},
+  ): Promise<ScheduleStatus> {
     return this.request({
       path: `/schedule/statuses/${id}`,
       method: 'get',
@@ -704,7 +739,7 @@ export class ScheduleAPI extends Manage {
 
   getScheduleStatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ScheduleStatusInfo> = {},
   ): Promise<ScheduleStatusInfo> {
     return this.request({
       path: `/schedule/statuses/${id}/info`,
@@ -713,7 +748,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/statuses/count`,
       method: 'get',
@@ -721,7 +756,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleStatusesInfo(params: CommonParameters = {}): Promise<Array<ScheduleStatusInfo>> {
+  getScheduleStatusesInfo(
+    params: CommonParameters<ScheduleStatusInfo> = {},
+  ): Promise<Array<ScheduleStatusInfo>> {
     return this.request({
       path: `/schedule/statuses/info`,
       method: 'get',
@@ -729,7 +766,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleStatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleStatusesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/statuses/info/count`,
       method: 'get',
@@ -737,7 +774,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypes(params: CommonParameters = {}): Promise<Array<ScheduleType>> {
+  getScheduleTypes(params: CommonParameters<ScheduleType> = {}): Promise<Array<ScheduleType>> {
     return this.request({
       path: `/schedule/types`,
       method: 'get',
@@ -753,7 +790,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypesById(id: number, params: CommonParameters = {}): Promise<ScheduleType> {
+  getScheduleTypesById(
+    id: number,
+    params: CommonParameters<ScheduleType> = {},
+  ): Promise<ScheduleType> {
     return this.request({
       path: `/schedule/types/${id}`,
       method: 'get',
@@ -787,7 +827,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypesByIdInfo(id: number, params: CommonParameters = {}): Promise<ScheduleTypeInfo> {
+  getScheduleTypesByIdInfo(
+    id: number,
+    params: CommonParameters<ScheduleTypeInfo> = {},
+  ): Promise<ScheduleTypeInfo> {
     return this.request({
       path: `/schedule/types/${id}/info`,
       method: 'get',
@@ -795,7 +838,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getScheduleTypesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/schedule/types/${id}/usages`,
       method: 'get',
@@ -803,7 +849,10 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypesByIdUsagesList(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getScheduleTypesByIdUsagesList(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/schedule/types/${id}/usages/list`,
       method: 'get',
@@ -811,7 +860,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/types/count`,
       method: 'get',
@@ -819,7 +868,9 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypesInfo(params: CommonParameters = {}): Promise<Array<ScheduleTypeInfo>> {
+  getScheduleTypesInfo(
+    params: CommonParameters<ScheduleTypeInfo> = {},
+  ): Promise<Array<ScheduleTypeInfo>> {
     return this.request({
       path: `/schedule/types/info`,
       method: 'get',
@@ -827,7 +878,7 @@ export class ScheduleAPI extends Manage {
     })
   }
 
-  getScheduleTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getScheduleTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/schedule/types/info/count`,
       method: 'get',

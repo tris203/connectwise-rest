@@ -183,7 +183,9 @@ export class FinanceAPI extends Manage {
     super(props)
   }
 
-  getFinanceAccountingBatches(params: CommonParameters = {}): Promise<Array<AccountingBatch>> {
+  getFinanceAccountingBatches(
+    params: CommonParameters<AccountingBatch> = {},
+  ): Promise<Array<AccountingBatch>> {
     return this.request({
       path: `/finance/accounting/batches`,
       method: 'get',
@@ -203,7 +205,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingBatchesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AccountingBatch> = {},
   ): Promise<AccountingBatch> {
     return this.request({
       path: `/finance/accounting/batches/${id}`,
@@ -232,7 +234,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingBatchesByParentIdEntries(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BatchEntry> = {},
   ): Promise<Array<BatchEntry>> {
     return this.request({
       path: `/finance/accounting/batches/${parentId}/entries`,
@@ -244,7 +246,7 @@ export class FinanceAPI extends Manage {
   getFinanceAccountingBatchesByParentIdEntriesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BatchEntry> = {},
   ): Promise<BatchEntry> {
     return this.request({
       path: `/finance/accounting/batches/${parentId}/entries/${id}`,
@@ -255,7 +257,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingBatchesByParentIdEntriesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/accounting/batches/${parentId}/entries/count`,
@@ -264,7 +266,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingBatchesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAccountingBatchesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/accounting/batches/count`,
       method: 'get',
@@ -283,7 +285,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceAccountingUnpostedexpenses(
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedExpense> = {},
   ): Promise<Array<UnpostedExpense>> {
     return this.request({
       path: `/finance/accounting/unpostedexpenses`,
@@ -294,7 +296,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedexpensesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedExpense> = {},
   ): Promise<UnpostedExpense> {
     return this.request({
       path: `/finance/accounting/unpostedexpenses/${id}`,
@@ -305,7 +307,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedexpensesByParentIdTaxableLevels(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedExpenseTaxableLevel> = {},
   ): Promise<Array<UnpostedExpenseTaxableLevel>> {
     return this.request({
       path: `/finance/accounting/unpostedexpenses/${parentId}/taxableLevels`,
@@ -317,7 +319,7 @@ export class FinanceAPI extends Manage {
   getFinanceAccountingUnpostedexpensesByParentIdTaxableLevelsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedExpenseTaxableLevel> = {},
   ): Promise<UnpostedExpenseTaxableLevel> {
     return this.request({
       path: `/finance/accounting/unpostedexpenses/${parentId}/taxableLevels/${id}`,
@@ -328,7 +330,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedexpensesByParentIdTaxableLevelsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/accounting/unpostedexpenses/${parentId}/taxableLevels/count`,
@@ -337,7 +339,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingUnpostedexpensesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAccountingUnpostedexpensesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/accounting/unpostedexpenses/count`,
       method: 'get',
@@ -346,7 +348,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceAccountingUnpostedinvoices(
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedInvoice> = {},
   ): Promise<Array<UnpostedInvoice>> {
     return this.request({
       path: `/finance/accounting/unpostedinvoices`,
@@ -357,7 +359,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedinvoicesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedInvoice> = {},
   ): Promise<UnpostedInvoice> {
     return this.request({
       path: `/finance/accounting/unpostedinvoices/${id}`,
@@ -368,7 +370,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedinvoicesByParentIdTaxableLevels(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedInvoiceTaxableLevel> = {},
   ): Promise<Array<UnpostedInvoiceTaxableLevel>> {
     return this.request({
       path: `/finance/accounting/unpostedinvoices/${parentId}/taxableLevels`,
@@ -380,7 +382,7 @@ export class FinanceAPI extends Manage {
   getFinanceAccountingUnpostedinvoicesByParentIdTaxableLevelsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedInvoiceTaxableLevel> = {},
   ): Promise<UnpostedInvoiceTaxableLevel> {
     return this.request({
       path: `/finance/accounting/unpostedinvoices/${parentId}/taxableLevels/${id}`,
@@ -391,7 +393,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedinvoicesByParentIdTaxableLevelsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/accounting/unpostedinvoices/${parentId}/taxableLevels/count`,
@@ -400,7 +402,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingUnpostedinvoicesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAccountingUnpostedinvoicesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/accounting/unpostedinvoices/count`,
       method: 'get',
@@ -409,7 +411,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceAccountingUnpostedpayments(
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedPayments> = {},
   ): Promise<Array<UnpostedPayments>> {
     return this.request({
       path: `/finance/accounting/unpostedpayments`,
@@ -420,7 +422,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedPaymentsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedPayments> = {},
   ): Promise<UnpostedPayments> {
     return this.request({
       path: `/finance/accounting/unpostedPayments/${id}`,
@@ -429,7 +431,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingUnpostedPaymentsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAccountingUnpostedPaymentsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/accounting/unpostedPayments/count`,
       method: 'get',
@@ -438,7 +440,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceAccountingUnpostedprocurement(
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedProcurement> = {},
   ): Promise<Array<UnpostedProcurement>> {
     return this.request({
       path: `/finance/accounting/unpostedprocurement`,
@@ -449,7 +451,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedprocurementById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedProcurement> = {},
   ): Promise<UnpostedProcurement> {
     return this.request({
       path: `/finance/accounting/unpostedprocurement/${id}`,
@@ -460,7 +462,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedprocurementByParentIdTaxableLevels(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedProcurementTaxableLevel> = {},
   ): Promise<Array<UnpostedProcurementTaxableLevel>> {
     return this.request({
       path: `/finance/accounting/unpostedprocurement/${parentId}/taxableLevels`,
@@ -472,7 +474,7 @@ export class FinanceAPI extends Manage {
   getFinanceAccountingUnpostedprocurementByParentIdTaxableLevelsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnpostedProcurementTaxableLevel> = {},
   ): Promise<UnpostedProcurementTaxableLevel> {
     return this.request({
       path: `/finance/accounting/unpostedprocurement/${parentId}/taxableLevels/${id}`,
@@ -483,7 +485,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingUnpostedprocurementByParentIdTaxableLevelsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/accounting/unpostedprocurement/${parentId}/taxableLevels/count`,
@@ -492,7 +494,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingUnpostedprocurementCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAccountingUnpostedprocurementCount(
+    params: CommonParameters<Count> = {},
+  ): Promise<Count> {
     return this.request({
       path: `/finance/accounting/unpostedprocurement/count`,
       method: 'get',
@@ -500,7 +504,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingPackages(params: CommonParameters = {}): Promise<Array<AccountingPackage>> {
+  getFinanceAccountingPackages(
+    params: CommonParameters<AccountingPackage> = {},
+  ): Promise<Array<AccountingPackage>> {
     return this.request({
       path: `/finance/accountingPackages`,
       method: 'get',
@@ -510,7 +516,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingPackagesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AccountingPackage> = {},
   ): Promise<AccountingPackage> {
     return this.request({
       path: `/finance/accountingPackages/${id}`,
@@ -519,7 +525,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingPackagesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAccountingPackagesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/accountingPackages/count`,
       method: 'get',
@@ -528,7 +534,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceAccountingPackageSetup(
-    params: CommonParameters = {},
+    params: CommonParameters<AccountingPackageSetup> = {},
   ): Promise<Array<AccountingPackageSetup>> {
     return this.request({
       path: `/finance/accountingPackageSetup`,
@@ -539,7 +545,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAccountingPackageSetupById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AccountingPackageSetup> = {},
   ): Promise<AccountingPackageSetup> {
     return this.request({
       path: `/finance/accountingPackageSetup/${id}`,
@@ -570,7 +576,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAccountingPackageSetupCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAccountingPackageSetupCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/accountingPackageSetup/count`,
       method: 'get',
@@ -578,7 +584,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementrecap(params: CommonParameters = {}): Promise<Array<AgreementRecap>> {
+  getFinanceAgreementrecap(
+    params: CommonParameters<AgreementRecap> = {},
+  ): Promise<Array<AgreementRecap>> {
     return this.request({
       path: `/finance/agreementrecap/`,
       method: 'get',
@@ -586,7 +594,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementrecapById(id: number, params: CommonParameters = {}): Promise<AgreementRecap> {
+  getFinanceAgreementrecapById(
+    id: number,
+    params: CommonParameters<AgreementRecap> = {},
+  ): Promise<AgreementRecap> {
     return this.request({
       path: `/finance/agreementrecap/${id}`,
       method: 'get',
@@ -594,7 +605,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreements(params: CommonParameters = {}): Promise<Array<Agreement>> {
+  getFinanceAgreements(params: CommonParameters<Agreement> = {}): Promise<Array<Agreement>> {
     return this.request({
       path: `/finance/agreements`,
       method: 'get',
@@ -610,7 +621,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementsById(id: number, params: CommonParameters = {}): Promise<Agreement> {
+  getFinanceAgreementsById(
+    id: number,
+    params: CommonParameters<Agreement> = {},
+  ): Promise<Agreement> {
     return this.request({
       path: `/finance/agreements/${id}`,
       method: 'get',
@@ -647,7 +661,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByIdApplicationParametersByPodId(
     id: number,
     podId: string,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementApplicationParameters> = {},
   ): Promise<AgreementApplicationParameters> {
     return this.request({
       path: `/finance/agreements/${id}/applicationParameters/${podId}`,
@@ -665,7 +679,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByIdQuickAccessCount(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTabsCount> = {},
   ): Promise<AgreementTabsCount> {
     return this.request({
       path: `/finance/agreements/${id}/quickAccess/count`,
@@ -677,7 +691,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByIdRecurringParametersByPodId(
     id: number,
     podId: string,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementRecurringParameters> = {},
   ): Promise<AgreementRecurringParameters> {
     return this.request({
       path: `/finance/agreements/${id}/recurringParameters/${podId}`,
@@ -688,7 +702,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdAdditions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Addition> = {},
   ): Promise<Array<Addition>> {
     return this.request({
       path: `/finance/agreements/${parentId}/additions`,
@@ -711,7 +725,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByParentIdAdditionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Addition> = {},
   ): Promise<Addition> {
     return this.request({
       path: `/finance/agreements/${parentId}/additions/${id}`,
@@ -756,7 +770,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdAdditionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/additions/count`,
@@ -767,7 +781,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdAdjustments(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementAdjustment> = {},
   ): Promise<Array<AgreementAdjustment>> {
     return this.request({
       path: `/finance/agreements/${parentId}/adjustments`,
@@ -790,7 +804,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByParentIdAdjustmentsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementAdjustment> = {},
   ): Promise<AgreementAdjustment> {
     return this.request({
       path: `/finance/agreements/${parentId}/adjustments/${id}`,
@@ -835,7 +849,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdAdjustmentsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/adjustments/count`,
@@ -846,7 +860,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdBoardDefaults(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BoardDefault> = {},
   ): Promise<Array<BoardDefault>> {
     return this.request({
       path: `/finance/agreements/${parentId}/boardDefaults`,
@@ -869,7 +883,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByParentIdBoardDefaultsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BoardDefault> = {},
   ): Promise<BoardDefault> {
     return this.request({
       path: `/finance/agreements/${parentId}/boardDefaults/${id}`,
@@ -914,7 +928,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdBoardDefaultsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/boardDefaults/count`,
@@ -925,7 +939,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdConfigurations(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationReference> = {},
   ): Promise<Array<ConfigurationReference>> {
     return this.request({
       path: `/finance/agreements/${parentId}/configurations`,
@@ -948,7 +962,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByParentIdConfigurationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ConfigurationReference> = {},
   ): Promise<ConfigurationReference> {
     return this.request({
       path: `/finance/agreements/${parentId}/configurations/${id}`,
@@ -969,7 +983,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdConfigurationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/configurations/count`,
@@ -987,7 +1001,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdSites(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementSite> = {},
   ): Promise<Array<AgreementSite>> {
     return this.request({
       path: `/finance/agreements/${parentId}/sites`,
@@ -1010,7 +1024,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByParentIdSitesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementSite> = {},
   ): Promise<AgreementSite> {
     return this.request({
       path: `/finance/agreements/${parentId}/sites/${id}`,
@@ -1055,7 +1069,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdSitesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/sites/count`,
@@ -1066,7 +1080,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorkRoleExclusions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementWorkRoleExclusion> = {},
   ): Promise<Array<AgreementWorkRoleExclusion>> {
     return this.request({
       path: `/finance/agreements/${parentId}/workRoleExclusions`,
@@ -1098,7 +1112,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorkRoleExclusionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/workRoleExclusions/count`,
@@ -1109,7 +1123,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorkroles(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementWorkRole> = {},
   ): Promise<Array<AgreementWorkRole>> {
     return this.request({
       path: `/finance/agreements/${parentId}/workroles`,
@@ -1132,7 +1146,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByParentIdWorkrolesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementWorkRole> = {},
   ): Promise<AgreementWorkRole> {
     return this.request({
       path: `/finance/agreements/${parentId}/workroles/${id}`,
@@ -1177,7 +1191,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorkrolesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/workroles/count`,
@@ -1188,7 +1202,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorkTypeExclusions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementWorkTypeExclusion> = {},
   ): Promise<Array<AgreementWorkTypeExclusion>> {
     return this.request({
       path: `/finance/agreements/${parentId}/workTypeExclusions`,
@@ -1220,7 +1234,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorkTypeExclusionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/workTypeExclusions/count`,
@@ -1231,7 +1245,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorktypes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementWorkType> = {},
   ): Promise<Array<AgreementWorkType>> {
     return this.request({
       path: `/finance/agreements/${parentId}/worktypes`,
@@ -1254,7 +1268,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementsByParentIdWorktypesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementWorkType> = {},
   ): Promise<AgreementWorkType> {
     return this.request({
       path: `/finance/agreements/${parentId}/worktypes/${id}`,
@@ -1299,7 +1313,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsByParentIdWorktypesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreements/${parentId}/worktypes/count`,
@@ -1308,7 +1322,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAgreementsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/agreements/count`,
       method: 'get',
@@ -1316,7 +1330,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementsTypes(params: CommonParameters = {}): Promise<Array<AgreementType>> {
+  getFinanceAgreementsTypes(
+    params: CommonParameters<AgreementType> = {},
+  ): Promise<Array<AgreementType>> {
     return this.request({
       path: `/finance/agreements/types`,
       method: 'get',
@@ -1332,7 +1348,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementsTypesById(id: number, params: CommonParameters = {}): Promise<AgreementType> {
+  getFinanceAgreementsTypesById(
+    id: number,
+    params: CommonParameters<AgreementType> = {},
+  ): Promise<AgreementType> {
     return this.request({
       path: `/finance/agreements/types/${id}`,
       method: 'get',
@@ -1368,7 +1387,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeInfo> = {},
   ): Promise<AgreementTypeInfo> {
     return this.request({
       path: `/finance/agreements/types/${id}/info`,
@@ -1379,7 +1398,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsTypesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/agreements/types/${id}/usages`,
@@ -1390,7 +1409,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementsTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/agreements/types/${id}/usages/list`,
@@ -1399,7 +1418,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementsTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAgreementsTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/agreements/types/count`,
       method: 'get',
@@ -1407,7 +1426,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementsTypesInfo(params: CommonParameters = {}): Promise<Array<AgreementTypeInfo>> {
+  getFinanceAgreementsTypesInfo(
+    params: CommonParameters<AgreementTypeInfo> = {},
+  ): Promise<Array<AgreementTypeInfo>> {
     return this.request({
       path: `/finance/agreements/types/info`,
       method: 'get',
@@ -1415,7 +1436,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceAgreementsTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceAgreementsTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/agreements/types/info/count`,
       method: 'get',
@@ -1432,7 +1453,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdBoardDefaults(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeBoardDefault> = {},
   ): Promise<Array<AgreementTypeBoardDefault>> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/boardDefaults`,
@@ -1455,7 +1476,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementTypesByParentIdBoardDefaultsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeBoardDefault> = {},
   ): Promise<AgreementTypeBoardDefault> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/boardDefaults/${id}`,
@@ -1500,7 +1521,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdBoardDefaultsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/boardDefaults/count`,
@@ -1511,7 +1532,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkRoleExclusions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkRoleExclusion> = {},
   ): Promise<Array<AgreementTypeWorkRoleExclusion>> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workRoleExclusions`,
@@ -1534,7 +1555,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementTypesByParentIdWorkRoleExclusionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkRoleExclusion> = {},
   ): Promise<AgreementTypeWorkRoleExclusion> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workRoleExclusions/${id}`,
@@ -1555,7 +1576,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkRoleExclusionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workRoleExclusions/count`,
@@ -1566,7 +1587,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkroles(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkRole> = {},
   ): Promise<Array<AgreementTypeWorkRole>> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workroles`,
@@ -1589,7 +1610,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementTypesByParentIdWorkrolesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkRole> = {},
   ): Promise<AgreementTypeWorkRole> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workroles/${id}`,
@@ -1634,7 +1655,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkrolesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workroles/count`,
@@ -1645,7 +1666,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkrolesInfo(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkRoleInfo> = {},
   ): Promise<Array<AgreementTypeWorkRoleInfo>> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workroles/info`,
@@ -1657,7 +1678,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementTypesByParentIdWorkrolesInfoById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkRoleInfo> = {},
   ): Promise<AgreementTypeWorkRoleInfo> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workroles/info/${id}`,
@@ -1668,7 +1689,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkrolesInfoCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workroles/info/count`,
@@ -1679,7 +1700,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkTypeExclusions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkTypeExclusion> = {},
   ): Promise<Array<AgreementTypeWorkTypeExclusion>> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workTypeExclusions`,
@@ -1702,7 +1723,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementTypesByParentIdWorkTypeExclusionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkTypeExclusion> = {},
   ): Promise<AgreementTypeWorkTypeExclusion> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workTypeExclusions/${id}`,
@@ -1723,7 +1744,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorkTypeExclusionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/workTypeExclusions/count`,
@@ -1734,7 +1755,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorktypes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkType> = {},
   ): Promise<Array<AgreementTypeWorkType>> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/worktypes`,
@@ -1757,7 +1778,7 @@ export class FinanceAPI extends Manage {
   getFinanceAgreementTypesByParentIdWorktypesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementTypeWorkType> = {},
   ): Promise<AgreementTypeWorkType> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/worktypes/${id}`,
@@ -1802,7 +1823,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceAgreementTypesByParentIdWorktypesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/agreementTypes/${parentId}/worktypes/count`,
@@ -1811,7 +1832,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBatchSetups(params: CommonParameters = {}): Promise<Array<AgreementBatchSetup>> {
+  getFinanceBatchSetups(
+    params: CommonParameters<AgreementBatchSetup> = {},
+  ): Promise<Array<AgreementBatchSetup>> {
     return this.request({
       path: `/finance/batchSetups`,
       method: 'get',
@@ -1821,7 +1844,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBatchSetupsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AgreementBatchSetup> = {},
   ): Promise<AgreementBatchSetup> {
     return this.request({
       path: `/finance/batchSetups/${id}`,
@@ -1852,7 +1875,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBatchSetupsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBatchSetupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/batchSetups/count`,
       method: 'get',
@@ -1860,7 +1883,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingCycles(params: CommonParameters = {}): Promise<Array<BillingCycle>> {
+  getFinanceBillingCycles(
+    params: CommonParameters<BillingCycle> = {},
+  ): Promise<Array<BillingCycle>> {
     return this.request({
       path: `/finance/billingCycles`,
       method: 'get',
@@ -1876,7 +1901,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingCyclesById(id: number, params: CommonParameters = {}): Promise<BillingCycle> {
+  getFinanceBillingCyclesById(
+    id: number,
+    params: CommonParameters<BillingCycle> = {},
+  ): Promise<BillingCycle> {
     return this.request({
       path: `/finance/billingCycles/${id}`,
       method: 'get',
@@ -1912,7 +1940,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingCyclesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BillingCycleInfo> = {},
   ): Promise<BillingCycleInfo> {
     return this.request({
       path: `/finance/billingCycles/${id}/info`,
@@ -1923,7 +1951,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingCyclesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/billingCycles/${id}/usages`,
@@ -1934,7 +1962,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingCyclesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/billingCycles/${id}/usages/list`,
@@ -1943,7 +1971,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingCyclesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingCyclesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingCycles/count`,
       method: 'get',
@@ -1951,7 +1979,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingCyclesInfo(params: CommonParameters = {}): Promise<Array<BillingCycleInfo>> {
+  getFinanceBillingCyclesInfo(
+    params: CommonParameters<BillingCycleInfo> = {},
+  ): Promise<Array<BillingCycleInfo>> {
     return this.request({
       path: `/finance/billingCycles/info`,
       method: 'get',
@@ -1959,7 +1989,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingCyclesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingCyclesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingCycles/info/count`,
       method: 'get',
@@ -1967,7 +1997,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingSetups(params: CommonParameters = {}): Promise<Array<BillingSetup>> {
+  getFinanceBillingSetups(
+    params: CommonParameters<BillingSetup> = {},
+  ): Promise<Array<BillingSetup>> {
     return this.request({
       path: `/finance/billingSetups`,
       method: 'get',
@@ -1983,7 +2015,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingSetupsById(id: number, params: CommonParameters = {}): Promise<BillingSetup> {
+  getFinanceBillingSetupsById(
+    id: number,
+    params: CommonParameters<BillingSetup> = {},
+  ): Promise<BillingSetup> {
     return this.request({
       path: `/finance/billingSetups/${id}`,
       method: 'get',
@@ -2019,7 +2054,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingSetupsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BillingSetupInfo> = {},
   ): Promise<BillingSetupInfo> {
     return this.request({
       path: `/finance/billingSetups/${id}/info`,
@@ -2030,7 +2065,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingSetupsByParentIdRoutings(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BillingSetupRouting> = {},
   ): Promise<Array<BillingSetupRouting>> {
     return this.request({
       path: `/finance/billingSetups/${parentId}/routings`,
@@ -2053,7 +2088,7 @@ export class FinanceAPI extends Manage {
   getFinanceBillingSetupsByParentIdRoutingsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BillingSetupRouting> = {},
   ): Promise<BillingSetupRouting> {
     return this.request({
       path: `/finance/billingSetups/${parentId}/routings/${id}`,
@@ -2098,7 +2133,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingSetupsByParentIdRoutingsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/billingSetups/${parentId}/routings/count`,
@@ -2107,7 +2142,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingSetupsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingSetupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingSetups/count`,
       method: 'get',
@@ -2115,7 +2150,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingSetupsInfo(params: CommonParameters = {}): Promise<Array<BillingSetupInfo>> {
+  getFinanceBillingSetupsInfo(
+    params: CommonParameters<BillingSetupInfo> = {},
+  ): Promise<Array<BillingSetupInfo>> {
     return this.request({
       path: `/finance/billingSetups/info`,
       method: 'get',
@@ -2123,7 +2160,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingSetupsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingSetupsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingSetups/info/count`,
       method: 'get',
@@ -2131,7 +2168,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingStatuses(params: CommonParameters = {}): Promise<Array<BillingStatus>> {
+  getFinanceBillingStatuses(
+    params: CommonParameters<BillingStatus> = {},
+  ): Promise<Array<BillingStatus>> {
     return this.request({
       path: `/finance/billingStatuses`,
       method: 'get',
@@ -2147,7 +2186,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingStatusesById(id: number, params: CommonParameters = {}): Promise<BillingStatus> {
+  getFinanceBillingStatusesById(
+    id: number,
+    params: CommonParameters<BillingStatus> = {},
+  ): Promise<BillingStatus> {
     return this.request({
       path: `/finance/billingStatuses/${id}`,
       method: 'get',
@@ -2183,7 +2225,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingStatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BillingStatusInfo> = {},
   ): Promise<BillingStatusInfo> {
     return this.request({
       path: `/finance/billingStatuses/${id}/info`,
@@ -2194,7 +2236,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingStatusesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/billingStatuses/${id}/usages`,
@@ -2205,7 +2247,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingStatusesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/billingStatuses/${id}/usages/list`,
@@ -2214,7 +2256,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingStatuses/count`,
       method: 'get',
@@ -2222,7 +2264,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingStatusesInfo(params: CommonParameters = {}): Promise<Array<BillingStatusInfo>> {
+  getFinanceBillingStatusesInfo(
+    params: CommonParameters<BillingStatusInfo> = {},
+  ): Promise<Array<BillingStatusInfo>> {
     return this.request({
       path: `/finance/billingStatuses/info`,
       method: 'get',
@@ -2230,7 +2274,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingStatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingStatusesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingStatuses/info/count`,
       method: 'get',
@@ -2238,7 +2282,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingTerms(params: CommonParameters = {}): Promise<Array<BillingTerm>> {
+  getFinanceBillingTerms(params: CommonParameters<BillingTerm> = {}): Promise<Array<BillingTerm>> {
     return this.request({
       path: `/finance/billingTerms`,
       method: 'get',
@@ -2254,7 +2298,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingTermsById(id: number, params: CommonParameters = {}): Promise<BillingTerm> {
+  getFinanceBillingTermsById(
+    id: number,
+    params: CommonParameters<BillingTerm> = {},
+  ): Promise<BillingTerm> {
     return this.request({
       path: `/finance/billingTerms/${id}`,
       method: 'get',
@@ -2290,7 +2337,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingTermsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<BillingTermInfo> = {},
   ): Promise<BillingTermInfo> {
     return this.request({
       path: `/finance/billingTerms/${id}/info`,
@@ -2301,7 +2348,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingTermsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/billingTerms/${id}/usages`,
@@ -2312,7 +2359,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceBillingTermsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/billingTerms/${id}/usages/list`,
@@ -2321,7 +2368,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingTermsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingTermsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingTerms/count`,
       method: 'get',
@@ -2329,7 +2376,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingTermsInfo(params: CommonParameters = {}): Promise<Array<BillingTermInfo>> {
+  getFinanceBillingTermsInfo(
+    params: CommonParameters<BillingTermInfo> = {},
+  ): Promise<Array<BillingTermInfo>> {
     return this.request({
       path: `/finance/billingTerms/info`,
       method: 'get',
@@ -2337,7 +2386,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceBillingTermsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceBillingTermsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/billingTerms/info/count`,
       method: 'get',
@@ -2364,7 +2413,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCompanyFinance(params: CommonParameters = {}): Promise<Array<CompanyFinance>> {
+  getFinanceCompanyFinance(
+    params: CommonParameters<CompanyFinance> = {},
+  ): Promise<Array<CompanyFinance>> {
     return this.request({
       path: `/finance/companyFinance/`,
       method: 'get',
@@ -2372,7 +2423,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCompanyFinanceById(id: number, params: CommonParameters = {}): Promise<CompanyFinance> {
+  getFinanceCompanyFinanceById(
+    id: number,
+    params: CommonParameters<CompanyFinance> = {},
+  ): Promise<CompanyFinance> {
     return this.request({
       path: `/finance/companyFinance/${id}`,
       method: 'get',
@@ -2402,7 +2456,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCompanyFinanceCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceCompanyFinanceCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/companyFinance/count`,
       method: 'get',
@@ -2410,7 +2464,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCurrencies(params: CommonParameters = {}): Promise<Array<FinanceCurrency>> {
+  getFinanceCurrencies(
+    params: CommonParameters<FinanceCurrency> = {},
+  ): Promise<Array<FinanceCurrency>> {
     return this.request({
       path: `/finance/currencies`,
       method: 'get',
@@ -2426,7 +2482,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCurrenciesById(id: number, params: CommonParameters = {}): Promise<FinanceCurrency> {
+  getFinanceCurrenciesById(
+    id: number,
+    params: CommonParameters<FinanceCurrency> = {},
+  ): Promise<FinanceCurrency> {
     return this.request({
       path: `/finance/currencies/${id}`,
       method: 'get',
@@ -2460,7 +2519,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCurrenciesByIdInfo(id: number, params: CommonParameters = {}): Promise<CurrencyInfo> {
+  getFinanceCurrenciesByIdInfo(
+    id: number,
+    params: CommonParameters<CurrencyInfo> = {},
+  ): Promise<CurrencyInfo> {
     return this.request({
       path: `/finance/currencies/${id}/info`,
       method: 'get',
@@ -2468,7 +2530,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCurrenciesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getFinanceCurrenciesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/currencies/${id}/usages`,
       method: 'get',
@@ -2478,7 +2543,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceCurrenciesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/currencies/${id}/usages/list`,
@@ -2487,7 +2552,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCurrenciesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceCurrenciesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/currencies/count`,
       method: 'get',
@@ -2495,7 +2560,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCurrenciesInfo(params: CommonParameters = {}): Promise<Array<CurrencyInfo>> {
+  getFinanceCurrenciesInfo(
+    params: CommonParameters<CurrencyInfo> = {},
+  ): Promise<Array<CurrencyInfo>> {
     return this.request({
       path: `/finance/currencies/info`,
       method: 'get',
@@ -2503,7 +2570,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceCurrenciesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceCurrenciesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/currencies/info/count`,
       method: 'get',
@@ -2511,7 +2578,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceDeliveryMethods(params: CommonParameters = {}): Promise<Array<DeliveryMethod>> {
+  getFinanceDeliveryMethods(
+    params: CommonParameters<DeliveryMethod> = {},
+  ): Promise<Array<DeliveryMethod>> {
     return this.request({
       path: `/finance/deliveryMethods`,
       method: 'get',
@@ -2529,7 +2598,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceDeliveryMethodsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<DeliveryMethod> = {},
   ): Promise<DeliveryMethod> {
     return this.request({
       path: `/finance/deliveryMethods/${id}`,
@@ -2567,7 +2636,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceDeliveryMethodsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceDeliveryMethodsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/deliveryMethods/count`,
       method: 'get',
@@ -2575,7 +2644,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlAccounts(params: CommonParameters = {}): Promise<Array<GLAccount>> {
+  getFinanceGlAccounts(params: CommonParameters<GLAccount> = {}): Promise<Array<GLAccount>> {
     return this.request({
       path: `/finance/glAccounts`,
       method: 'get',
@@ -2591,7 +2660,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlAccountsById(id: number, params: CommonParameters = {}): Promise<GLAccount> {
+  getFinanceGlAccountsById(
+    id: number,
+    params: CommonParameters<GLAccount> = {},
+  ): Promise<GLAccount> {
     return this.request({
       path: `/finance/glAccounts/${id}`,
       method: 'get',
@@ -2625,7 +2697,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlAccountsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceGlAccountsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/glAccounts/count`,
       method: 'get',
@@ -2633,7 +2705,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlAccountsMappedTypes(params: CommonParameters = {}): Promise<Array<MappedType>> {
+  getFinanceGlAccountsMappedTypes(
+    params: CommonParameters<MappedType> = {},
+  ): Promise<Array<MappedType>> {
     return this.request({
       path: `/finance/glAccounts/mappedTypes`,
       method: 'get',
@@ -2641,7 +2715,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlAccountsMappedTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceGlAccountsMappedTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/glAccounts/mappedTypes/count`,
       method: 'get',
@@ -2649,7 +2723,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlCaptions(params: CommonParameters = {}): Promise<Array<GLCaption>> {
+  getFinanceGlCaptions(params: CommonParameters<GLCaption> = {}): Promise<Array<GLCaption>> {
     return this.request({
       path: `/finance/glCaptions`,
       method: 'get',
@@ -2657,7 +2731,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlCaptionsById(id: number, params: CommonParameters = {}): Promise<GLCaption> {
+  getFinanceGlCaptionsById(
+    id: number,
+    params: CommonParameters<GLCaption> = {},
+  ): Promise<GLCaption> {
     return this.request({
       path: `/finance/glCaptions/${id}`,
       method: 'get',
@@ -2684,7 +2761,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlCaptionsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceGlCaptionsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/glCaptions/count`,
       method: 'get',
@@ -2692,7 +2769,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlpaths(params: CommonParameters = {}): Promise<Array<GLPath>> {
+  getFinanceGlpaths(params: CommonParameters<GLPath> = {}): Promise<Array<GLPath>> {
     return this.request({
       path: `/finance/glpaths`,
       method: 'get',
@@ -2708,7 +2785,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlpathsById(id: number, params: CommonParameters = {}): Promise<GLPath> {
+  getFinanceGlpathsById(id: number, params: CommonParameters<GLPath> = {}): Promise<GLPath> {
     return this.request({
       path: `/finance/glpaths/${id}`,
       method: 'get',
@@ -2739,7 +2816,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceGlpathsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceGlpathsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/glpaths/count`,
       method: 'get',
@@ -2747,7 +2824,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInfoCurrencyCodes(params: CommonParameters = {}): Promise<Array<CurrencyCode>> {
+  getFinanceInfoCurrencyCodes(
+    params: CommonParameters<CurrencyCode> = {},
+  ): Promise<Array<CurrencyCode>> {
     return this.request({
       path: `/finance/info/currencyCodes`,
       method: 'get',
@@ -2757,7 +2836,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInfoCurrencyCodesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CurrencyCode> = {},
   ): Promise<CurrencyCode> {
     return this.request({
       path: `/finance/info/currencyCodes/${id}`,
@@ -2766,7 +2845,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInfoCurrencyCodesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceInfoCurrencyCodesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/info/currencyCodes/count`,
       method: 'get',
@@ -2774,7 +2853,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInfoInvoiceById(id: number, params: CommonParameters = {}): Promise<InvoiceInfo> {
+  getFinanceInfoInvoiceById(
+    id: number,
+    params: CommonParameters<InvoiceInfo> = {},
+  ): Promise<InvoiceInfo> {
     return this.request({
       path: `/finance/info/invoice/${id}`,
       method: 'get',
@@ -2782,7 +2864,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInfoTaxIntegrations(params: CommonParameters = {}): Promise<Array<TaxIntegrationInfo>> {
+  getFinanceInfoTaxIntegrations(
+    params: CommonParameters<TaxIntegrationInfo> = {},
+  ): Promise<Array<TaxIntegrationInfo>> {
     return this.request({
       path: `/finance/info/taxIntegrations`,
       method: 'get',
@@ -2792,7 +2876,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInfoTaxIntegrationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxIntegrationInfo> = {},
   ): Promise<TaxIntegrationInfo> {
     return this.request({
       path: `/finance/info/taxIntegrations/${id}`,
@@ -2801,7 +2885,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInfoTaxIntegrationsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceInfoTaxIntegrationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/info/taxIntegrations/count`,
       method: 'get',
@@ -2810,7 +2894,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceInvoiceEmailTemplates(
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceEmailTemplate> = {},
   ): Promise<Array<InvoiceEmailTemplate>> {
     return this.request({
       path: `/finance/invoiceEmailTemplates`,
@@ -2831,7 +2915,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceEmailTemplatesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceEmailTemplate> = {},
   ): Promise<InvoiceEmailTemplate> {
     return this.request({
       path: `/finance/invoiceEmailTemplates/${id}`,
@@ -2871,7 +2955,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceEmailTemplatesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceEmailTemplateInfo> = {},
   ): Promise<InvoiceEmailTemplateInfo> {
     return this.request({
       path: `/finance/invoiceEmailTemplates/${id}/info`,
@@ -2882,7 +2966,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceEmailTemplatesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/invoiceEmailTemplates/${id}/usages`,
@@ -2893,7 +2977,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceEmailTemplatesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/invoiceEmailTemplates/${id}/usages/list`,
@@ -2902,7 +2986,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoiceEmailTemplatesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceInvoiceEmailTemplatesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/invoiceEmailTemplates/count`,
       method: 'get',
@@ -2911,7 +2995,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceInvoiceEmailTemplatesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceEmailTemplateInfo> = {},
   ): Promise<Array<InvoiceEmailTemplateInfo>> {
     return this.request({
       path: `/finance/invoiceEmailTemplates/info`,
@@ -2920,7 +3004,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoiceEmailTemplatesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceInvoiceEmailTemplatesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/invoiceEmailTemplates/info/count`,
       method: 'get',
@@ -2928,7 +3012,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoices(params: CommonParameters = {}): Promise<Array<Invoice>> {
+  getFinanceInvoices(params: CommonParameters<Invoice> = {}): Promise<Array<Invoice>> {
     return this.request({
       path: `/finance/invoices`,
       method: 'get',
@@ -2944,7 +3028,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoicesById(id: number, params: CommonParameters = {}): Promise<Invoice> {
+  getFinanceInvoicesById(id: number, params: CommonParameters<Invoice> = {}): Promise<Invoice> {
     return this.request({
       path: `/finance/invoices/${id}`,
       method: 'get',
@@ -2975,7 +3059,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoicesByIdPdf(id: number, params: CommonParameters = {}): Promise<string> {
+  getFinanceInvoicesByIdPdf(id: number, params: CommonParameters<string> = {}): Promise<string> {
     return this.request({
       path: `/finance/invoices/${id}/pdf`,
       method: 'get',
@@ -2985,7 +3069,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoicesByParentIdCommissions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceCommission> = {},
   ): Promise<Array<InvoiceCommission>> {
     return this.request({
       path: `/finance/invoices/${parentId}/commissions`,
@@ -2997,7 +3081,7 @@ export class FinanceAPI extends Manage {
   getFinanceInvoicesByParentIdCommissionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceCommission> = {},
   ): Promise<InvoiceCommission> {
     return this.request({
       path: `/finance/invoices/${parentId}/commissions/${id}`,
@@ -3027,7 +3111,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoicesByParentIdGlEntries(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<GLEntry> = {},
   ): Promise<Array<GLEntry>> {
     return this.request({
       path: `/finance/invoices/${parentId}/glEntries/`,
@@ -3039,7 +3123,7 @@ export class FinanceAPI extends Manage {
   getFinanceInvoicesByParentIdGlEntriesById(
     parentId: number,
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<GLEntry> = {},
   ): Promise<GLEntry> {
     return this.request({
       path: `/finance/invoices/${parentId}/glEntries/${id}`,
@@ -3074,7 +3158,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoicesByParentIdPayments(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoicePayment> = {},
   ): Promise<Array<InvoicePayment>> {
     return this.request({
       path: `/finance/invoices/${parentId}/payments`,
@@ -3097,7 +3181,7 @@ export class FinanceAPI extends Manage {
   getFinanceInvoicesByParentIdPaymentsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoicePayment> = {},
   ): Promise<InvoicePayment> {
     return this.request({
       path: `/finance/invoices/${parentId}/payments/${id}`,
@@ -3142,7 +3226,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoicesByParentIdRoutings(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceRouting> = {},
   ): Promise<Array<InvoiceRouting>> {
     return this.request({
       path: `/finance/invoices/${parentId}/routings`,
@@ -3165,7 +3249,7 @@ export class FinanceAPI extends Manage {
   getFinanceInvoicesByParentIdRoutingsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceRouting> = {},
   ): Promise<InvoiceRouting> {
     return this.request({
       path: `/finance/invoices/${parentId}/routings/${id}`,
@@ -3210,7 +3294,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoicesByParentIdRoutingsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/invoices/${parentId}/routings/count`,
@@ -3219,7 +3303,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoicesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceInvoicesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/invoices/count`,
       method: 'get',
@@ -3227,7 +3311,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoiceTemplates(params: CommonParameters = {}): Promise<Array<InvoiceTemplate>> {
+  getFinanceInvoiceTemplates(
+    params: CommonParameters<InvoiceTemplate> = {},
+  ): Promise<Array<InvoiceTemplate>> {
     return this.request({
       path: `/finance/invoiceTemplates`,
       method: 'get',
@@ -3245,7 +3331,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceTemplatesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceTemplate> = {},
   ): Promise<InvoiceTemplate> {
     return this.request({
       path: `/finance/invoiceTemplates/${id}`,
@@ -3285,7 +3371,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceTemplatesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/invoiceTemplates/${id}/usages`,
@@ -3296,7 +3382,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceTemplatesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/invoiceTemplates/${id}/usages/list`,
@@ -3305,7 +3391,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoiceTemplatesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceInvoiceTemplatesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/invoiceTemplates/count`,
       method: 'get',
@@ -3314,7 +3400,7 @@ export class FinanceAPI extends Manage {
   }
 
   getFinanceInvoiceTemplateSetups(
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceTemplateSetup> = {},
   ): Promise<Array<InvoiceTemplateSetup>> {
     return this.request({
       path: `/finance/invoiceTemplateSetups`,
@@ -3325,7 +3411,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceInvoiceTemplateSetupsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceTemplateSetup> = {},
   ): Promise<InvoiceTemplateSetup> {
     return this.request({
       path: `/finance/invoiceTemplateSetups/${id}`,
@@ -3334,7 +3420,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceInvoiceTemplateSetupsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceInvoiceTemplateSetupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/invoiceTemplateSetups/count`,
       method: 'get',
@@ -3342,7 +3428,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxCodes(params: CommonParameters = {}): Promise<Array<TaxCode>> {
+  getFinanceTaxCodes(params: CommonParameters<TaxCode> = {}): Promise<Array<TaxCode>> {
     return this.request({
       path: `/finance/taxCodes`,
       method: 'get',
@@ -3361,7 +3447,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdExpenseTypeExemptionsByParentIdTaxableExpenseTypeLevels(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableExpenseTypeLevel> = {},
   ): Promise<Array<TaxableExpenseTypeLevel>> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/expenseTypeExemptions/${parentId}/taxableExpenseTypeLevels`,
@@ -3386,7 +3472,7 @@ export class FinanceAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableExpenseTypeLevel> = {},
   ): Promise<TaxableExpenseTypeLevel> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/expenseTypeExemptions/${parentId}/taxableExpenseTypeLevels/${id}`,
@@ -3435,7 +3521,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdExpenseTypeExemptionsByParentIdTaxableExpenseTypeLevelsCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/expenseTypeExemptions/${parentId}/taxableExpenseTypeLevels/count`,
@@ -3447,7 +3533,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdProductTypeExemptionsByParentIdTaxableProductTypeLevels(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableProductTypeLevel> = {},
   ): Promise<Array<TaxableProductTypeLevel>> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/productTypeExemptions/${parentId}/taxableProductTypeLevels`,
@@ -3472,7 +3558,7 @@ export class FinanceAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableProductTypeLevel> = {},
   ): Promise<TaxableProductTypeLevel> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/productTypeExemptions/${parentId}/taxableProductTypeLevels/${id}`,
@@ -3521,7 +3607,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdProductTypeExemptionsByParentIdTaxableProductTypeLevelsCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/productTypeExemptions/${parentId}/taxableProductTypeLevels/count`,
@@ -3533,7 +3619,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdTaxCodeXRefsByParentIdTaxableXRefLevels(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableXRefLevel> = {},
   ): Promise<Array<TaxableXRefLevel>> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/taxCodeXRefs/${parentId}/taxableXRefLevels`,
@@ -3558,7 +3644,7 @@ export class FinanceAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableXRefLevel> = {},
   ): Promise<TaxableXRefLevel> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/taxCodeXRefs/${parentId}/taxableXRefLevels/${id}`,
@@ -3607,7 +3693,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdTaxCodeXRefsByParentIdTaxableXRefLevelsCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/taxCodeXRefs/${parentId}/taxableXRefLevels/count`,
@@ -3619,7 +3705,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdWorkRoleExemptionsByParentIdTaxableWorkRoleLevels(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableWorkRoleLevel> = {},
   ): Promise<Array<TaxableWorkRoleLevel>> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/workRoleExemptions/${parentId}/taxableWorkRoleLevels`,
@@ -3644,7 +3730,7 @@ export class FinanceAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxableWorkRoleLevel> = {},
   ): Promise<TaxableWorkRoleLevel> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/workRoleExemptions/${parentId}/taxableWorkRoleLevels/${id}`,
@@ -3693,7 +3779,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByGrandparentIdWorkRoleExemptionsByParentIdTaxableWorkRoleLevelsCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${grandparentId}/workRoleExemptions/${parentId}/taxableWorkRoleLevels/count`,
@@ -3702,7 +3788,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxCodesById(id: number, params: CommonParameters = {}): Promise<TaxCode> {
+  getFinanceTaxCodesById(id: number, params: CommonParameters<TaxCode> = {}): Promise<TaxCode> {
     return this.request({
       path: `/finance/taxCodes/${id}`,
       method: 'get',
@@ -3740,7 +3826,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxCodesByIdInfo(id: number, params: CommonParameters = {}): Promise<TaxCodeInfo> {
+  getFinanceTaxCodesByIdInfo(
+    id: number,
+    params: CommonParameters<TaxCodeInfo> = {},
+  ): Promise<TaxCodeInfo> {
     return this.request({
       path: `/finance/taxCodes/${id}/info`,
       method: 'get',
@@ -3748,7 +3837,10 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxCodesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getFinanceTaxCodesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/taxCodes/${id}/usages`,
       method: 'get',
@@ -3758,7 +3850,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/finance/taxCodes/${id}/usages/list`,
@@ -3769,7 +3861,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdExpenseTypeExemptions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ExpenseTypeExemption> = {},
   ): Promise<Array<ExpenseTypeExemption>> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/expenseTypeExemptions`,
@@ -3792,7 +3884,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByParentIdExpenseTypeExemptionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ExpenseTypeExemption> = {},
   ): Promise<ExpenseTypeExemption> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/expenseTypeExemptions/${id}`,
@@ -3837,7 +3929,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdExpenseTypeExemptionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/expenseTypeExemptions/count`,
@@ -3848,7 +3940,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdProductTypeExemptions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProductTypeExemption> = {},
   ): Promise<Array<ProductTypeExemption>> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/productTypeExemptions`,
@@ -3871,7 +3963,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByParentIdProductTypeExemptionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProductTypeExemption> = {},
   ): Promise<ProductTypeExemption> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/productTypeExemptions/${id}`,
@@ -3916,7 +4008,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdProductTypeExemptionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/productTypeExemptions/count`,
@@ -3927,7 +4019,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdTaxCodeLevels(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxCodeLevel> = {},
   ): Promise<Array<TaxCodeLevel>> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/taxCodeLevels`,
@@ -3950,7 +4042,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByParentIdTaxCodeLevelsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxCodeLevel> = {},
   ): Promise<TaxCodeLevel> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/taxCodeLevels/${id}`,
@@ -3995,7 +4087,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdTaxCodeLevelsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/taxCodeLevels/count`,
@@ -4006,7 +4098,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdTaxCodeXRefs(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxCodeXRef> = {},
   ): Promise<Array<TaxCodeXRef>> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/taxCodeXRefs`,
@@ -4029,7 +4121,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByParentIdTaxCodeXRefsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxCodeXRef> = {},
   ): Promise<TaxCodeXRef> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/taxCodeXRefs/${id}`,
@@ -4074,7 +4166,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdTaxCodeXRefsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/taxCodeXRefs/count`,
@@ -4085,7 +4177,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdWorkRoleExemptions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkRoleExemption> = {},
   ): Promise<Array<WorkRoleExemption>> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/workRoleExemptions`,
@@ -4108,7 +4200,7 @@ export class FinanceAPI extends Manage {
   getFinanceTaxCodesByParentIdWorkRoleExemptionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WorkRoleExemption> = {},
   ): Promise<WorkRoleExemption> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/workRoleExemptions/${id}`,
@@ -4153,7 +4245,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxCodesByParentIdWorkRoleExemptionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/${parentId}/workRoleExemptions/count`,
@@ -4162,7 +4254,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxCodesCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceTaxCodesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/count`,
       method: 'get',
@@ -4170,7 +4262,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxCodesInfo(params: CommonParameters = {}): Promise<Array<TaxCodeInfo>> {
+  getFinanceTaxCodesInfo(params: CommonParameters<TaxCodeInfo> = {}): Promise<Array<TaxCodeInfo>> {
     return this.request({
       path: `/finance/taxCodes/info`,
       method: 'get',
@@ -4178,7 +4270,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxCodesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceTaxCodesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/taxCodes/info/count`,
       method: 'get',
@@ -4186,7 +4278,9 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxIntegrations(params: CommonParameters = {}): Promise<Array<TaxIntegration>> {
+  getFinanceTaxIntegrations(
+    params: CommonParameters<TaxIntegration> = {},
+  ): Promise<Array<TaxIntegration>> {
     return this.request({
       path: `/finance/taxIntegrations`,
       method: 'get',
@@ -4196,7 +4290,7 @@ export class FinanceAPI extends Manage {
 
   getFinanceTaxIntegrationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TaxIntegration> = {},
   ): Promise<TaxIntegration> {
     return this.request({
       path: `/finance/taxIntegrations/${id}`,
@@ -4227,7 +4321,7 @@ export class FinanceAPI extends Manage {
     })
   }
 
-  getFinanceTaxIntegrationsCount(params: CommonParameters = {}): Promise<Count> {
+  getFinanceTaxIntegrationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/finance/taxIntegrations/count`,
       method: 'get',

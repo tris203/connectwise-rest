@@ -155,7 +155,9 @@ export class ProcurementAPI extends Manage {
     super(props)
   }
 
-  getProcurementAdjustments(params: CommonParameters = {}): Promise<Array<ProcurementAdjustment>> {
+  getProcurementAdjustments(
+    params: CommonParameters<ProcurementAdjustment> = {},
+  ): Promise<Array<ProcurementAdjustment>> {
     return this.request({
       path: `/procurement/adjustments`,
       method: 'get',
@@ -173,7 +175,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementAdjustmentsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProcurementAdjustment> = {},
   ): Promise<ProcurementAdjustment> {
     return this.request({
       path: `/procurement/adjustments/${id}`,
@@ -213,7 +215,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementAdjustmentsByParentIdDetails(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AdjustmentDetail> = {},
   ): Promise<Array<AdjustmentDetail>> {
     return this.request({
       path: `/procurement/adjustments/${parentId}/details`,
@@ -236,7 +238,7 @@ export class ProcurementAPI extends Manage {
   getProcurementAdjustmentsByParentIdDetailsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AdjustmentDetail> = {},
   ): Promise<AdjustmentDetail> {
     return this.request({
       path: `/procurement/adjustments/${parentId}/details/${id}`,
@@ -257,7 +259,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementAdjustmentsByParentIdDetailsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/adjustments/${parentId}/details/count`,
@@ -266,7 +268,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementAdjustmentsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementAdjustmentsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/adjustments/count`,
       method: 'get',
@@ -274,7 +276,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementAdjustmentsTypes(params: CommonParameters = {}): Promise<Array<AdjustmentType>> {
+  getProcurementAdjustmentsTypes(
+    params: CommonParameters<AdjustmentType> = {},
+  ): Promise<Array<AdjustmentType>> {
     return this.request({
       path: `/procurement/adjustments/types`,
       method: 'get',
@@ -292,7 +296,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementAdjustmentsTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AdjustmentType> = {},
   ): Promise<AdjustmentType> {
     return this.request({
       path: `/procurement/adjustments/types/${id}`,
@@ -332,7 +336,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementAdjustmentsTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<AdjustmentTypeInfo> = {},
   ): Promise<AdjustmentTypeInfo> {
     return this.request({
       path: `/procurement/adjustments/types/${id}/info`,
@@ -343,7 +347,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementAdjustmentsTypesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/adjustments/types/${id}/usages`,
@@ -354,7 +358,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementAdjustmentsTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/adjustments/types/${id}/usages/list`,
@@ -363,7 +367,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementAdjustmentsTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementAdjustmentsTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/adjustments/types/count`,
       method: 'get',
@@ -372,7 +376,7 @@ export class ProcurementAPI extends Manage {
   }
 
   getProcurementAdjustmentsTypesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<AdjustmentTypeInfo> = {},
   ): Promise<Array<AdjustmentTypeInfo>> {
     return this.request({
       path: `/procurement/adjustments/types/info`,
@@ -381,7 +385,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementAdjustmentsTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementAdjustmentsTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/adjustments/types/info/count`,
       method: 'get',
@@ -389,7 +393,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCatalog(params: CommonParameters = {}): Promise<Array<CatalogItem>> {
+  getProcurementCatalog(params: CommonParameters<CatalogItem> = {}): Promise<Array<CatalogItem>> {
     return this.request({
       path: `/procurement/catalog`,
       method: 'get',
@@ -408,7 +412,7 @@ export class ProcurementAPI extends Manage {
   getProcurementCatalogByCatalogItemIdentifierQuantityOnHand(
     catalogItemIdentifier: string,
     warehouseBinId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/catalog/${catalogItemIdentifier}/quantityOnHand`,
@@ -417,7 +421,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCatalogById(id: number, params: CommonParameters = {}): Promise<CatalogItem> {
+  getProcurementCatalogById(
+    id: number,
+    params: CommonParameters<CatalogItem> = {},
+  ): Promise<CatalogItem> {
     return this.request({
       path: `/procurement/catalog/${id}`,
       method: 'get',
@@ -460,7 +467,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CatalogItemInfo> = {},
   ): Promise<CatalogItemInfo> {
     return this.request({
       path: `/procurement/catalog/${id}/info`,
@@ -482,7 +489,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogByParentIdComponents(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CatalogComponent> = {},
   ): Promise<Array<CatalogComponent>> {
     return this.request({
       path: `/procurement/catalog/${parentId}/components`,
@@ -505,7 +512,7 @@ export class ProcurementAPI extends Manage {
   getProcurementCatalogByParentIdComponentsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CatalogComponent> = {},
   ): Promise<CatalogComponent> {
     return this.request({
       path: `/procurement/catalog/${parentId}/components/${id}`,
@@ -550,7 +557,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogByParentIdComponentsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/catalog/${parentId}/components/count`,
@@ -561,7 +568,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogByParentIdInventory(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CatalogInventory> = {},
   ): Promise<Array<CatalogInventory>> {
     return this.request({
       path: `/procurement/catalog/${parentId}/inventory`,
@@ -573,7 +580,7 @@ export class ProcurementAPI extends Manage {
   getProcurementCatalogByParentIdInventoryById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CatalogInventory> = {},
   ): Promise<CatalogInventory> {
     return this.request({
       path: `/procurement/catalog/${parentId}/inventory/${id}`,
@@ -584,7 +591,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogByParentIdInventoryCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/catalog/${parentId}/inventory/count`,
@@ -595,7 +602,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogByParentIdMinimumStockByWarehouse(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MinimumStockByWarehouse> = {},
   ): Promise<Array<MinimumStockByWarehouse>> {
     return this.request({
       path: `/procurement/catalog/${parentId}/minimumStockByWarehouse`,
@@ -618,7 +625,7 @@ export class ProcurementAPI extends Manage {
   getProcurementCatalogByParentIdMinimumStockByWarehouseById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MinimumStockByWarehouse> = {},
   ): Promise<MinimumStockByWarehouse> {
     return this.request({
       path: `/procurement/catalog/${parentId}/minimumStockByWarehouse/${id}`,
@@ -663,7 +670,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogByParentIdMinimumStockByWarehouseCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/catalog/${parentId}/minimumStockByWarehouse/count`,
@@ -706,7 +713,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCatalogCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementCatalogCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/catalog/count`,
       method: 'get',
@@ -714,7 +721,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCatalogInfo(params: CommonParameters = {}): Promise<Array<CatalogItemInfo>> {
+  getProcurementCatalogInfo(
+    params: CommonParameters<CatalogItemInfo> = {},
+  ): Promise<Array<CatalogItemInfo>> {
     return this.request({
       path: `/procurement/catalog/info`,
       method: 'get',
@@ -722,7 +731,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCatalogInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementCatalogInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/catalog/info/count`,
       method: 'get',
@@ -740,7 +749,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCatalogVendorsByParentId(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CatalogVendors> = {},
   ): Promise<Array<CatalogVendors>> {
     return this.request({
       path: `/procurement/catalog/vendors/${parentId}`,
@@ -749,7 +758,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCategories(params: CommonParameters = {}): Promise<Array<Category>> {
+  getProcurementCategories(params: CommonParameters<Category> = {}): Promise<Array<Category>> {
     return this.request({
       path: `/procurement/categories`,
       method: 'get',
@@ -765,7 +774,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCategoriesById(id: number, params: CommonParameters = {}): Promise<Category> {
+  getProcurementCategoriesById(
+    id: number,
+    params: CommonParameters<Category> = {},
+  ): Promise<Category> {
     return this.request({
       path: `/procurement/categories/${id}`,
       method: 'get',
@@ -801,7 +813,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCategoriesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CategoryInfo> = {},
   ): Promise<CategoryInfo> {
     return this.request({
       path: `/procurement/categories/${id}/info`,
@@ -812,7 +824,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCategoriesByParentIdSubcategories(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LegacySubCategory> = {},
   ): Promise<Array<LegacySubCategory>> {
     return this.request({
       path: `/procurement/categories/${parentId}/subcategories/`,
@@ -835,7 +847,7 @@ export class ProcurementAPI extends Manage {
   getProcurementCategoriesByParentIdSubcategoriesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LegacySubCategory> = {},
   ): Promise<LegacySubCategory> {
     return this.request({
       path: `/procurement/categories/${parentId}/subcategories/${id}`,
@@ -881,7 +893,7 @@ export class ProcurementAPI extends Manage {
   getProcurementCategoriesByParentIdSubcategoriesByIdInfo(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LegacySubCategoryInfo> = {},
   ): Promise<LegacySubCategoryInfo> {
     return this.request({
       path: `/procurement/categories/${parentId}/subcategories/${id}/info`,
@@ -892,7 +904,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCategoriesByParentIdSubcategoriesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/categories/${parentId}/subcategories/count`,
@@ -903,7 +915,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCategoriesByParentIdSubcategoriesInfo(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LegacySubCategoryInfo> = {},
   ): Promise<Array<LegacySubCategoryInfo>> {
     return this.request({
       path: `/procurement/categories/${parentId}/subcategories/info`,
@@ -914,7 +926,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementCategoriesByParentIdSubcategoriesInfoCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/categories/${parentId}/subcategories/info/count`,
@@ -923,7 +935,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCategoriesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementCategoriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/categories/count`,
       method: 'get',
@@ -931,7 +943,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCategoriesInfo(params: CommonParameters = {}): Promise<Array<CategoryInfo>> {
+  getProcurementCategoriesInfo(
+    params: CommonParameters<CategoryInfo> = {},
+  ): Promise<Array<CategoryInfo>> {
     return this.request({
       path: `/procurement/categories/info`,
       method: 'get',
@@ -939,7 +953,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementCategoriesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementCategoriesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/categories/info/count`,
       method: 'get',
@@ -947,7 +961,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementChangeorder(params: CommonParameters = {}): Promise<Array<ChangeOrder>> {
+  getProcurementChangeorder(
+    params: CommonParameters<ChangeOrder> = {},
+  ): Promise<Array<ChangeOrder>> {
     return this.request({
       path: `/procurement/changeorder`,
       method: 'get',
@@ -981,7 +997,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementChangeordersCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementChangeordersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/changeorders/count`,
       method: 'get',
@@ -989,7 +1005,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementDirectionalSyncs(params: CommonParameters = {}): Promise<Array<DirectionalSync>> {
+  getProcurementDirectionalSyncs(
+    params: CommonParameters<DirectionalSync> = {},
+  ): Promise<Array<DirectionalSync>> {
     return this.request({
       path: `/procurement/directionalSyncs`,
       method: 'get',
@@ -1007,7 +1025,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementDirectionalSyncsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<DirectionalSync> = {},
   ): Promise<DirectionalSync> {
     return this.request({
       path: `/procurement/directionalSyncs/${id}`,
@@ -1045,7 +1063,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementDirectionalSyncsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementDirectionalSyncsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/directionalSyncs/count`,
       method: 'get',
@@ -1053,7 +1071,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementInvoicegrouping(params: CommonParameters = {}): Promise<Array<InvoiceGrouping>> {
+  getProcurementInvoicegrouping(
+    params: CommonParameters<InvoiceGrouping> = {},
+  ): Promise<Array<InvoiceGrouping>> {
     return this.request({
       path: `/procurement/invoicegrouping`,
       method: 'get',
@@ -1063,7 +1083,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementInvoicegroupingById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InvoiceGrouping> = {},
   ): Promise<InvoiceGrouping> {
     return this.request({
       path: `/procurement/invoicegrouping/${id}`,
@@ -1103,7 +1123,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementInvoicegroupingByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/invoicegrouping/${id}/usages`,
@@ -1114,7 +1134,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementInvoicegroupingByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/invoicegrouping/${id}/usages/list`,
@@ -1123,7 +1143,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementInvoicegroupingCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementInvoicegroupingCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/invoicegrouping/count`,
       method: 'get',
@@ -1139,7 +1159,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementManufacturers(params: CommonParameters = {}): Promise<Array<Manufacturer>> {
+  getProcurementManufacturers(
+    params: CommonParameters<Manufacturer> = {},
+  ): Promise<Array<Manufacturer>> {
     return this.request({
       path: `/procurement/manufacturers`,
       method: 'get',
@@ -1157,7 +1179,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementManufacturersById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Manufacturer> = {},
   ): Promise<Manufacturer> {
     return this.request({
       path: `/procurement/manufacturers/${id}`,
@@ -1194,7 +1216,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementManufacturersByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ManufacturerInfo> = {},
   ): Promise<ManufacturerInfo> {
     return this.request({
       path: `/procurement/manufacturers/${id}/info`,
@@ -1203,7 +1225,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementManufacturersCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementManufacturersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/manufacturers/count`,
       method: 'get',
@@ -1211,7 +1233,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementManufacturersCountInfo(params: CommonParameters = {}): Promise<Count> {
+  getProcurementManufacturersCountInfo(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/manufacturers/count/info`,
       method: 'get',
@@ -1219,7 +1241,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementManufacturersInfo(params: CommonParameters = {}): Promise<Array<ManufacturerInfo>> {
+  getProcurementManufacturersInfo(
+    params: CommonParameters<ManufacturerInfo> = {},
+  ): Promise<Array<ManufacturerInfo>> {
     return this.request({
       path: `/procurement/manufacturers/info`,
       method: 'get',
@@ -1228,7 +1252,7 @@ export class ProcurementAPI extends Manage {
   }
 
   getProcurementOnhandserialnumbers(
-    params: CommonParameters = {},
+    params: CommonParameters<OnHandSerialNumber> = {},
   ): Promise<Array<OnHandSerialNumber>> {
     return this.request({
       path: `/procurement/onhandserialnumbers`,
@@ -1239,7 +1263,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementOnhandserialnumbersById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OnHandSerialNumber> = {},
   ): Promise<OnHandSerialNumber> {
     return this.request({
       path: `/procurement/onhandserialnumbers/${id}`,
@@ -1248,7 +1272,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementOnhandserialnumbersCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementOnhandserialnumbersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/onhandserialnumbers/count`,
       method: 'get',
@@ -1256,7 +1280,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementPricingschedules(params: CommonParameters = {}): Promise<Array<PricingSchedule>> {
+  getProcurementPricingschedules(
+    params: CommonParameters<PricingSchedule> = {},
+  ): Promise<Array<PricingSchedule>> {
     return this.request({
       path: `/procurement/pricingschedules`,
       method: 'get',
@@ -1275,7 +1301,7 @@ export class ProcurementAPI extends Manage {
   getProcurementPricingschedulesByGrandparentIdDetailsByParentIdBreaks(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PricingBreak> = {},
   ): Promise<Array<PricingBreak>> {
     return this.request({
       path: `/procurement/pricingschedules/${grandparentId}/details/${parentId}/breaks`,
@@ -1300,7 +1326,7 @@ export class ProcurementAPI extends Manage {
     id: number,
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PricingBreak> = {},
   ): Promise<PricingBreak> {
     return this.request({
       path: `/procurement/pricingschedules/${grandparentId}/details/${parentId}/breaks/${id}`,
@@ -1349,7 +1375,7 @@ export class ProcurementAPI extends Manage {
   getProcurementPricingschedulesByGrandparentIdDetailsByParentIdBreaksCount(
     parentId: number,
     grandparentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/pricingschedules/${grandparentId}/details/${parentId}/breaks/count`,
@@ -1360,7 +1386,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPricingschedulesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PricingSchedule> = {},
   ): Promise<PricingSchedule> {
     return this.request({
       path: `/procurement/pricingschedules/${id}`,
@@ -1400,7 +1426,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPricingschedulesByParentIdDetails(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PricingDetail> = {},
   ): Promise<Array<PricingDetail>> {
     return this.request({
       path: `/procurement/pricingschedules/${parentId}/details`,
@@ -1423,7 +1449,7 @@ export class ProcurementAPI extends Manage {
   getProcurementPricingschedulesByParentIdDetailsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PricingDetail> = {},
   ): Promise<PricingDetail> {
     return this.request({
       path: `/procurement/pricingschedules/${parentId}/details/${id}`,
@@ -1468,7 +1494,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPricingschedulesByParentIdDetailsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/pricingschedules/${parentId}/details/count`,
@@ -1477,7 +1503,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementPricingschedulesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementPricingschedulesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/pricingschedules/count`,
       method: 'get',
@@ -1485,7 +1511,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementProducts(params: CommonParameters = {}): Promise<Array<ProductItem>> {
+  getProcurementProducts(params: CommonParameters<ProductItem> = {}): Promise<Array<ProductItem>> {
     return this.request({
       path: `/procurement/products`,
       method: 'get',
@@ -1501,7 +1527,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementProductsById(id: number, params: CommonParameters = {}): Promise<ProductItem> {
+  getProcurementProductsById(
+    id: number,
+    params: CommonParameters<ProductItem> = {},
+  ): Promise<ProductItem> {
     return this.request({
       path: `/procurement/products/${id}`,
       method: 'get',
@@ -1545,7 +1574,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementProductsByParentIdComponents(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProductComponent> = {},
   ): Promise<Array<ProductComponent>> {
     return this.request({
       path: `/procurement/products/${parentId}/components`,
@@ -1568,7 +1597,7 @@ export class ProcurementAPI extends Manage {
   getProcurementProductsByParentIdComponentsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProductComponent> = {},
   ): Promise<Array<ProductComponent>> {
     return this.request({
       path: `/procurement/products/${parentId}/components/${id}`,
@@ -1613,7 +1642,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementProductsByParentIdComponentsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/products/${parentId}/components/count`,
@@ -1624,7 +1653,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementProductsByParentIdPickingShippingDetails(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProductPickingShippingDetail> = {},
   ): Promise<Array<ProductPickingShippingDetail>> {
     return this.request({
       path: `/procurement/products/${parentId}/pickingShippingDetails`,
@@ -1647,7 +1676,7 @@ export class ProcurementAPI extends Manage {
   getProcurementProductsByParentIdPickingShippingDetailsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProductPickingShippingDetail> = {},
   ): Promise<Array<ProductPickingShippingDetail>> {
     return this.request({
       path: `/procurement/products/${parentId}/pickingShippingDetails/${id}`,
@@ -1692,7 +1721,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementProductsByParentIdPickingShippingDetailsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/products/${parentId}/pickingShippingDetails/count`,
@@ -1701,7 +1730,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementProductsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementProductsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/products/count`,
       method: 'get',
@@ -1709,7 +1738,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementPurchaseorders(params: CommonParameters = {}): Promise<Array<PurchaseOrder>> {
+  getProcurementPurchaseorders(
+    params: CommonParameters<PurchaseOrder> = {},
+  ): Promise<Array<PurchaseOrder>> {
     return this.request({
       path: `/procurement/purchaseorders`,
       method: 'get',
@@ -1727,7 +1758,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseordersById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrder> = {},
   ): Promise<PurchaseOrder> {
     return this.request({
       path: `/procurement/purchaseorders/${id}`,
@@ -1774,7 +1805,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseordersByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderInfo> = {},
   ): Promise<PurchaseOrderInfo> {
     return this.request({
       path: `/procurement/purchaseorders/${id}/info`,
@@ -1785,7 +1816,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseordersByIdQuickAccessCount(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<HttpResponseMessage> = {},
   ): Promise<HttpResponseMessage> {
     return this.request({
       path: `/procurement/purchaseorders/${id}/quickAccess/count`,
@@ -1810,7 +1841,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseordersByParentIdLineitems(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderLineItem> = {},
   ): Promise<Array<PurchaseOrderLineItem>> {
     return this.request({
       path: `/procurement/purchaseorders/${parentId}/lineitems`,
@@ -1843,7 +1874,7 @@ export class ProcurementAPI extends Manage {
   getProcurementPurchaseordersByParentIdLineitemsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderLineItem> = {},
   ): Promise<PurchaseOrderLineItem> {
     return this.request({
       path: `/procurement/purchaseorders/${parentId}/lineitems/${id}`,
@@ -1911,7 +1942,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseordersByParentIdLineitemsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorders/${parentId}/lineitems/count`,
@@ -1922,7 +1953,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseordersByParentIdNotes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderNote> = {},
   ): Promise<Array<PurchaseOrderNote>> {
     return this.request({
       path: `/procurement/purchaseorders/${parentId}/notes`,
@@ -1945,7 +1976,7 @@ export class ProcurementAPI extends Manage {
   getProcurementPurchaseordersByParentIdNotesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderNote> = {},
   ): Promise<PurchaseOrderNote> {
     return this.request({
       path: `/procurement/purchaseorders/${parentId}/notes/${id}`,
@@ -1990,7 +2021,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseordersByParentIdNotesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorders/${parentId}/notes/count`,
@@ -1999,7 +2030,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementPurchaseordersCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementPurchaseordersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorders/count`,
       method: 'get',
@@ -2008,7 +2039,7 @@ export class ProcurementAPI extends Manage {
   }
 
   getProcurementPurchaseordersInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderInfo> = {},
   ): Promise<Array<PurchaseOrderInfo>> {
     return this.request({
       path: `/procurement/purchaseorders/info`,
@@ -2017,7 +2048,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementPurchaseordersInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementPurchaseordersInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorders/info/count`,
       method: 'get',
@@ -2026,7 +2057,7 @@ export class ProcurementAPI extends Manage {
   }
 
   getProcurementPurchaseorderstatuses(
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatus> = {},
   ): Promise<Array<PurchaseOrderStatus>> {
     return this.request({
       path: `/procurement/purchaseorderstatuses`,
@@ -2047,7 +2078,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatus> = {},
   ): Promise<PurchaseOrderStatus> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${id}`,
@@ -2087,7 +2118,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatusInfo> = {},
   ): Promise<PurchaseOrderStatusInfo> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${id}/info`,
@@ -2098,7 +2129,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${id}/usages`,
@@ -2109,7 +2140,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${id}/usages/list`,
@@ -2120,7 +2151,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesByParentIdEmailtemplates(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatusEmailTemplate> = {},
   ): Promise<Array<PurchaseOrderStatusEmailTemplate>> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${parentId}/emailtemplates/`,
@@ -2143,7 +2174,7 @@ export class ProcurementAPI extends Manage {
   getProcurementPurchaseorderstatusesByParentIdEmailtemplatesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatusEmailTemplate> = {},
   ): Promise<PurchaseOrderStatusEmailTemplate> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${parentId}/emailtemplates/${id}`,
@@ -2188,7 +2219,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesByParentIdEmailtemplatesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${parentId}/emailtemplates/count`,
@@ -2199,7 +2230,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesByParentIdNotifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatusNotification> = {},
   ): Promise<Array<PurchaseOrderStatusNotification>> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${parentId}/notifications`,
@@ -2222,7 +2253,7 @@ export class ProcurementAPI extends Manage {
   getProcurementPurchaseorderstatusesByParentIdNotificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatusNotification> = {},
   ): Promise<PurchaseOrderStatusNotification> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${parentId}/notifications/${id}`,
@@ -2267,7 +2298,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementPurchaseorderstatusesByParentIdNotificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/${parentId}/notifications/count`,
@@ -2276,7 +2307,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementPurchaseorderstatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementPurchaseorderstatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/count`,
       method: 'get',
@@ -2285,7 +2316,7 @@ export class ProcurementAPI extends Manage {
   }
 
   getProcurementPurchaseorderstatusesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<PurchaseOrderStatusInfo> = {},
   ): Promise<Array<PurchaseOrderStatusInfo>> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/info`,
@@ -2294,7 +2325,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementPurchaseorderstatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementPurchaseorderstatusesInfoCount(
+    params: CommonParameters<Count> = {},
+  ): Promise<Count> {
     return this.request({
       path: `/procurement/purchaseorderstatuses/Info/count`,
       method: 'get',
@@ -2310,7 +2343,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaActions(params: CommonParameters = {}): Promise<Array<RmaAction>> {
+  getProcurementRmaActions(params: CommonParameters<RmaAction> = {}): Promise<Array<RmaAction>> {
     return this.request({
       path: `/procurement/rmaActions`,
       method: 'get',
@@ -2326,7 +2359,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaActionsById(id: number, params: CommonParameters = {}): Promise<RmaAction> {
+  getProcurementRmaActionsById(
+    id: number,
+    params: CommonParameters<RmaAction> = {},
+  ): Promise<RmaAction> {
     return this.request({
       path: `/procurement/rmaActions/${id}`,
       method: 'get',
@@ -2362,7 +2398,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaActionsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaActionInfo> = {},
   ): Promise<RmaActionInfo> {
     return this.request({
       path: `/procurement/rmaActions/${id}/info`,
@@ -2371,7 +2407,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaActionsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementRmaActionsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/rmaActions/count`,
       method: 'get',
@@ -2379,7 +2415,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaActionsInfo(params: CommonParameters = {}): Promise<Array<RmaActionInfo>> {
+  getProcurementRmaActionsInfo(
+    params: CommonParameters<RmaActionInfo> = {},
+  ): Promise<Array<RmaActionInfo>> {
     return this.request({
       path: `/procurement/rmaActions/info`,
       method: 'get',
@@ -2387,7 +2425,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaActionsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementRmaActionsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/rmaActions/info/count`,
       method: 'get',
@@ -2395,7 +2433,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRMADispositions(params: CommonParameters = {}): Promise<Array<RmaDisposition>> {
+  getProcurementRMADispositions(
+    params: CommonParameters<RmaDisposition> = {},
+  ): Promise<Array<RmaDisposition>> {
     return this.request({
       path: `/procurement/RMADispositions`,
       method: 'get',
@@ -2413,7 +2453,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRMADispositionsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaDisposition> = {},
   ): Promise<RmaDisposition> {
     return this.request({
       path: `/procurement/RMADispositions/${id}`,
@@ -2453,7 +2493,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRMADispositionsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaDispositionInfo> = {},
   ): Promise<RmaDispositionInfo> {
     return this.request({
       path: `/procurement/RMADispositions/${id}/info`,
@@ -2462,7 +2502,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRMADispositionsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementRMADispositionsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/RMADispositions/count`,
       method: 'get',
@@ -2471,7 +2511,7 @@ export class ProcurementAPI extends Manage {
   }
 
   getProcurementRMADispositionsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<RmaDispositionInfo> = {},
   ): Promise<Array<RmaDispositionInfo>> {
     return this.request({
       path: `/procurement/RMADispositions/info`,
@@ -2480,7 +2520,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRMADispositionsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementRMADispositionsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/RMADispositions/info/count`,
       method: 'get',
@@ -2488,7 +2528,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaStatuses(params: CommonParameters = {}): Promise<Array<RmaStatus>> {
+  getProcurementRmaStatuses(params: CommonParameters<RmaStatus> = {}): Promise<Array<RmaStatus>> {
     return this.request({
       path: `/procurement/rmaStatuses`,
       method: 'get',
@@ -2504,7 +2544,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaStatusesById(id: number, params: CommonParameters = {}): Promise<RmaStatus> {
+  getProcurementRmaStatusesById(
+    id: number,
+    params: CommonParameters<RmaStatus> = {},
+  ): Promise<RmaStatus> {
     return this.request({
       path: `/procurement/rmaStatuses/${id}`,
       method: 'get',
@@ -2540,7 +2583,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaStatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaStatusInfo> = {},
   ): Promise<RmaStatusInfo> {
     return this.request({
       path: `/procurement/rmaStatuses/${id}/info`,
@@ -2551,7 +2594,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaStatusesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/rmaStatuses/${id}/usages`,
@@ -2562,7 +2605,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaStatusesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/rmaStatuses/${id}/usages/list`,
@@ -2584,7 +2627,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaStatusesByParentIdEmailTemplates(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaStatusEmailTemplate> = {},
   ): Promise<Array<RmaStatusEmailTemplate>> {
     return this.request({
       path: `/procurement/rmaStatuses/${parentId}/emailTemplates/`,
@@ -2596,7 +2639,7 @@ export class ProcurementAPI extends Manage {
   getProcurementRmaStatusesByParentIdEmailtemplatesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaStatusEmailTemplate> = {},
   ): Promise<RmaStatusEmailTemplate> {
     return this.request({
       path: `/procurement/rmaStatuses/${parentId}/emailtemplates/${id}`,
@@ -2641,7 +2684,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaStatusesByParentIdEmailtemplatesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/rmaStatuses/${parentId}/emailtemplates/count`,
@@ -2652,7 +2695,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaStatusesByParentIdNotifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaStatusNotification> = {},
   ): Promise<Array<RmaStatusNotification>> {
     return this.request({
       path: `/procurement/rmaStatuses/${parentId}/notifications`,
@@ -2675,7 +2718,7 @@ export class ProcurementAPI extends Manage {
   getProcurementRmaStatusesByParentIdNotificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaStatusNotification> = {},
   ): Promise<RmaStatusNotification> {
     return this.request({
       path: `/procurement/rmaStatuses/${parentId}/notifications/${id}`,
@@ -2720,7 +2763,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementRmaStatusesByParentIdNotificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/rmaStatuses/${parentId}/notifications/count`,
@@ -2729,7 +2772,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementRmaStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/rmaStatuses/count`,
       method: 'get',
@@ -2737,7 +2780,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaStatusesInfo(params: CommonParameters = {}): Promise<Array<RmaStatusInfo>> {
+  getProcurementRmaStatusesInfo(
+    params: CommonParameters<RmaStatusInfo> = {},
+  ): Promise<Array<RmaStatusInfo>> {
     return this.request({
       path: `/procurement/rmaStatuses/info`,
       method: 'get',
@@ -2745,7 +2790,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaStatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementRmaStatusesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/rmaStatuses/info/count`,
       method: 'get',
@@ -2753,7 +2798,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaTags(params: CommonParameters = {}): Promise<Array<RmaTag>> {
+  getProcurementRmaTags(params: CommonParameters<RmaTag> = {}): Promise<Array<RmaTag>> {
     return this.request({
       path: `/procurement/rmaTags`,
       method: 'get',
@@ -2769,7 +2814,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaTagsById(id: number, params: CommonParameters = {}): Promise<RmaTag> {
+  getProcurementRmaTagsById(id: number, params: CommonParameters<RmaTag> = {}): Promise<RmaTag> {
     return this.request({
       path: `/procurement/rmaTags/${id}`,
       method: 'get',
@@ -2800,7 +2845,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementRmaTagsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementRmaTagsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/rmaTags/count`,
       method: 'get',
@@ -2815,7 +2860,7 @@ export class ProcurementAPI extends Manage {
     projectId: number,
     salesOrderId: number,
     companyId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<RmaTag> = {},
   ): Promise<RmaTag> {
     return this.request({
       path: `/procurement/rmaTags/default`,
@@ -2824,7 +2869,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementSettings(params: CommonParameters = {}): Promise<Array<ProcurementSetting>> {
+  getProcurementSettings(
+    params: CommonParameters<ProcurementSetting> = {},
+  ): Promise<Array<ProcurementSetting>> {
     return this.request({
       path: `/procurement/settings`,
       method: 'get',
@@ -2834,7 +2881,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementSettingsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ProcurementSetting> = {},
   ): Promise<ProcurementSetting> {
     return this.request({
       path: `/procurement/settings/${id}`,
@@ -2865,7 +2912,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementSettingsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementSettingsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/settings/count`,
       method: 'get',
@@ -2873,7 +2920,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementShipmentmethods(params: CommonParameters = {}): Promise<Array<ShipmentMethod>> {
+  getProcurementShipmentmethods(
+    params: CommonParameters<ShipmentMethod> = {},
+  ): Promise<Array<ShipmentMethod>> {
     return this.request({
       path: `/procurement/shipmentmethods`,
       method: 'get',
@@ -2891,7 +2940,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementShipmentmethodsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ShipmentMethod> = {},
   ): Promise<ShipmentMethod> {
     return this.request({
       path: `/procurement/shipmentmethods/${id}`,
@@ -2931,7 +2980,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementShipmentmethodsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ShipmentMethodInfo> = {},
   ): Promise<ShipmentMethodInfo> {
     return this.request({
       path: `/procurement/shipmentmethods/${id}/info`,
@@ -2942,7 +2991,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementShipmentmethodsByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/shipmentmethods/${id}/usages`,
@@ -2953,7 +3002,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementShipmentmethodsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/shipmentmethods/${id}/usages/list`,
@@ -2962,7 +3011,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementShipmentmethodsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementShipmentmethodsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/shipmentmethods/count`,
       method: 'get',
@@ -2971,7 +3020,7 @@ export class ProcurementAPI extends Manage {
   }
 
   getProcurementShipmentmethodsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<ShipmentMethodInfo> = {},
   ): Promise<Array<ShipmentMethodInfo>> {
     return this.request({
       path: `/procurement/shipmentmethods/info`,
@@ -2980,7 +3029,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementShipmentmethodsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementShipmentmethodsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/shipmentmethods/info/count`,
       method: 'get',
@@ -2988,7 +3037,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementSubcategories(params: CommonParameters = {}): Promise<Array<SubCategory>> {
+  getProcurementSubcategories(
+    params: CommonParameters<SubCategory> = {},
+  ): Promise<Array<SubCategory>> {
     return this.request({
       path: `/procurement/subcategories/`,
       method: 'get',
@@ -3004,7 +3055,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementSubcategoriesById(id: number, params: CommonParameters = {}): Promise<SubCategory> {
+  getProcurementSubcategoriesById(
+    id: number,
+    params: CommonParameters<SubCategory> = {},
+  ): Promise<SubCategory> {
     return this.request({
       path: `/procurement/subcategories/${id}`,
       method: 'get',
@@ -3040,7 +3094,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementSubcategoriesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SubCategoryInfo> = {},
   ): Promise<SubCategoryInfo> {
     return this.request({
       path: `/procurement/subcategories/${id}/info`,
@@ -3051,7 +3105,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementSubcategoriesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/subcategories/${id}/usages`,
@@ -3062,7 +3116,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementSubcategoriesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/subcategories/${id}/usages/list`,
@@ -3071,7 +3125,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementSubcategoriesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementSubcategoriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/subcategories/count`,
       method: 'get',
@@ -3079,7 +3133,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementSubcategoriesInfo(params: CommonParameters = {}): Promise<Array<SubCategoryInfo>> {
+  getProcurementSubcategoriesInfo(
+    params: CommonParameters<SubCategoryInfo> = {},
+  ): Promise<Array<SubCategoryInfo>> {
     return this.request({
       path: `/procurement/subcategories/info/`,
       method: 'get',
@@ -3087,7 +3143,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementSubcategoriesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementSubcategoriesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/subcategories/info/count`,
       method: 'get',
@@ -3095,7 +3151,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementTypes(params: CommonParameters = {}): Promise<Array<ProductType>> {
+  getProcurementTypes(params: CommonParameters<ProductType> = {}): Promise<Array<ProductType>> {
     return this.request({
       path: `/procurement/types`,
       method: 'get',
@@ -3111,7 +3167,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementTypesById(id: number, params: CommonParameters = {}): Promise<ProductType> {
+  getProcurementTypesById(
+    id: number,
+    params: CommonParameters<ProductType> = {},
+  ): Promise<ProductType> {
     return this.request({
       path: `/procurement/types/${id}`,
       method: 'get',
@@ -3145,7 +3204,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementTypesByIdInfo(id: number, params: CommonParameters = {}): Promise<ProductTypeInfo> {
+  getProcurementTypesByIdInfo(
+    id: number,
+    params: CommonParameters<ProductTypeInfo> = {},
+  ): Promise<ProductTypeInfo> {
     return this.request({
       path: `/procurement/types/${id}/info`,
       method: 'get',
@@ -3153,7 +3215,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementTypesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getProcurementTypesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/types/${id}/usages`,
       method: 'get',
@@ -3163,7 +3228,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/procurement/types/${id}/usages/list`,
@@ -3172,7 +3237,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/types/count`,
       method: 'get',
@@ -3180,7 +3245,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementTypesInfo(params: CommonParameters = {}): Promise<Array<ProductTypeInfo>> {
+  getProcurementTypesInfo(
+    params: CommonParameters<ProductTypeInfo> = {},
+  ): Promise<Array<ProductTypeInfo>> {
     return this.request({
       path: `/procurement/types/info`,
       method: 'get',
@@ -3188,7 +3255,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/types/info/count`,
       method: 'get',
@@ -3196,7 +3263,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementUnitOfMeasures(params: CommonParameters = {}): Promise<Array<UnitOfMeasure>> {
+  getProcurementUnitOfMeasures(
+    params: CommonParameters<UnitOfMeasure> = {},
+  ): Promise<Array<UnitOfMeasure>> {
     return this.request({
       path: `/procurement/unitOfMeasures`,
       method: 'get',
@@ -3214,7 +3283,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementUnitOfMeasuresById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<UnitOfMeasure> = {},
   ): Promise<UnitOfMeasure> {
     return this.request({
       path: `/procurement/unitOfMeasures/${id}`,
@@ -3254,7 +3323,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementUnitOfMeasuresByParentIdConversions(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Conversion> = {},
   ): Promise<Array<Conversion>> {
     return this.request({
       path: `/procurement/unitOfMeasures/${parentId}/conversions`,
@@ -3277,7 +3346,7 @@ export class ProcurementAPI extends Manage {
   getProcurementUnitOfMeasuresByParentIdConversionsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Conversion> = {},
   ): Promise<Conversion> {
     return this.request({
       path: `/procurement/unitOfMeasures/${parentId}/conversions/${id}`,
@@ -3322,7 +3391,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementUnitOfMeasuresByParentIdConversionsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/unitOfMeasures/${parentId}/conversions/count`,
@@ -3331,7 +3400,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementUnitOfMeasuresCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementUnitOfMeasuresCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/unitOfMeasures/count`,
       method: 'get',
@@ -3339,7 +3408,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehouseBins(params: CommonParameters = {}): Promise<Array<WarehouseBin>> {
+  getProcurementWarehouseBins(
+    params: CommonParameters<WarehouseBin> = {},
+  ): Promise<Array<WarehouseBin>> {
     return this.request({
       path: `/procurement/warehouseBins`,
       method: 'get',
@@ -3357,7 +3428,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementWarehouseBinsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WarehouseBin> = {},
   ): Promise<WarehouseBin> {
     return this.request({
       path: `/procurement/warehouseBins/${id}`,
@@ -3394,7 +3465,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementWarehouseBinsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WarehouseBinInfo> = {},
   ): Promise<WarehouseBinInfo> {
     return this.request({
       path: `/procurement/warehouseBins/${id}/info`,
@@ -3405,7 +3476,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementWarehouseBinsByParentIdInventoryOnHand(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InventoryOnHand> = {},
   ): Promise<Array<InventoryOnHand>> {
     return this.request({
       path: `/procurement/warehouseBins/${parentId}/inventoryOnHand`,
@@ -3417,7 +3488,7 @@ export class ProcurementAPI extends Manage {
   getProcurementWarehouseBinsByParentIdInventoryOnHandById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<InventoryOnHand> = {},
   ): Promise<InventoryOnHand> {
     return this.request({
       path: `/procurement/warehouseBins/${parentId}/inventoryOnHand/${id}`,
@@ -3428,7 +3499,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementWarehouseBinsByParentIdInventoryOnHandCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/procurement/warehouseBins/${parentId}/inventoryOnHand/count`,
@@ -3437,7 +3508,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehouseBinsCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementWarehouseBinsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/warehouseBins/count`,
       method: 'get',
@@ -3445,7 +3516,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehouseBinsInfo(params: CommonParameters = {}): Promise<Array<WarehouseBinInfo>> {
+  getProcurementWarehouseBinsInfo(
+    params: CommonParameters<WarehouseBinInfo> = {},
+  ): Promise<Array<WarehouseBinInfo>> {
     return this.request({
       path: `/procurement/warehouseBins/info`,
       method: 'get',
@@ -3453,7 +3526,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehouseBinsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementWarehouseBinsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/warehouseBins/info/count`,
       method: 'get',
@@ -3461,7 +3534,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehouses(params: CommonParameters = {}): Promise<Array<Warehouse>> {
+  getProcurementWarehouses(params: CommonParameters<Warehouse> = {}): Promise<Array<Warehouse>> {
     return this.request({
       path: `/procurement/warehouses`,
       method: 'get',
@@ -3477,7 +3550,10 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehousesById(id: number, params: CommonParameters = {}): Promise<Warehouse> {
+  getProcurementWarehousesById(
+    id: number,
+    params: CommonParameters<Warehouse> = {},
+  ): Promise<Warehouse> {
     return this.request({
       path: `/procurement/warehouses/${id}`,
       method: 'get',
@@ -3513,7 +3589,7 @@ export class ProcurementAPI extends Manage {
 
   getProcurementWarehousesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<WarehouseInfo> = {},
   ): Promise<WarehouseInfo> {
     return this.request({
       path: `/procurement/warehouses/${id}/info`,
@@ -3522,7 +3598,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehousesCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementWarehousesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/warehouses/count`,
       method: 'get',
@@ -3530,7 +3606,9 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehousesInfo(params: CommonParameters = {}): Promise<Array<WarehouseInfo>> {
+  getProcurementWarehousesInfo(
+    params: CommonParameters<WarehouseInfo> = {},
+  ): Promise<Array<WarehouseInfo>> {
     return this.request({
       path: `/procurement/warehouses/info`,
       method: 'get',
@@ -3538,7 +3616,7 @@ export class ProcurementAPI extends Manage {
     })
   }
 
-  getProcurementWarehousesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getProcurementWarehousesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/procurement/warehouses/info/count`,
       method: 'get',

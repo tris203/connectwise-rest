@@ -57,7 +57,7 @@ export class MarketingAPI extends Manage {
     super(props)
   }
 
-  getMarketingCampaigns(params: CommonParameters = {}): Promise<Array<Campaign>> {
+  getMarketingCampaigns(params: CommonParameters<Campaign> = {}): Promise<Array<Campaign>> {
     return this.request({
       path: `/marketing/campaigns`,
       method: 'get',
@@ -73,7 +73,10 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsById(id: number, params: CommonParameters = {}): Promise<Campaign> {
+  getMarketingCampaignsById(
+    id: number,
+    params: CommonParameters<Campaign> = {},
+  ): Promise<Campaign> {
     return this.request({
       path: `/marketing/campaigns/${id}`,
       method: 'get',
@@ -109,7 +112,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByIdActivities(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ActivityReference> = {},
   ): Promise<Array<ActivityReference>> {
     return this.request({
       path: `/marketing/campaigns/${id}/activities`,
@@ -120,7 +123,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByIdActivitiesCount(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/${id}/activities/count`,
@@ -131,7 +134,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByIdOpportunities(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityReference> = {},
   ): Promise<Array<OpportunityReference>> {
     return this.request({
       path: `/marketing/campaigns/${id}/opportunities`,
@@ -142,7 +145,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByIdOpportunitiesCount(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/${id}/opportunities/count`,
@@ -153,7 +156,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdAudits(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CampaignAudit> = {},
   ): Promise<Array<CampaignAudit>> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/audits`,
@@ -176,7 +179,7 @@ export class MarketingAPI extends Manage {
   getMarketingCampaignsByParentIdAuditsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CampaignAudit> = {},
   ): Promise<CampaignAudit> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/audits/${id}`,
@@ -221,7 +224,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdAuditsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/audits/count`,
@@ -232,7 +235,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdEmailsOpened(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EmailOpened> = {},
   ): Promise<Array<EmailOpened>> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/emailsOpened`,
@@ -255,7 +258,7 @@ export class MarketingAPI extends Manage {
   getMarketingCampaignsByParentIdEmailsOpenedById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<EmailOpened> = {},
   ): Promise<EmailOpened> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/emailsOpened/${id}`,
@@ -300,7 +303,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdEmailsOpenedCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/emailsOpened/count`,
@@ -311,7 +314,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdFormsSubmitted(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<FormSubmitted> = {},
   ): Promise<Array<FormSubmitted>> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/formsSubmitted`,
@@ -334,7 +337,7 @@ export class MarketingAPI extends Manage {
   getMarketingCampaignsByParentIdFormsSubmittedById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<FormSubmitted> = {},
   ): Promise<FormSubmitted> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/formsSubmitted/${id}`,
@@ -379,7 +382,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdFormsSubmittedCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/formsSubmitted/count`,
@@ -390,7 +393,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdLinksClicked(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LinkClicked> = {},
   ): Promise<Array<LinkClicked>> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/linksClicked`,
@@ -413,7 +416,7 @@ export class MarketingAPI extends Manage {
   getMarketingCampaignsByParentIdLinksClickedById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<LinkClicked> = {},
   ): Promise<LinkClicked> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/linksClicked/${id}`,
@@ -458,7 +461,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsByParentIdLinksClickedCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/${parentId}/linksClicked/count`,
@@ -467,7 +470,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsCount(params: CommonParameters = {}): Promise<Count> {
+  getMarketingCampaignsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/count`,
       method: 'get',
@@ -475,7 +478,9 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsStatuses(params: CommonParameters = {}): Promise<Array<CampaignStatus>> {
+  getMarketingCampaignsStatuses(
+    params: CommonParameters<CampaignStatus> = {},
+  ): Promise<Array<CampaignStatus>> {
     return this.request({
       path: `/marketing/campaigns/statuses`,
       method: 'get',
@@ -493,7 +498,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsStatusesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CampaignStatus> = {},
   ): Promise<CampaignStatus> {
     return this.request({
       path: `/marketing/campaigns/statuses/${id}`,
@@ -531,7 +536,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getMarketingCampaignsStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/statuses/count`,
       method: 'get',
@@ -540,7 +545,7 @@ export class MarketingAPI extends Manage {
   }
 
   getMarketingCampaignsSubTypes(
-    params: CommonParameters = {},
+    params: CommonParameters<CampaignSubTypeCampaignSubType> = {},
   ): Promise<Array<CampaignSubTypeCampaignSubType>> {
     return this.request({
       path: `/marketing/campaigns/subTypes`,
@@ -561,7 +566,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsSubTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CampaignSubTypeCampaignSubType> = {},
   ): Promise<CampaignSubTypeCampaignSubType> {
     return this.request({
       path: `/marketing/campaigns/subTypes/${id}`,
@@ -599,7 +604,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsSubTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getMarketingCampaignsSubTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/subTypes/count`,
       method: 'get',
@@ -607,7 +612,9 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsTypes(params: CommonParameters = {}): Promise<Array<CampaignType>> {
+  getMarketingCampaignsTypes(
+    params: CommonParameters<CampaignType> = {},
+  ): Promise<Array<CampaignType>> {
     return this.request({
       path: `/marketing/campaigns/types`,
       method: 'get',
@@ -623,7 +630,10 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsTypesById(id: number, params: CommonParameters = {}): Promise<CampaignType> {
+  getMarketingCampaignsTypesById(
+    id: number,
+    params: CommonParameters<CampaignType> = {},
+  ): Promise<CampaignType> {
     return this.request({
       path: `/marketing/campaigns/types/${id}`,
       method: 'get',
@@ -659,7 +669,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<CampaignTypeInfo> = {},
   ): Promise<CampaignTypeInfo> {
     return this.request({
       path: `/marketing/campaigns/types/${id}/info`,
@@ -670,7 +680,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsTypesByParentIdSubTypes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TypeSubTypeCampaignSubType> = {},
   ): Promise<Array<TypeSubTypeCampaignSubType>> {
     return this.request({
       path: `/marketing/campaigns/types/${parentId}/subTypes`,
@@ -682,7 +692,7 @@ export class MarketingAPI extends Manage {
   getMarketingCampaignsTypesByParentIdSubTypesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<TypeSubTypeCampaignSubType> = {},
   ): Promise<TypeSubTypeCampaignSubType> {
     return this.request({
       path: `/marketing/campaigns/types/${parentId}/subTypes/${id}`,
@@ -693,7 +703,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingCampaignsTypesByParentIdSubTypesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/types/${parentId}/subTypes/count`,
@@ -702,7 +712,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getMarketingCampaignsTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/types/count`,
       method: 'get',
@@ -710,7 +720,9 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsTypesInfo(params: CommonParameters = {}): Promise<Array<CampaignTypeInfo>> {
+  getMarketingCampaignsTypesInfo(
+    params: CommonParameters<CampaignTypeInfo> = {},
+  ): Promise<Array<CampaignTypeInfo>> {
     return this.request({
       path: `/marketing/campaigns/types/info`,
       method: 'get',
@@ -718,7 +730,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingCampaignsTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getMarketingCampaignsTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/marketing/campaigns/types/info/count`,
       method: 'get',
@@ -726,7 +738,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingGroups(params: CommonParameters = {}): Promise<Array<Group>> {
+  getMarketingGroups(params: CommonParameters<Group> = {}): Promise<Array<Group>> {
     return this.request({
       path: `/marketing/groups`,
       method: 'get',
@@ -742,7 +754,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingGroupsById(id: number, params: CommonParameters = {}): Promise<Group> {
+  getMarketingGroupsById(id: number, params: CommonParameters<Group> = {}): Promise<Group> {
     return this.request({
       path: `/marketing/groups/${id}`,
       method: 'get',
@@ -773,7 +785,10 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingGroupsByIdInfo(id: number, params: CommonParameters = {}): Promise<GroupInfo> {
+  getMarketingGroupsByIdInfo(
+    id: number,
+    params: CommonParameters<GroupInfo> = {},
+  ): Promise<GroupInfo> {
     return this.request({
       path: `/marketing/groups/${id}/info`,
       method: 'get',
@@ -781,7 +796,10 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingGroupsByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getMarketingGroupsByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/marketing/groups/${id}/usages`,
       method: 'get',
@@ -791,7 +809,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingGroupsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/marketing/groups/${id}/usages/list`,
@@ -802,7 +820,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingGroupsByParentIdCompanies(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MarketingCompany> = {},
   ): Promise<Array<MarketingCompany>> {
     return this.request({
       path: `/marketing/groups/${parentId}/companies`,
@@ -825,7 +843,7 @@ export class MarketingAPI extends Manage {
   getMarketingGroupsByParentIdCompaniesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MarketingCompany> = {},
   ): Promise<MarketingCompany> {
     return this.request({
       path: `/marketing/groups/${parentId}/companies/${id}`,
@@ -870,7 +888,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingGroupsByParentIdCompaniesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/groups/${parentId}/companies/count`,
@@ -881,7 +899,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingGroupsByParentIdContacts(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MarketingContact> = {},
   ): Promise<Array<MarketingContact>> {
     return this.request({
       path: `/marketing/groups/${parentId}/contacts`,
@@ -904,7 +922,7 @@ export class MarketingAPI extends Manage {
   getMarketingGroupsByParentIdContactsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<MarketingContact> = {},
   ): Promise<MarketingContact> {
     return this.request({
       path: `/marketing/groups/${parentId}/contacts/${id}`,
@@ -949,7 +967,7 @@ export class MarketingAPI extends Manage {
 
   getMarketingGroupsByParentIdContactsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/marketing/groups/${parentId}/contacts/count`,
@@ -958,7 +976,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingGroupsCount(params: CommonParameters = {}): Promise<Count> {
+  getMarketingGroupsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/marketing/groups/count`,
       method: 'get',
@@ -966,7 +984,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingGroupsInfo(params: CommonParameters = {}): Promise<Array<GroupInfo>> {
+  getMarketingGroupsInfo(params: CommonParameters<GroupInfo> = {}): Promise<Array<GroupInfo>> {
     return this.request({
       path: `/marketing/groups/info`,
       method: 'get',
@@ -974,7 +992,7 @@ export class MarketingAPI extends Manage {
     })
   }
 
-  getMarketingGroupsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getMarketingGroupsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/marketing/groups/info/count`,
       method: 'get',

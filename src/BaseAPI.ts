@@ -87,7 +87,6 @@ export interface PaginationConfig {
   thisObj: InstanceType<typeof Automate | typeof Manage>
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type PaginationApiMethod<T = unknown, Args extends any[] = any[]> = (
   ...args: Args
 ) => Promise<T[]>
@@ -145,7 +144,7 @@ export const makePaginate =
 /**
  * @internal
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 function getPage<T>(
   apiMethod: PaginationApiMethod<T, any[]>,
   methodArgs: any[],

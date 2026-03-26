@@ -109,7 +109,7 @@ export class SalesAPI extends Manage {
     super(props)
   }
 
-  getSalesActivities(params: CommonParameters = {}): Promise<Array<Activity>> {
+  getSalesActivities(params: CommonParameters<Activity> = {}): Promise<Array<Activity>> {
     return this.request({
       path: `/sales/activities`,
       method: 'get',
@@ -125,7 +125,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesById(id: number, params: CommonParameters = {}): Promise<Activity> {
+  getSalesActivitiesById(id: number, params: CommonParameters<Activity> = {}): Promise<Activity> {
     return this.request({
       path: `/sales/activities/${id}`,
       method: 'get',
@@ -156,7 +156,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesActivitiesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/activities/count`,
       method: 'get',
@@ -164,7 +164,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesStatuses(params: CommonParameters = {}): Promise<Array<ActivityStatus>> {
+  getSalesActivitiesStatuses(
+    params: CommonParameters<ActivityStatus> = {},
+  ): Promise<Array<ActivityStatus>> {
     return this.request({
       path: `/sales/activities/statuses`,
       method: 'get',
@@ -182,7 +184,7 @@ export class SalesAPI extends Manage {
 
   getSalesActivitiesStatusesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ActivityStatus> = {},
   ): Promise<ActivityStatus> {
     return this.request({
       path: `/sales/activities/statuses/${id}`,
@@ -222,7 +224,7 @@ export class SalesAPI extends Manage {
 
   getSalesActivitiesStatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ActivityStatusInfo> = {},
   ): Promise<ActivityStatusInfo> {
     return this.request({
       path: `/sales/activities/statuses/${id}/info`,
@@ -231,7 +233,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesActivitiesStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/activities/statuses/count`,
       method: 'get',
@@ -240,7 +242,7 @@ export class SalesAPI extends Manage {
   }
 
   getSalesActivitiesStatusesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<ActivityStatusInfo> = {},
   ): Promise<Array<ActivityStatusInfo>> {
     return this.request({
       path: `/sales/activities/statuses/info`,
@@ -249,7 +251,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesStatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesActivitiesStatusesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/activities/statuses/info/count`,
       method: 'get',
@@ -257,7 +259,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesTypes(params: CommonParameters = {}): Promise<Array<ActivityType>> {
+  getSalesActivitiesTypes(
+    params: CommonParameters<ActivityType> = {},
+  ): Promise<Array<ActivityType>> {
     return this.request({
       path: `/sales/activities/types`,
       method: 'get',
@@ -273,7 +277,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesTypesById(id: number, params: CommonParameters = {}): Promise<ActivityType> {
+  getSalesActivitiesTypesById(
+    id: number,
+    params: CommonParameters<ActivityType> = {},
+  ): Promise<ActivityType> {
     return this.request({
       path: `/sales/activities/types/${id}`,
       method: 'get',
@@ -309,7 +316,7 @@ export class SalesAPI extends Manage {
 
   getSalesActivitiesTypesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/activities/types/${id}/usages`,
@@ -320,7 +327,7 @@ export class SalesAPI extends Manage {
 
   getSalesActivitiesTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/activities/types/${id}/usages/list`,
@@ -329,7 +336,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesActivitiesTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesActivitiesTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/activities/types/count`,
       method: 'get',
@@ -337,7 +344,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesCommissions(params: CommonParameters = {}): Promise<Array<Commission>> {
+  getSalesCommissions(params: CommonParameters<Commission> = {}): Promise<Array<Commission>> {
     return this.request({
       path: `/sales/commissions`,
       method: 'get',
@@ -353,7 +360,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesCommissionsById(id: number, params: CommonParameters = {}): Promise<Commission> {
+  getSalesCommissionsById(
+    id: number,
+    params: CommonParameters<Commission> = {},
+  ): Promise<Commission> {
     return this.request({
       path: `/sales/commissions/${id}`,
       method: 'get',
@@ -387,7 +397,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesCommissionsByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getSalesCommissionsByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/commissions/${id}/usages`,
       method: 'get',
@@ -397,7 +410,7 @@ export class SalesAPI extends Manage {
 
   getSalesCommissionsByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/commissions/${id}/usages/list`,
@@ -406,7 +419,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesCommissionsCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesCommissionsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/commissions/count`,
       method: 'get',
@@ -414,7 +427,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunities(params: CommonParameters = {}): Promise<Array<Opportunity>> {
+  getSalesOpportunities(params: CommonParameters<Opportunity> = {}): Promise<Array<Opportunity>> {
     return this.request({
       path: `/sales/opportunities`,
       method: 'get',
@@ -430,7 +443,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesById(id: number, params: CommonParameters = {}): Promise<Opportunity> {
+  getSalesOpportunitiesById(
+    id: number,
+    params: CommonParameters<Opportunity> = {},
+  ): Promise<Opportunity> {
     return this.request({
       path: `/sales/opportunities/${id}`,
       method: 'get',
@@ -510,7 +526,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdContacts(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityContact> = {},
   ): Promise<Array<OpportunityContact>> {
     return this.request({
       path: `/sales/opportunities/${parentId}/contacts`,
@@ -533,7 +549,7 @@ export class SalesAPI extends Manage {
   getSalesOpportunitiesByParentIdContactsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityContact> = {},
   ): Promise<OpportunityContact> {
     return this.request({
       path: `/sales/opportunities/${parentId}/contacts/${id}`,
@@ -578,7 +594,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdContactsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/${parentId}/contacts/count`,
@@ -589,7 +605,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdForecast(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Forecast> = {},
   ): Promise<Array<Forecast>> {
     return this.request({
       path: `/sales/opportunities/${parentId}/forecast`,
@@ -638,7 +654,7 @@ export class SalesAPI extends Manage {
   getSalesOpportunitiesByParentIdForecastById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ForecastItem> = {},
   ): Promise<ForecastItem> {
     return this.request({
       path: `/sales/opportunities/${parentId}/forecast/${id}`,
@@ -705,7 +721,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdForecastCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/${parentId}/forecast/count`,
@@ -716,7 +732,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdNotes(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityNote> = {},
   ): Promise<Array<OpportunityNote>> {
     return this.request({
       path: `/sales/opportunities/${parentId}/notes`,
@@ -739,7 +755,7 @@ export class SalesAPI extends Manage {
   getSalesOpportunitiesByParentIdNotesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityNote> = {},
   ): Promise<OpportunityNote> {
     return this.request({
       path: `/sales/opportunities/${parentId}/notes/${id}`,
@@ -784,7 +800,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdNotesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityNote> = {},
   ): Promise<Array<OpportunityNote>> {
     return this.request({
       path: `/sales/opportunities/${parentId}/notes/count`,
@@ -795,7 +811,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdTeam(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Team> = {},
   ): Promise<Array<Team>> {
     return this.request({
       path: `/sales/opportunities/${parentId}/team`,
@@ -815,7 +831,7 @@ export class SalesAPI extends Manage {
   getSalesOpportunitiesByParentIdTeamById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Team> = {},
   ): Promise<Team> {
     return this.request({
       path: `/sales/opportunities/${parentId}/team/${id}`,
@@ -856,7 +872,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesByParentIdTeamCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/${parentId}/team/count`,
@@ -867,7 +883,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesConversionsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesConversion> = {},
   ): Promise<Array<SalesConversion>> {
     return this.request({
       path: `/sales/opportunities/conversions/${id}`,
@@ -876,7 +892,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOpportunitiesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/count`,
       method: 'get',
@@ -884,7 +900,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesDefault(params: CommonParameters = {}): Promise<Opportunity> {
+  getSalesOpportunitiesDefault(params: CommonParameters<Opportunity> = {}): Promise<Opportunity> {
     return this.request({
       path: `/sales/opportunities/default`,
       method: 'get',
@@ -892,7 +908,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesRatings(params: CommonParameters = {}): Promise<Array<OpportunityRating>> {
+  getSalesOpportunitiesRatings(
+    params: CommonParameters<OpportunityRating> = {},
+  ): Promise<Array<OpportunityRating>> {
     return this.request({
       path: `/sales/opportunities/ratings`,
       method: 'get',
@@ -910,7 +928,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesRatingsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityRating> = {},
   ): Promise<OpportunityRating> {
     return this.request({
       path: `/sales/opportunities/ratings/${id}`,
@@ -950,7 +968,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesRatingsByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityRatingInfo> = {},
   ): Promise<OpportunityRatingInfo> {
     return this.request({
       path: `/sales/opportunities/ratings/${id}/info`,
@@ -959,7 +977,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesRatingsCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOpportunitiesRatingsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/ratings/count`,
       method: 'get',
@@ -968,7 +986,7 @@ export class SalesAPI extends Manage {
   }
 
   getSalesOpportunitiesRatingsInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityRatingInfo> = {},
   ): Promise<Array<OpportunityRatingInfo>> {
     return this.request({
       path: `/sales/opportunities/ratings/info`,
@@ -977,7 +995,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesRatingsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOpportunitiesRatingsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/ratings/info/count`,
       method: 'get',
@@ -985,7 +1003,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesStatuses(params: CommonParameters = {}): Promise<Array<OpportunityStatus>> {
+  getSalesOpportunitiesStatuses(
+    params: CommonParameters<OpportunityStatus> = {},
+  ): Promise<Array<OpportunityStatus>> {
     return this.request({
       path: `/sales/opportunities/statuses`,
       method: 'get',
@@ -1003,7 +1023,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesStatusesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityStatus> = {},
   ): Promise<OpportunityStatus> {
     return this.request({
       path: `/sales/opportunities/statuses/${id}`,
@@ -1043,7 +1063,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesStatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityStatusInfo> = {},
   ): Promise<OpportunityStatusInfo> {
     return this.request({
       path: `/sales/opportunities/statuses/${id}/info`,
@@ -1054,7 +1074,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesStatusesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/opportunities/statuses/${id}/usages`,
@@ -1065,7 +1085,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesStatusesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/opportunities/statuses/${id}/usages/list`,
@@ -1074,7 +1094,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOpportunitiesStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/statuses/count`,
       method: 'get',
@@ -1083,7 +1103,7 @@ export class SalesAPI extends Manage {
   }
 
   getSalesOpportunitiesStatusesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityStatusInfo> = {},
   ): Promise<Array<OpportunityStatusInfo>> {
     return this.request({
       path: `/sales/opportunities/statuses/info`,
@@ -1092,7 +1112,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesStatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOpportunitiesStatusesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/statuses/info/count`,
       method: 'get',
@@ -1100,7 +1120,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesTypes(params: CommonParameters = {}): Promise<Array<OpportunityType>> {
+  getSalesOpportunitiesTypes(
+    params: CommonParameters<OpportunityType> = {},
+  ): Promise<Array<OpportunityType>> {
     return this.request({
       path: `/sales/opportunities/types`,
       method: 'get',
@@ -1118,7 +1140,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityType> = {},
   ): Promise<OpportunityType> {
     return this.request({
       path: `/sales/opportunities/types/${id}`,
@@ -1158,7 +1180,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityTypeInfo> = {},
   ): Promise<OpportunityTypeInfo> {
     return this.request({
       path: `/sales/opportunities/types/${id}/info`,
@@ -1169,7 +1191,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesTypesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/opportunities/types/${id}/usages`,
@@ -1180,7 +1202,7 @@ export class SalesAPI extends Manage {
 
   getSalesOpportunitiesTypesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/opportunities/types/${id}/usages/list`,
@@ -1189,7 +1211,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOpportunitiesTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/types/count`,
       method: 'get',
@@ -1198,7 +1220,7 @@ export class SalesAPI extends Manage {
   }
 
   getSalesOpportunitiesTypesInfo(
-    params: CommonParameters = {},
+    params: CommonParameters<OpportunityTypeInfo> = {},
   ): Promise<Array<OpportunityTypeInfo>> {
     return this.request({
       path: `/sales/opportunities/types/info`,
@@ -1207,7 +1229,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOpportunitiesTypesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOpportunitiesTypesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/opportunities/types/info/count`,
       method: 'get',
@@ -1215,7 +1237,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrders(params: CommonParameters = {}): Promise<Array<Order>> {
+  getSalesOrders(params: CommonParameters<Order> = {}): Promise<Array<Order>> {
     return this.request({
       path: `/sales/orders`,
       method: 'get',
@@ -1231,7 +1253,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrdersById(id: number, params: CommonParameters = {}): Promise<Order> {
+  getSalesOrdersById(id: number, params: CommonParameters<Order> = {}): Promise<Order> {
     return this.request({
       path: `/sales/orders/${id}`,
       method: 'get',
@@ -1282,7 +1304,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersByIdFinancialrecap(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesOrderRecap> = {},
   ): Promise<Array<SalesOrderRecap>> {
     return this.request({
       path: `/sales/orders/${id}/financialrecap`,
@@ -1293,7 +1315,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersByParentIdLineitems(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesOrdersLineItem> = {},
   ): Promise<Array<SalesOrdersLineItem>> {
     return this.request({
       path: `/sales/orders/${parentId}/lineitems/`,
@@ -1316,7 +1338,7 @@ export class SalesAPI extends Manage {
   getSalesOrdersByParentIdLineitemsById(
     parentId: number,
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesOrdersLineItem> = {},
   ): Promise<SalesOrdersLineItem> {
     return this.request({
       path: `/sales/orders/${parentId}/lineitems/${id}`,
@@ -1361,7 +1383,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersByParentIdLineitemsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/orders/${parentId}/lineitems/count`,
@@ -1372,7 +1394,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersConversionsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesConversion> = {},
   ): Promise<Array<SalesConversion>> {
     return this.request({
       path: `/sales/orders/conversions/${id}`,
@@ -1381,7 +1403,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrdersCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOrdersCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/orders/count`,
       method: 'get',
@@ -1389,7 +1411,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrdersStatuses(params: CommonParameters = {}): Promise<Array<OrderStatus>> {
+  getSalesOrdersStatuses(params: CommonParameters<OrderStatus> = {}): Promise<Array<OrderStatus>> {
     return this.request({
       path: `/sales/orders/statuses`,
       method: 'get',
@@ -1405,7 +1427,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrdersStatusesById(id: number, params: CommonParameters = {}): Promise<OrderStatus> {
+  getSalesOrdersStatusesById(
+    id: number,
+    params: CommonParameters<OrderStatus> = {},
+  ): Promise<OrderStatus> {
     return this.request({
       path: `/sales/orders/statuses/${id}`,
       method: 'get',
@@ -1441,7 +1466,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersStatusesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OrderStatusInfo> = {},
   ): Promise<OrderStatusInfo> {
     return this.request({
       path: `/sales/orders/statuses/${id}/info`,
@@ -1452,7 +1477,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersStatusesByIdUsages(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/orders/statuses/${id}/usages`,
@@ -1463,7 +1488,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersStatusesByIdUsagesList(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Usage> = {},
   ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/orders/statuses/${id}/usages/list`,
@@ -1474,7 +1499,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersStatusesByParentIdEmailtemplates(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OrderStatusEmailTemplate> = {},
   ): Promise<Array<OrderStatusEmailTemplate>> {
     return this.request({
       path: `/sales/orders/statuses/${parentId}/emailtemplates/`,
@@ -1497,7 +1522,7 @@ export class SalesAPI extends Manage {
   getSalesOrdersStatusesByParentIdEmailtemplatesById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OrderStatusEmailTemplate> = {},
   ): Promise<OrderStatusEmailTemplate> {
     return this.request({
       path: `/sales/orders/statuses/${parentId}/emailtemplates/${id}`,
@@ -1542,7 +1567,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersStatusesByParentIdEmailtemplatesCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/orders/statuses/${parentId}/emailtemplates/count`,
@@ -1553,7 +1578,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersStatusesByParentIdNotifications(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OrderStatusNotification> = {},
   ): Promise<Array<OrderStatusNotification>> {
     return this.request({
       path: `/sales/orders/statuses/${parentId}/notifications`,
@@ -1576,7 +1601,7 @@ export class SalesAPI extends Manage {
   getSalesOrdersStatusesByParentIdNotificationsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<OrderStatusNotification> = {},
   ): Promise<OrderStatusNotification> {
     return this.request({
       path: `/sales/orders/statuses/${parentId}/notifications/${id}`,
@@ -1621,7 +1646,7 @@ export class SalesAPI extends Manage {
 
   getSalesOrdersStatusesByParentIdNotificationsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/orders/statuses/${parentId}/notifications/count`,
@@ -1630,7 +1655,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrdersStatusesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOrdersStatusesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/orders/statuses/count`,
       method: 'get',
@@ -1638,7 +1663,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrdersStatusesInfo(params: CommonParameters = {}): Promise<Array<OrderStatusInfo>> {
+  getSalesOrdersStatusesInfo(
+    params: CommonParameters<OrderStatusInfo> = {},
+  ): Promise<Array<OrderStatusInfo>> {
     return this.request({
       path: `/sales/orders/statuses/info`,
       method: 'get',
@@ -1646,7 +1673,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesOrdersStatusesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesOrdersStatusesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/orders/statuses/info/count`,
       method: 'get',
@@ -1654,7 +1681,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesProbabilities(params: CommonParameters = {}): Promise<Array<SalesProbability>> {
+  getSalesProbabilities(
+    params: CommonParameters<SalesProbability> = {},
+  ): Promise<Array<SalesProbability>> {
     return this.request({
       path: `/sales/probabilities`,
       method: 'get',
@@ -1670,7 +1699,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesProbabilitiesById(id: number, params: CommonParameters = {}): Promise<SalesProbability> {
+  getSalesProbabilitiesById(
+    id: number,
+    params: CommonParameters<SalesProbability> = {},
+  ): Promise<SalesProbability> {
     return this.request({
       path: `/sales/probabilities/${id}`,
       method: 'get',
@@ -1706,7 +1738,7 @@ export class SalesAPI extends Manage {
 
   getSalesProbabilitiesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesProbabilityInfo> = {},
   ): Promise<SalesProbabilityInfo> {
     return this.request({
       path: `/sales/probabilities/${id}/info`,
@@ -1715,7 +1747,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesProbabilitiesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesProbabilitiesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/probabilities/count`,
       method: 'get',
@@ -1723,7 +1755,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesProbabilitiesInfo(params: CommonParameters = {}): Promise<Array<SalesProbabilityInfo>> {
+  getSalesProbabilitiesInfo(
+    params: CommonParameters<SalesProbabilityInfo> = {},
+  ): Promise<Array<SalesProbabilityInfo>> {
     return this.request({
       path: `/sales/probabilities/info`,
       method: 'get',
@@ -1731,7 +1765,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesProbabilitiesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesProbabilitiesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/probabilities/info/count`,
       method: 'get',
@@ -1739,7 +1773,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesQuotas(params: CommonParameters = {}): Promise<Array<SalesQuota>> {
+  getSalesQuotas(params: CommonParameters<SalesQuota> = {}): Promise<Array<SalesQuota>> {
     return this.request({
       path: `/sales/quotas`,
       method: 'get',
@@ -1755,7 +1789,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesQuotasById(id: number, params: CommonParameters = {}): Promise<SalesQuota> {
+  getSalesQuotasById(id: number, params: CommonParameters<SalesQuota> = {}): Promise<SalesQuota> {
     return this.request({
       path: `/sales/quotas/${id}`,
       method: 'get',
@@ -1786,7 +1820,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesQuotasCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesQuotasCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/quotas/count`,
       method: 'get',
@@ -1794,7 +1828,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesRoles(params: CommonParameters = {}): Promise<Array<Role>> {
+  getSalesRoles(params: CommonParameters<Role> = {}): Promise<Array<Role>> {
     return this.request({
       path: `/sales/roles`,
       method: 'get',
@@ -1810,7 +1844,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesRolesById(id: number, params: CommonParameters = {}): Promise<Role> {
+  getSalesRolesById(id: number, params: CommonParameters<Role> = {}): Promise<Role> {
     return this.request({
       path: `/sales/roles/${id}`,
       method: 'get',
@@ -1841,7 +1875,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesRolesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesRolesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/roles/count`,
       method: 'get',
@@ -1849,7 +1883,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesSalesTeams(params: CommonParameters = {}): Promise<Array<SalesTeam>> {
+  getSalesSalesTeams(params: CommonParameters<SalesTeam> = {}): Promise<Array<SalesTeam>> {
     return this.request({
       path: `/sales/salesTeams`,
       method: 'get',
@@ -1865,7 +1899,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesSalesTeamsById(id: number, params: CommonParameters = {}): Promise<SalesTeam> {
+  getSalesSalesTeamsById(id: number, params: CommonParameters<SalesTeam> = {}): Promise<SalesTeam> {
     return this.request({
       path: `/sales/salesTeams/${id}`,
       method: 'get',
@@ -1898,7 +1932,7 @@ export class SalesAPI extends Manage {
 
   getSalesSalesTeamsByParentIdMembers(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesTeamMember> = {},
   ): Promise<Array<SalesTeamMember>> {
     return this.request({
       path: `/sales/salesTeams/${parentId}/members`,
@@ -1921,7 +1955,7 @@ export class SalesAPI extends Manage {
   getSalesSalesTeamsByParentIdMembersById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<SalesTeamMember> = {},
   ): Promise<SalesTeamMember> {
     return this.request({
       path: `/sales/salesTeams/${parentId}/members/${id}`,
@@ -1966,7 +2000,7 @@ export class SalesAPI extends Manage {
 
   getSalesSalesTeamsByParentIdMembersCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/salesTeams/${parentId}/members/count`,
@@ -1975,7 +2009,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesSalesTeamsCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesSalesTeamsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/salesTeams/count`,
       method: 'get',
@@ -1985,7 +2019,7 @@ export class SalesAPI extends Manage {
 
   getSalesScheduleHolidaylistsByParentIdHolidaysInfoCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/sales/schedule/holidaylists/${parentId}/holidays/info/count`,
@@ -1994,7 +2028,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesScheduleHolidaylistsInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesScheduleHolidaylistsInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/schedule/holidaylists/info/count`,
       method: 'get',
@@ -2002,7 +2036,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesServicePriorityInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesServicePriorityInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/service/priority/info/count`,
       method: 'get',
@@ -2010,7 +2044,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStages(params: CommonParameters = {}): Promise<Array<OpportunityStage>> {
+  getSalesStages(
+    params: CommonParameters<OpportunityStage> = {},
+  ): Promise<Array<OpportunityStage>> {
     return this.request({
       path: `/sales/stages`,
       method: 'get',
@@ -2026,7 +2062,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStagesById(id: number, params: CommonParameters = {}): Promise<OpportunityStage> {
+  getSalesStagesById(
+    id: number,
+    params: CommonParameters<OpportunityStage> = {},
+  ): Promise<OpportunityStage> {
     return this.request({
       path: `/sales/stages/${id}`,
       method: 'get',
@@ -2060,7 +2099,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStagesByIdInfo(id: number, params: CommonParameters = {}): Promise<OpportunityStageInfo> {
+  getSalesStagesByIdInfo(
+    id: number,
+    params: CommonParameters<OpportunityStageInfo> = {},
+  ): Promise<OpportunityStageInfo> {
     return this.request({
       path: `/sales/stages/${id}/info`,
       method: 'get',
@@ -2068,7 +2110,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStagesByIdUsages(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getSalesStagesByIdUsages(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/stages/${id}/usages`,
       method: 'get',
@@ -2076,7 +2121,10 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStagesByIdUsagesList(id: number, params: CommonParameters = {}): Promise<Array<Usage>> {
+  getSalesStagesByIdUsagesList(
+    id: number,
+    params: CommonParameters<Usage> = {},
+  ): Promise<Array<Usage>> {
     return this.request({
       path: `/sales/stages/${id}/usages/list`,
       method: 'get',
@@ -2084,7 +2132,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStagesCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesStagesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/stages/count`,
       method: 'get',
@@ -2092,7 +2140,9 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStagesInfo(params: CommonParameters = {}): Promise<Array<OpportunityStageInfo>> {
+  getSalesStagesInfo(
+    params: CommonParameters<OpportunityStageInfo> = {},
+  ): Promise<Array<OpportunityStageInfo>> {
     return this.request({
       path: `/sales/stages/info`,
       method: 'get',
@@ -2100,7 +2150,7 @@ export class SalesAPI extends Manage {
     })
   }
 
-  getSalesStagesInfoCount(params: CommonParameters = {}): Promise<Count> {
+  getSalesStagesInfoCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/sales/stages/info/count`,
       method: 'get',

@@ -47,7 +47,9 @@ export class ExpenseAPI extends Manage {
     super(props)
   }
 
-  getExpenseClassifications(params: CommonParameters = {}): Promise<Array<Classification>> {
+  getExpenseClassifications(
+    params: CommonParameters<Classification> = {},
+  ): Promise<Array<Classification>> {
     return this.request({
       path: `/expense/classifications`,
       method: 'get',
@@ -57,7 +59,7 @@ export class ExpenseAPI extends Manage {
 
   getExpenseClassificationsById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Classification> = {},
   ): Promise<Classification> {
     return this.request({
       path: `/expense/classifications/${id}`,
@@ -66,7 +68,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseClassificationsCount(params: CommonParameters = {}): Promise<Count> {
+  getExpenseClassificationsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/expense/classifications/count`,
       method: 'get',
@@ -74,7 +76,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseEntries(params: CommonParameters = {}): Promise<Array<ExpenseEntry>> {
+  getExpenseEntries(params: CommonParameters<ExpenseEntry> = {}): Promise<Array<ExpenseEntry>> {
     return this.request({
       path: `/expense/entries`,
       method: 'get',
@@ -90,7 +92,10 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseEntriesById(id: number, params: CommonParameters = {}): Promise<ExpenseEntry> {
+  getExpenseEntriesById(
+    id: number,
+    params: CommonParameters<ExpenseEntry> = {},
+  ): Promise<ExpenseEntry> {
     return this.request({
       path: `/expense/entries/${id}`,
       method: 'get',
@@ -126,7 +131,7 @@ export class ExpenseAPI extends Manage {
 
   getExpenseEntriesByParentIdAudits(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ExpenseEntryAudit> = {},
   ): Promise<Array<ExpenseEntryAudit>> {
     return this.request({
       path: `/expense/entries/${parentId}/audits`,
@@ -138,7 +143,7 @@ export class ExpenseAPI extends Manage {
   getExpenseEntriesByParentIdAuditsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ExpenseEntryAudit> = {},
   ): Promise<ExpenseEntryAudit> {
     return this.request({
       path: `/expense/entries/${parentId}/audits/${id}`,
@@ -149,7 +154,7 @@ export class ExpenseAPI extends Manage {
 
   getExpenseEntriesByParentIdAuditsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/expense/entries/${parentId}/audits/count`,
@@ -158,7 +163,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseEntriesCount(params: CommonParameters = {}): Promise<Count> {
+  getExpenseEntriesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/expense/entries/count`,
       method: 'get',
@@ -166,7 +171,9 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseInfoTaxTypes(params: CommonParameters = {}): Promise<Array<ExpenseTaxTypeInfo>> {
+  getExpenseInfoTaxTypes(
+    params: CommonParameters<ExpenseTaxTypeInfo> = {},
+  ): Promise<Array<ExpenseTaxTypeInfo>> {
     return this.request({
       path: `/expense/info/taxTypes`,
       method: 'get',
@@ -176,7 +183,7 @@ export class ExpenseAPI extends Manage {
 
   getExpenseInfoTaxTypesById(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ExpenseTaxTypeInfo> = {},
   ): Promise<ExpenseTaxTypeInfo> {
     return this.request({
       path: `/expense/info/taxTypes/${id}`,
@@ -185,7 +192,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseInfoTaxTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getExpenseInfoTaxTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/expense/info/taxTypes/count`,
       method: 'get',
@@ -193,7 +200,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpensePaymentTypes(params: CommonParameters = {}): Promise<Array<PaymentType>> {
+  getExpensePaymentTypes(params: CommonParameters<PaymentType> = {}): Promise<Array<PaymentType>> {
     return this.request({
       path: `/expense/paymentTypes`,
       method: 'get',
@@ -209,7 +216,10 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpensePaymentTypesById(id: number, params: CommonParameters = {}): Promise<PaymentType> {
+  getExpensePaymentTypesById(
+    id: number,
+    params: CommonParameters<PaymentType> = {},
+  ): Promise<PaymentType> {
     return this.request({
       path: `/expense/paymentTypes/${id}`,
       method: 'get',
@@ -245,7 +255,7 @@ export class ExpenseAPI extends Manage {
 
   getExpensePaymentTypesByIdInfo(
     id: number,
-    params: CommonParameters = {},
+    params: CommonParameters<PaymentTypeInfo> = {},
   ): Promise<PaymentTypeInfo> {
     return this.request({
       path: `/expense/paymentTypes/${id}/info`,
@@ -254,7 +264,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpensePaymentTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getExpensePaymentTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/expense/paymentTypes/count`,
       method: 'get',
@@ -262,7 +272,9 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpensePaymentTypesInfo(params: CommonParameters = {}): Promise<Array<PaymentTypeInfo>> {
+  getExpensePaymentTypesInfo(
+    params: CommonParameters<PaymentTypeInfo> = {},
+  ): Promise<Array<PaymentTypeInfo>> {
     return this.request({
       path: `/expense/paymentTypes/info`,
       method: 'get',
@@ -270,7 +282,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseReports(params: CommonParameters = {}): Promise<Array<ExpenseReport>> {
+  getExpenseReports(params: CommonParameters<ExpenseReport> = {}): Promise<Array<ExpenseReport>> {
     return this.request({
       path: `/expense/reports`,
       method: 'get',
@@ -278,7 +290,10 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseReportsById(id: number, params: CommonParameters = {}): Promise<ExpenseReport> {
+  getExpenseReportsById(
+    id: number,
+    params: CommonParameters<ExpenseReport> = {},
+  ): Promise<ExpenseReport> {
     return this.request({
       path: `/expense/reports/${id}`,
       method: 'get',
@@ -320,7 +335,7 @@ export class ExpenseAPI extends Manage {
 
   getExpenseReportsByParentIdAudits(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ExpenseReportAudit> = {},
   ): Promise<Array<ExpenseReportAudit>> {
     return this.request({
       path: `/expense/reports/${parentId}/audits`,
@@ -332,7 +347,7 @@ export class ExpenseAPI extends Manage {
   getExpenseReportsByParentIdAuditsById(
     id: number,
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<ExpenseReportAudit> = {},
   ): Promise<ExpenseReportAudit> {
     return this.request({
       path: `/expense/reports/${parentId}/audits/${id}`,
@@ -343,7 +358,7 @@ export class ExpenseAPI extends Manage {
 
   getExpenseReportsByParentIdAuditsCount(
     parentId: number,
-    params: CommonParameters = {},
+    params: CommonParameters<Count> = {},
   ): Promise<Count> {
     return this.request({
       path: `/expense/reports/${parentId}/audits/count`,
@@ -352,7 +367,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseReportsCount(params: CommonParameters = {}): Promise<Count> {
+  getExpenseReportsCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/expense/reports/count`,
       method: 'get',
@@ -360,7 +375,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseTypes(params: CommonParameters = {}): Promise<Array<ExpenseType>> {
+  getExpenseTypes(params: CommonParameters<ExpenseType> = {}): Promise<Array<ExpenseType>> {
     return this.request({
       path: `/expense/types`,
       method: 'get',
@@ -376,7 +391,10 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseTypesById(id: number, params: CommonParameters = {}): Promise<ExpenseType> {
+  getExpenseTypesById(
+    id: number,
+    params: CommonParameters<ExpenseType> = {},
+  ): Promise<ExpenseType> {
     return this.request({
       path: `/expense/types/${id}`,
       method: 'get',
@@ -407,7 +425,10 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseTypesByIdInfo(id: number, params: CommonParameters = {}): Promise<ExpenseTypeInfo> {
+  getExpenseTypesByIdInfo(
+    id: number,
+    params: CommonParameters<ExpenseTypeInfo> = {},
+  ): Promise<ExpenseTypeInfo> {
     return this.request({
       path: `/expense/types/${id}/info`,
       method: 'get',
@@ -415,7 +436,7 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseTypesCount(params: CommonParameters = {}): Promise<Count> {
+  getExpenseTypesCount(params: CommonParameters<Count> = {}): Promise<Count> {
     return this.request({
       path: `/expense/types/count`,
       method: 'get',
@@ -423,7 +444,9 @@ export class ExpenseAPI extends Manage {
     })
   }
 
-  getExpenseTypesInfo(params: CommonParameters = {}): Promise<Array<ExpenseTypeInfo>> {
+  getExpenseTypesInfo(
+    params: CommonParameters<ExpenseTypeInfo> = {},
+  ): Promise<Array<ExpenseTypeInfo>> {
     return this.request({
       path: `/expense/types/info`,
       method: 'get',

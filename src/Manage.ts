@@ -191,10 +191,39 @@ export default class Manage {
     data,
   }: RequestOptions): Promise<ErrorResponse | DataResponse> {
     try {
+      const normalizeFieldValue = (value: unknown) =>
+        Array.isArray(value) ? value.join(',') : value
+
+      const normalizeOrderByValue = (value: unknown) => {
+        if (!Array.isArray(value)) {
+          return value
+        }
+
+        return value
+          .map((item) => {
+            if (!item || typeof item !== 'object' || !('field' in item) || !('direction' in item)) {
+              return item
+            }
+
+            const { field, direction } = item as { field: string; direction: 'asc' | 'desc' }
+            return `${field} ${direction}`
+          })
+          .join(',')
+      }
+
+      const normalizedParams =
+        params && typeof params === 'object' && ('fields' in params || 'orderBy' in params)
+          ? {
+              ...params,
+              fields: normalizeFieldValue(params.fields),
+              orderBy: normalizeOrderByValue(params.orderBy),
+            }
+          : params
+
       const result = await this.instance({
         url: path,
         method,
-        params,
+        params: normalizedParams,
         data,
       })
 
