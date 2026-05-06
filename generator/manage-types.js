@@ -16,37 +16,41 @@ import { factory, SyntaxKind } from 'typescript'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-function createPatchValuePropertyTransform(property, _schemaObject, meta) {
-  if (meta.path == '#/components/schemas/PatchOperation/value') {
-    return factory.updatePropertySignature(
-      property,
-      property.modifiers,
-      property.name,
-      factory.createToken(SyntaxKind.QuestionToken),
-      tsUnion([
-        tsRecord(STRING, UNKNOWN),
-        NUMBER,
-        STRING,
-        BOOLEAN,
-        factory.createArrayTypeNode(
-          factory.createTypeLiteralNode([
-            factory.createPropertySignature(
-              undefined,
-              factory.createIdentifier('id'),
-              undefined,
-              NUMBER,
-            ),
-            factory.createPropertySignature(
-              undefined,
-              factory.createIdentifier('value'),
-              undefined,
-              STRING,
-            ),
-          ]),
-        ),
+function createProperty(name, type, optional = false) {
+  return factory.createPropertySignature(
+    undefined,
+    factory.createIdentifier(name),
+    optional ? factory.createToken(SyntaxKind.QuestionToken) : undefined,
+    type,
+  )
+}
+
+function createOpType(...ops) {
+  return factory.createUnionTypeNode(
+    ops.map((op) => factory.createLiteralTypeNode(factory.createStringLiteral(op))),
+  )
+}
+
+function createPatchOperationTransform(_schemaObject, meta) {
+  if (meta.path == '#/components/schemas/PatchOperation') {
+    return factory.createUnionTypeNode([
+      factory.createTypeLiteralNode([
+        createProperty('op', createOpType('add', 'replace')),
+        createProperty('path', STRING),
+        createProperty('value', UNKNOWN),
       ]),
-    )
+      factory.createTypeLiteralNode([
+        createProperty('op', createOpType('remove')),
+        createProperty('path', STRING),
+        createProperty('value', UNKNOWN, true),
+      ]),
+    ])
   }
+
+  return undefined
+}
+
+function createPatchValuePropertyTransform(property, _schemaObject, meta) {
   if (meta.path == '#/components/schemas/CustomFieldValue/value') {
     return factory.updatePropertySignature(
       property,
@@ -61,7 +65,10 @@ function createPatchValuePropertyTransform(property, _schemaObject, meta) {
 
 async function generate() {
   try {
-    const options = { transformProperty: createPatchValuePropertyTransform }
+    const options = {
+      transform: createPatchOperationTransform,
+      transformProperty: createPatchValuePropertyTransform,
+    }
     const ast = await ot(spec, options)
     const types = astToString(ast)
 

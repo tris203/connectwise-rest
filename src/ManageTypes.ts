@@ -41332,12 +41332,13 @@ export interface components {
             };
         };
         PatchOperation: {
-            op?: string;
-            path?: string;
-            value?: Record<string, unknown> | number | string | boolean | {
-                id: number;
-                value: string;
-            }[];
+            op: "add" | "replace";
+            path: string;
+            value: unknown;
+        } | {
+            op: "remove";
+            path: string;
+            value?: unknown;
         };
         PaymentMethodReference: {
             /** Format: int32 */
