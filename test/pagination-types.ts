@@ -2,6 +2,7 @@ import { expectTypeOf } from 'expect-type'
 import type Manage from '../src/Manage'
 import type { CommonParameters } from '../src/ManageAPI'
 import type { ServiceAPI, Ticket as ManageTicket } from '../src/Manage/ServiceAPI'
+import type { PatchOperation } from '../src/types'
 
 type SimpleTicket = { id: number; summary: string }
 type TicketParams = { conditions?: string; page?: number; pageSize?: number }
@@ -46,3 +47,20 @@ serviceApi.getServiceTickets({ orderBy: [{ field: 'notAField', direction: 'asc' 
 
 // @ts-expect-error orderBy direction should be constrained to asc or desc.
 serviceApi.getServiceTickets({ orderBy: [{ field: 'summary', direction: 'ascending' }] })
+
+const addPatchOperation: PatchOperation = { op: 'add', path: 'summary', value: 'updated' }
+const replacePatchOperation: PatchOperation = { op: 'replace', path: 'summary', value: 'updated' }
+const removePatchOperation: PatchOperation = { op: 'remove', path: 'summary' }
+
+expectTypeOf(addPatchOperation.value).toEqualTypeOf<unknown>()
+expectTypeOf(replacePatchOperation.value).toEqualTypeOf<unknown>()
+expectTypeOf(removePatchOperation.value).toEqualTypeOf<unknown | undefined>()
+
+// @ts-expect-error add operations should require a value.
+const addPatchOperationWithoutValue: PatchOperation = { op: 'add', path: 'summary' }
+
+// @ts-expect-error replace operations should require a value.
+const replacePatchOperationWithoutValue: PatchOperation = { op: 'replace', path: 'summary' }
+
+// @ts-expect-error patch operation op should be constrained to JSON patch operations.
+const invalidPatchOperation: PatchOperation = { op: 'copy', path: 'summary', value: 'updated' }
