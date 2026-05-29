@@ -90,7 +90,7 @@ export const makeRequest =
     api: (args: RequestOptions) => Promise<unknown>
     thisObj: InstanceType<typeof Automate | typeof Manage>
   }): ((args: RequestOptions) => Promise<unknown>) =>
-  ({ path, method = 'get', params, data }: RequestOptions): Promise<unknown> => {
+  ({ path, method = 'get', params, data, contentType, responseType, headers }: RequestOptions): Promise<unknown> => {
     const retryCodes = ['ECONNRESET', 'ETIMEDOUT', 'ESOCKETTIMEDOUT']
     const boundApi = api.bind(thisObj)
 
@@ -102,7 +102,7 @@ export const makeRequest =
     const { retry, retryOptions, logger } = config
 
     if (!retry) {
-      return boundApi({ path, method, params, data })
+      return boundApi({ path, method, params, data, contentType, responseType, headers })
         .then((result: any) => {
           logger(
             'info',
@@ -120,7 +120,7 @@ export const makeRequest =
         })
     } else {
       return promiseRetry(retryOptions, (retry, number) => {
-        return boundApi({ path, method, params, data }).catch((error) => {
+        return boundApi({ path, method, params, data, contentType, responseType, headers }).catch((error) => {
           logger(
             'warn',
             `${method} ${path} ${Date.now() - startTime}ms error occurred: ${
